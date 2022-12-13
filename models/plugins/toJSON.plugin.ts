@@ -1,27 +1,37 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/**
- * A mongoose schema plugin which applies the following in the toJSON transform call:
- *  - removes __v, createdAt, updatedAt, and any path that has private: true
- *  - replaces _id with id
- */
+import { Schema } from 'mongoose';
 
-const deleteAtPath = (obj: any, path: any, index: any) => {
+
+/**
+ * remove fileds that are private
+ * @param {Object} obj
+ * @param {string} path
+ * @param {numer} index
+ */
+const deleteAtPath = (obj: Object, path: Array<string>, index: number) => {
     if (index === path.length - 1) {
         delete obj[path[index]];
         return;
     }
     deleteAtPath(obj[path[index]], path, index + 1);
 };
-// function changer<Type>(obj: Type): Type {
 
-const toJSON = (schema: any) => {
+
+/**
+ * remove fileds that are private
+ * removes __v, createdAt, updatedAt, and any schema path that has private: true 
+ * @param {Schema} schema
+ */
+const toJSON = (schema: Schema) => {
     let transform: any;
     if (schema.options.toJSON && schema.options.toJSON.transform) {
         transform = schema.options.toJSON.transform;
     }
 
+    // Assign toJson for schema
     schema.options.toJSON = Object.assign(schema.options.toJSON || {}, {
         transform(doc: any, ret: any, options: any) {
+            // Loop through fileds and find fileds with private option
             Object.keys(schema.paths).forEach((path) => {
                 if (schema.paths[path].options && schema.paths[path].options.private) {
                     deleteAtPath(ret, path.split('.'), 0);
