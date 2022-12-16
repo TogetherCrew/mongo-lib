@@ -4,7 +4,8 @@
   "description": "All interactions with DB",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "main": "index.js"
   },
   "repository": {
     "type": "git",
