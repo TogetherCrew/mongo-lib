@@ -2,10 +2,9 @@
   "name": "tc-dbcomm",
   "version": "1.0.0",
   "description": "All interactions with DB",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc",
-    "main": "index.js"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

@@ -3,7 +3,6 @@ src/config/dev.env
 src/config/test.env
 
 # compiled output
-/dist
 /node_modules
 
 # Logs
