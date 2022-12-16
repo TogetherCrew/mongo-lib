@@ -8,7 +8,7 @@ import { Schema } from 'mongoose';
  * @param {string} path
  * @param {numer} index
  */
-const deleteAtPath = (obj: Object, path: Array<string>, index: number) => {
+const deleteAtPath = (obj: any, path: any, index: any) => {
     if (index === path.length - 1) {
         delete obj[path[index]];
         return;
@@ -22,7 +22,7 @@ const deleteAtPath = (obj: Object, path: Array<string>, index: number) => {
  * removes __v, createdAt, updatedAt, and any schema path that has private: true 
  * @param {Schema} schema
  */
-const toJSON = (schema: Schema) => {
+const toJSON = (schema: any) => {
     let transform: any;
     if (schema.options.toJSON && schema.options.toJSON.transform) {
         transform = schema.options.toJSON.transform;
