@@ -15,7 +15,6 @@ async function connectToDB(guildname: string) {
     if (!await User.findOne({ discordId: 'discordId' })) {
         await User.create({ discordId: 'discordId' });
     }
-    mongoose.connection.close();
 }
 
 
