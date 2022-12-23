@@ -21,10 +21,10 @@ const rawInfoSchema = new Schema<IRawInfo>({
     reactions: [{
         type: String
     }],
-    Replied_User: {
+    replied_User: {
         type: String
     },
-    Reference_Message: {
+    reference_Message: {
         type: Number
     }
 

@@ -1,7 +1,7 @@
 import { Document } from 'mongodb';
 
 export interface IHeatMap {
-    data?: Date,
+    date?: Date,
     channel?: string,
     messages?: Array<number>,
     interactions?: Array<number>,

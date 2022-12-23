@@ -7,8 +7,8 @@ export interface IRawInfo {
     user_Mentions?: Array<string>,
     roles_Mentions?: Array<string>,
     reactions?: Array<string>,
-    Replied_User?: string,
-    Reference_Message?: number
+    replied_User?: string,
+    reference_Message?: number
 }
 
 export interface IRawInfoModel extends IRawInfo, Document { }

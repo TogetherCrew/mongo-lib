@@ -3,7 +3,7 @@ import { toJSON } from './plugins';
 import { IHeatMap, IHeatMapModel } from '../interfaces/HeatMap.interface';
 
 const heatMapSchema = new Schema<IHeatMap>({
-    data: {
+    date: {
         type: String
     },
     channel: {
