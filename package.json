@@ -4,7 +4,9 @@
   "description": "All interactions with DB",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "env-cmd -f ./src/config/dev.env nodemon ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,13 +20,15 @@
   "homepage": "https://github.com/Behzad-rabiei/tc-dbComm#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
+    "joi": "^17.7.0",
     "moment": "^2.29.4",
-    "mongoose": "^6.8.0",
+    "mongoose": "^6.8.1",
     "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
     "@types/validator": "^13.7.10",
+    "env-cmd": "^10.1.0",
     "jest": "^29.3.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
