@@ -1,6 +1,6 @@
 import { Document } from 'mongodb';
 
-export interface IRawInfo {
+export interface IHeatMap {
     data?: Date,
     channel?: string,
     messages?: Array<number>,
@@ -8,4 +8,4 @@ export interface IRawInfo {
     emojis?: Array<number>,
 }
 
-export interface IUserModel extends IRawInfo, Document { }
+export interface IHeatMapModel extends IHeatMap, Document { }

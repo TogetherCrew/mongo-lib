@@ -11,4 +11,4 @@ export interface IRawInfo {
     Reference_Message?: number
 }
 
-export interface IUserModel extends IRawInfo, Document { }
+export interface IRawInfoModel extends IRawInfo, Document { }
