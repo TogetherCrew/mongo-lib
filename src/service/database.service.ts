@@ -11,13 +11,10 @@ async function connectToDB(guildname: string) {
     mongoose.set("strictQuery", false);
     mongoose.connect(config.mongoose.url, { dbName: guildname });
     // NOTE: connect to a database will not create a new database so for creating database we need crated document in that.
-    // TODO: need
     if (!await User.findOne({ discordId: 'discordId' })) {
         await User.create({ discordId: 'discordId' });
     }
 }
-
-
 
 export default {
     connectToDB

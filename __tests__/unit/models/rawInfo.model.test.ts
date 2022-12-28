@@ -1,6 +1,5 @@
 import { RawInfo } from '../../../src/models';
 import { IRawInfo } from '../../../src/interfaces/RawInfo.interface'
-import moment from "moment";
 
 describe('RawInfo model', () => {
     describe('rawInfo validation', () => {
