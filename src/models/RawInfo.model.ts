@@ -1,36 +1,6 @@
-import { Schema, model } from 'mongoose';
-import { toJSON } from './plugins';
-import { IRawInfo, IRawInfoModel } from '../interfaces/RawInfo.interface';
-
-const rawInfoSchema = new Schema<IRawInfo>({
-    type: {
-        type: String
-    },
-    author: {
-        type: String
-    },
-    content: {
-        type: String
-    },
-    user_Mentions: [{
-        type: String
-    }],
-    roles_Mentions: [{
-        type: String
-    }],
-    reactions: [{
-        type: String
-    }],
-    replied_User: {
-        type: String
-    },
-    reference_Message: {
-        type: Number
-    }
-
-});
-
-// Plugins
-rawInfoSchema.plugin(toJSON);
+import { model } from 'mongoose';
+import { rawInfoSchema } from './schemas';
+import { IRawInfoModel } from '../interfaces/RawInfo.interface';
 
 export default model<IRawInfoModel>('RawInfo', rawInfoSchema);
+

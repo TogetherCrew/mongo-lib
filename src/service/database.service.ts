@@ -1,21 +1,22 @@
-import mongoose from "mongoose";
-import { User } from "../models";
+import mongoose, { Connection } from 'mongoose';
+import { heatMapSchema, rawInfoSchema } from '../models/schemas';
+import { Snowflake } from 'discord.js';
 import config from '../config';
-
+import { IHeatMapModel } from '../interfaces/HeatMap.interface';
+import { IRawInfoModel } from '../interfaces/RawInfo.interface';
 
 /**
- * connect to db(or create if it is not exist)
- * @param {string} guildname
+ * connect to database (create with guildId if not exist)
+ * @param {Snowflake} guildId
+ * @returns {Connection}
  */
-async function connectToDB(guildname: string) {
-    mongoose.set("strictQuery", false);
-    mongoose.connect(config.mongoose.url, { dbName: guildname });
-    // NOTE: connect to a database will not create a new database so for creating database we need crated document in that.
-    if (!await User.findOne({ discordId: 'discordId' })) {
-        await User.create({ discordId: 'discordId' });
-    }
+function connectionFactory(guildId: Snowflake): Connection {
+    const connection = mongoose.createConnection(config.mongoose.url, { dbName: guildId });
+    connection.model<IHeatMapModel>('HeatMap', heatMapSchema);
+    connection.model<IRawInfoModel>('RawInfo', rawInfoSchema);
+    return connection;
 }
 
 export default {
-    connectToDB
+    connectionFactory
 }

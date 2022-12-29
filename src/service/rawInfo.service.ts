@@ -1,12 +1,13 @@
+import { Connection } from 'mongoose';
 import { IRawInfo } from '../interfaces/RawInfo.interface';
-import { RawInfo } from '../models'
+
 /**
  * Create rawInfo
  * @param {IRawInfo} data
  * @returns {Promise<IRawInfo>}
  */
-async function createRawInfo(data: IRawInfo) {
-    return RawInfo.create(data);
+async function createRawInfo(connection: Connection, data: IRawInfo) {
+    return connection.models.RawInfo.create(data);
 }
 
 export default {
