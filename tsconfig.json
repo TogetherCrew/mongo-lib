@@ -19,7 +19,8 @@
     "include": [
         "src/**/*",
         "__tests__/**/*",
-        "index.ts"
+        "src/index.ts",
+        "src/connection.js.ts"
     ],
     "ts-node": {
         "transpileOnly": true,

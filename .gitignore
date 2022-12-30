@@ -2,8 +2,9 @@
 src/config/dev.env
 src/config/test.env
 
-# compiled output
 /node_modules
+/lib
+# compiled output
 
 # Logs
 logs
