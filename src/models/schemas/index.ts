@@ -1,5 +1,5 @@
-import userSchema from "./user.schema";
-import tokenSchema from "./token.schema";
+import userSchema from "./User.schema";
+import tokenSchema from "./Token.schema";
 import guildSchema from "./Guild.schema";
 import heatMapSchema from './HeatMap.schema';
 import rawInfoSchema from './RawInfo.schema';
