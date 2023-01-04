@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./lib/index.js",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon ./src/index.ts",
-    "test": "env-cmd -f ./src/config/test.env jest  --watch  --detectOpenHandles --runInBand"
+    "dev": "nodemon ./src/index.ts",
+    "test": "jest  --watch  --detectOpenHandles --runInBand"
   },
   "repository": {
     "type": "git",
