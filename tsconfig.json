@@ -28,7 +28,7 @@
     },
     "exclude": [
         "./coverage",
-        "./dist",
+        "./lib",
         "__tests__",
         "jest.config.js"
     ],

@@ -3,10 +3,4 @@ import { IDiscordGuild, IDiscordOathBotCallback, IDiscordUser } from './interfac
 import { IUser, IUserModel } from './interfaces/User.interface';
 import { IToken, ITokenModel } from './interfaces/Token.interface';
 import { IGuild, IGuildModel } from './interfaces/Guild.interface';
-
-
-
-
-export {
-    User, Token, Guild, IDiscordGuild, IDiscordOathBotCallback, IDiscordUser, IUser, IUserModel, IToken, ITokenModel, IGuild, IGuildModel
-}
+export { User, Token, Guild, IDiscordGuild, IDiscordOathBotCallback, IDiscordUser, IUser, IUserModel, IToken, ITokenModel, IGuild, IGuildModel };
