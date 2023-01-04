@@ -21,10 +21,10 @@ const rawInfoSample = {
 
 
 
-const connection1 = databaseService.connectionFactory('guildId#1');
+const connection1 = databaseService.connectionFactory('guildId#1', 'mongodb://127.0.0.1:27017/RnDAO');
 heatmapService.createHeatMap(connection1, heatmapSample);
 rawInfoService.createRawInfo(connection1, rawInfoSample);
 
-const connection2 = databaseService.connectionFactory('guildId#2');
+const connection2 = databaseService.connectionFactory('guildId#2', 'mongodb://127.0.0.1:27017/RnDAO');
 heatmapService.createHeatMap(connection2, heatmapSample);
 rawInfoService.createRawInfo(connection2, rawInfoSample);
