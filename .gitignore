@@ -1,9 +1,6 @@
-# env vars
-src/config/dev.env
-src/config/test.env
 
 /node_modules
-# compiled output
+/lib
 
 # Logs
 logs
@@ -16,13 +13,6 @@ lerna-debug.log*
 
 # OS
 .DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# __tests__/
-
 
 # IDEs and editors
 /.idea
