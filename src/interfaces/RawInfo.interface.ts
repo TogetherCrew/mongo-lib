@@ -1,4 +1,5 @@
 import { Document } from 'mongodb';
+import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
     type?: string,
@@ -10,7 +11,7 @@ export interface IRawInfo {
     replied_User?: string,
     reference_Message?: number,
     created_at?: Date,
-    channelId?: string,
+    channelId?: Snowflake,
 }
 
 export interface IRawInfoModel extends IRawInfo, Document { }
