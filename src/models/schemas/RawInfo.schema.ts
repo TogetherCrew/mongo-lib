@@ -26,6 +26,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
     },
     reference_Message: {
         type: Number
+    },
+    created_at: {
+        type: Date
     }
 
 });

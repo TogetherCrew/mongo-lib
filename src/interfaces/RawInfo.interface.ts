@@ -8,7 +8,9 @@ export interface IRawInfo {
     roles_Mentions?: Array<string>,
     reactions?: Array<string>,
     replied_User?: string,
-    reference_Message?: number
+    reference_Message?: number,
+    created_at?: Date,
+    channelId?: string,
 }
 
 export interface IRawInfoModel extends IRawInfo, Document { }
