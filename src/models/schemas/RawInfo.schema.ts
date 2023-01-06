@@ -29,6 +29,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
     },
     created_at: {
         type: Date
+    },
+    channelId: {
+        type: String
     }
 
 });
