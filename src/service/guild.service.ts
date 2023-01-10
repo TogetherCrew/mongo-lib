@@ -4,9 +4,8 @@ import { Connection } from 'mongoose';
  * Fetch all guild settings
  * @returns {Array<Promise<IGuild> >}
  */
-async function fetchGuild(connection: Connection) {
+const fetchGuild = async (connection: Connection) => {
     const data = await connection.models.Guilds.find({});
-    console.log(data);
     return data;
 }
 
