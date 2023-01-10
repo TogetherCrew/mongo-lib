@@ -14,25 +14,11 @@ function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
     const connection = mongoose.createConnection(dbURI, { dbName: guildId });
     connection.model<IHeatMapModel>('HeatMap', heatMapSchema);
     connection.model<IRawInfoModel>('RawInfo', rawInfoSchema);
+    connection.model<IGuildModel>('Guilds', guildSchema);
     return connection;
 }
-
-
-/**
- * connect to guild setting database
- * @param {Snowflake} dbURI
- * @param {string} dbName
- * @returns {Connection}
- */
-function connectionGuild(dbURI: string, dbName = "configs"): Connection {
-    const connection = mongoose.createConnection(dbURI, { dbName: dbName });
-    connection.model<IGuildModel>('settings', guildSchema);
-    return connection;
-}
-
 
 export default {
     connectionFactory,
-    connectionGuild
 }
 
