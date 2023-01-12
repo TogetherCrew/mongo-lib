@@ -28,7 +28,7 @@ const fetchRawinfo = async (connection: Connection, {selectedChannels, period}: 
 }
 
 const checkExist = async (connection: Connection, time: Date) => {
-    const model = connection.models.Rawinfo;
+    const model = connection.models.RawInfo;
     const data = await model.find({
         created_at: time
     });
