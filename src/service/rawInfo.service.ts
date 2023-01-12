@@ -13,7 +13,7 @@ async function createRawInfo(connection: Connection, data: IRawInfo) {
 
 const fetchRawinfo = async (connection: Connection, {selectedChannels, period}: IGuild) => {
     const model = connection.models.RawInfo;
-    const channelList = selectedChannels?.map((item) => item.channelName);
+    const channelList = selectedChannels?.map((item) => item.channelId);
     const today = moment().startOf('day');
     const data = await model.find({
         channelId: { 

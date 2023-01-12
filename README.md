@@ -45,6 +45,7 @@ HeatMap {
     messages?: Array<number>,
     interactions?: Array<number>,
     emojis?: Array<number>,
+}
 ```
 
 ### Schema for token
