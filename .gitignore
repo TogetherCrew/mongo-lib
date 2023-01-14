@@ -3,6 +3,7 @@
 /lib
 /coverage
 /.nyc_output
+src/config/*.env
 
 # Logs
 logs
