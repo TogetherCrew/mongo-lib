@@ -20,17 +20,14 @@ const guildSchema = new Schema<IGuild>({
         {
             channelId: {
                 type: String,
-                required: true,
             },
             channelName: {
                 type: String,
-                required: true
             },
         }
     ],
     period: {
         type: Date,
-        required: true
     }
 });
 
