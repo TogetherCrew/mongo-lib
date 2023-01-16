@@ -1,3 +1,6 @@
+# env vars
+src/config/dev.env
+src/config/test.env
 
 /node_modules
 /lib
