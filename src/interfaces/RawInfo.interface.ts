@@ -12,6 +12,7 @@ export interface IRawInfo {
     reference_Message?: number,
     created_at?: Date,
     channelId?: Snowflake,
+    messageId?: Snowflake
 }
 
 export interface IRawInfoModel extends IRawInfo, Document { }
