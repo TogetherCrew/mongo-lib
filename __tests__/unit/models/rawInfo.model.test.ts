@@ -15,7 +15,8 @@ describe('RawInfo model', () => {
                 replied_User: "Sortoite#2577",
                 reference_Message: 1050119122215780352,
                 created_at: new Date(),
-                channelId: "1037490021462179915"
+                channelId: "1037490021462179915",
+                messageId: "1037490021462179915"
 
             }
         });

@@ -32,6 +32,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
     },
     channelId: {
         type: String
+    },
+    messageId: {
+        type: String
     }
 
 });

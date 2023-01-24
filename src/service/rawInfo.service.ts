@@ -35,8 +35,16 @@ const checkExist = async (connection: Connection, time: Date) => {
     return data.length > 0;
 }
 
+const getRangeId = async (connection: Connection) => {
+    const model = connection.models.RawInfo;
+    const latest = await model.findOne().sort({ 'messageId': -1 });
+    const oldest = await model.findOne().sort({ 'messageId': 1})
+    return [oldest, latest];
+}
+
 export default {
     createRawInfo,
     fetchRawinfo,
-    checkExist
+    checkExist,
+    getRangeId
 }
