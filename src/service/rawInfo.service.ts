@@ -8,7 +8,11 @@ import moment = require("moment");
  * @returns {Promise<IRawInfo>}
 */
 async function createRawInfo(connection: Connection, data: IRawInfo) {
-    return connection.models.RawInfo.create(data);
+    try {
+        await connection.models.RawInfo.create(data);
+    } catch(e) {
+        return false;
+    }
 }
 
 const fetchRawinfo = async (connection: Connection, {selectedChannels, period}: IGuild) => {
