@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/Behzad-rabiei/tc-dbComm#readme",
   "dependencies": {
+    "@types/mongoose-unique-validator": "^1.0.6",
     "discord.js": "^14.7.1",
     "joi": "^17.7.0",
     "moment": "^2.29.4",
     "mongoose": "^6.8.1",
+    "mongoose-unique-validator": "^3.1.0",
     "validator": "^13.7.0"
   },
   "devDependencies": {

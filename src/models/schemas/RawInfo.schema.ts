@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
 import { IRawInfo } from '../../interfaces/RawInfo.interface';
+import mongooseUniqueValidator from 'mongoose-unique-validator';
 
 const rawInfoSchema = new Schema<IRawInfo>({
     type: {
@@ -34,12 +35,13 @@ const rawInfoSchema = new Schema<IRawInfo>({
         type: String
     },
     messageId: {
-        type: String
+        type: String,
+        unique: true
     }
 
 });
 
 // Plugins
 rawInfoSchema.plugin(toJSON);
-
+rawInfoSchema.plugin(mongooseUniqueValidator);
 export default rawInfoSchema;
