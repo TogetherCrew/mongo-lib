@@ -15,7 +15,7 @@ async function createHeatMap(connection: Connection, data: IHeatMap) {
  * @param {IHeatMap} data
  * @returns {Promise<IHeatMap>}
  */
-async function createHeatMaps(connection: Connection, data: [IHeatMap]) {
+async function createHeatMaps(connection: Connection, data: IHeatMap[]) {
     return connection.models.HeatMap.insertMany(data);
 }
 
