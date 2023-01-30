@@ -14,7 +14,6 @@ function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
     const connection = mongoose.createConnection(dbURI, { dbName: guildId });
     connection.model<IHeatMapModel>('HeatMap', heatMapSchema);
     connection.model<IRawInfoModel>('RawInfo', rawInfoSchema);
-    connection.model<IGuildModel>('Guilds', guildSchema);
     return connection;
 }
 
