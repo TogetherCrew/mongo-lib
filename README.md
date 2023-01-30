@@ -64,13 +64,16 @@ Token {
 Guild {
     guildId: Snowflake,
     user: Snowflake,
-    name: string,
+    name?: string,
     selectedChannels?: [
         {
             channelId: Snowflake,
             channelName?: string
         }
     ],
-    period?: Date
+    period?: Date,
+    connectedAt?: Date,
+    isInProgress?: Boolean
+    isDisconneted?: Boolean
 }
 ```
