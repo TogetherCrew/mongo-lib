@@ -1,9 +1,9 @@
 import mongoose, { Connection } from 'mongoose';
-import { heatMapSchema, rawInfoSchema, guildSchema } from '../models/schemas';
+import { heatMapSchema, rawInfoSchema } from '../models/schemas';
 import { Snowflake } from 'discord.js';
 import { IHeatMapModel } from '../interfaces/HeatMap.interface';
 import { IRawInfoModel } from '../interfaces/RawInfo.interface';
-import { IGuildModel } from '../interfaces/Guild.interface';
+
 /**
  * connect to database (create with guildId if not exist)
  * @param {Snowflake} guildId
