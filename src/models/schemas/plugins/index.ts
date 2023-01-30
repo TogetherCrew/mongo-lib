@@ -1,5 +1,7 @@
 import toJSON from "./toJSON.plugin";
+import paginate from "./pagintae.plugin";
 
 export {
-    toJSON
+    toJSON,
+    paginate
 };

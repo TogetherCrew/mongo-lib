@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { paginate, toJSON } from './plugins';
 import { IGuild } from '../../interfaces/Guild.interface';
 
 const guildSchema = new Schema<IGuild>({
@@ -45,5 +45,6 @@ const guildSchema = new Schema<IGuild>({
 
 // Plugins
 guildSchema.plugin(toJSON);
+guildSchema.plugin(paginate);
 
 export default guildSchema;
