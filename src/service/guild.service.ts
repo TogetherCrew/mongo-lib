@@ -7,7 +7,7 @@ import { Guild } from '../models'
  * @returns {Array<Promise<IGuild> >}
  */
 const fetchGuild = async (connection: Connection) => {
-    const data = await connection.models.Guilds.find({});
+    const data = await connection.models.Guilds.find({ isDisconneted: false });
     return data;
 }
 
