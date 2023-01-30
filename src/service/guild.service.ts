@@ -15,7 +15,6 @@ const fetchGuild = async (connection: Connection) => {
 /**
  * update guild by guildId
  * @param {Snowflake} guildId
- * @param {Snowflake} userDiscordId
  * @param {IGuildUpdateBody} updateBody
  * @returns {Promise<IGuild>}
  */
