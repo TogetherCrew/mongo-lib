@@ -6,6 +6,7 @@ src/config/test.env
 /lib
 /coverage
 /.nyc_output
+src/config/*.env
 
 # Logs
 logs
