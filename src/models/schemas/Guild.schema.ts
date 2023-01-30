@@ -28,6 +28,18 @@ const guildSchema = new Schema<IGuild>({
     ],
     period: {
         type: Date,
+    },
+    connectedAt: {
+        type: Date,
+        default: new Date()
+    },
+    isInProgress: {
+        type: Boolean,
+        default: true
+    },
+    isDisconneted: {
+        type: Boolean,
+        default: false
     }
 });
 

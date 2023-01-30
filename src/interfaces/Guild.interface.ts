@@ -11,9 +11,24 @@ export interface IGuild {
             channelName?: string
         }
     ],
-    period?: Date
+    period?: Date,
+    connectedAt: Date,
+    isDisconneted: boolean,
+    isInProgress: boolean,
+
 
 }
 
+export interface IGuildUpdateBody {
+    selectedChannels?: [
+        {
+            channelId: Snowflake,
+            channelName?: string
+        }
+    ],
+    period?: Date,
+    isDisconneted?: boolean,
+    isInProgress?: boolean
+}
 
 export interface IGuildModel extends IGuild, Document { }
