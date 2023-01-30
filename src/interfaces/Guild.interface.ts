@@ -13,7 +13,7 @@ export interface IGuild {
     ],
     period?: Date,
     connectedAt: Date,
-    isDisconneted: boolean,
+    isDisconnected: boolean,
     isInProgress: boolean,
 
 
@@ -27,7 +27,7 @@ export interface IGuildUpdateBody {
         }
     ],
     period?: Date,
-    isDisconneted?: boolean,
+    isDisconnected?: boolean,
     isInProgress?: boolean
 }
 

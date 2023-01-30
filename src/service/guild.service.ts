@@ -1,4 +1,3 @@
-import { Connection } from 'mongoose';
 import { Snowflake } from 'discord.js';
 import { IGuildUpdateBody } from '../interfaces/Guild.interface'
 import { Guild } from '../models'
@@ -6,7 +5,7 @@ import { Guild } from '../models'
  * Fetch all guild settings
  * @returns {Array<Promise<IGuild> >}
  */
-const fetchGuild = async (connection: Connection) => {
+const fetchGuild = async () => {
     const data = await Guild.find({ isDisconnected: false });
     return data;
 }
