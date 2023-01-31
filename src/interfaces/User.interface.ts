@@ -1,5 +1,5 @@
 import { Snowflake } from 'discord.js';
-import { Document } from 'mongodb';
+import { Model } from 'mongoose';
 
 export interface IUser {
     discordId: Snowflake,
@@ -19,4 +19,8 @@ export interface IUser {
     public_flags?: number,
 }
 
-export interface IUserModel extends IUser, Document { }
+export interface UserModel extends Model<IUser> {
+    paginate(filter: object, options: object): any
+}
+
+

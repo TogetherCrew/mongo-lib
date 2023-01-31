@@ -1,5 +1,5 @@
 import { Snowflake } from 'discord.js';
-import { Document } from 'mongoose';
+import { Model } from 'mongoose';
 
 export interface IToken {
     token: string,
@@ -9,4 +9,6 @@ export interface IToken {
     blacklisted?: boolean
 }
 
-export interface ITokenModel extends IToken, Document { }
+export interface TokenModel extends Model<IToken> {
+    paginate(filter: object, options: object): any
+}

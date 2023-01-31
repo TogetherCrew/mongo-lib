@@ -1,6 +1,6 @@
 import { model } from 'mongoose';
 import { heatMapSchema } from './schemas';
-import { IHeatMapModel } from '../interfaces/HeatMap.interface';
+import { IHeatMap } from '../interfaces/HeatMap.interface';
 
-export default model<IHeatMapModel>('HeatMap', heatMapSchema);
+export default model<IHeatMap>('HeatMap', heatMapSchema);
 

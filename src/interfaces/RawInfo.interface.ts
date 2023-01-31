@@ -1,4 +1,4 @@
-import { Document } from 'mongodb';
+import { Model } from 'mongoose';
 import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
@@ -15,4 +15,6 @@ export interface IRawInfo {
     messageId?: Snowflake
 }
 
-export interface IRawInfoModel extends IRawInfo, Document { }
+export interface RawInfoModel extends Model<IRawInfo> {
+    paginate(filter: object, options: object): any
+}
