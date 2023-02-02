@@ -37,7 +37,7 @@ const guildSchema = new Schema<IGuild>({
         type: Boolean,
         default: true
     },
-    isDisconneted: {
+    isDisconnected: {
         type: Boolean,
         default: false
     }
