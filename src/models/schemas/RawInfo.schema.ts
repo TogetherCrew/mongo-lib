@@ -7,29 +7,29 @@ const rawInfoSchema = new Schema<IRawInfo>({
     type: {
         type: String
     },
+    channel: {
+        type: String
+    },
     author: {
         type: String
     },
     content: {
         type: String
     },
-    user_Mentions: [{
+    user_mentions: [{
         type: String
     }],
-    roles_Mentions: [{
+    role_mentions: [{
         type: String
     }],
     reactions: [{
         type: String
     }],
-    replied_User: {
+    replied_user: {
         type: String
     },
-    reference_Message: {
-        type: Number
-    },
-    created_at: {
-        type: Date
+    datetime: {
+        type: String
     },
     channelId: {
         type: String
@@ -37,6 +37,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
     messageId: {
         type: String,
         unique: true
+    },
+    thread: {
+        type: Boolean
     }
 
 });
