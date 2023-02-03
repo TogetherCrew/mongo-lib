@@ -19,6 +19,7 @@ export interface IGuild {
 
 
 export interface GuildModel extends Model<IGuild> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     paginate(filter: object, options: object): any
 }
 
