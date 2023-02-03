@@ -1,7 +1,9 @@
 # dbComm
-All interactions with DB 
+
+All interactions with DB
 
 ## Schema for rawinfo
+
 ```
 rawinfo {
     type?: string,
@@ -16,7 +18,9 @@ rawinfo {
     channelId?: Snowflake,
 }
 ```
+
 ### Schema for user
+
 ```
 User {
     discordId: Snowflake,
@@ -38,6 +42,7 @@ User {
 ```
 
 ### Schema for heatmap
+
 ```
 HeatMap {
     date?: Date,
@@ -49,6 +54,7 @@ HeatMap {
 ```
 
 ### Schema for token
+
 ```
 Token {
     token: string,
@@ -60,17 +66,21 @@ Token {
 ```
 
 ### Schema for guild
+
 ```
 Guild {
     guildId: Snowflake,
     user: Snowflake,
-    name: string,
+    name?: string,
     selectedChannels?: [
         {
             channelId: Snowflake,
             channelName?: string
         }
     ],
-    period?: Date
+    period?: Date,
+    connectedAt?: Date,
+    isInProgress?: Boolean
+    isDisconnected?: Boolean
 }
 ```
