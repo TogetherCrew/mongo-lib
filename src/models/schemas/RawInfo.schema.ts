@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { toJSON, paginate } from './plugins';
 import { IRawInfo } from '../../interfaces/RawInfo.interface';
 import mongooseUniqueValidator from 'mongoose-unique-validator';
 
@@ -44,4 +44,5 @@ const rawInfoSchema = new Schema<IRawInfo>({
 // Plugins
 rawInfoSchema.plugin(toJSON);
 rawInfoSchema.plugin(mongooseUniqueValidator);
+
 export default rawInfoSchema;

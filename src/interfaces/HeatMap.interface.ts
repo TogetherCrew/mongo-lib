@@ -1,4 +1,4 @@
-import { Document } from 'mongodb';
+import { Model } from 'mongoose';
 
 export interface IHeatMap {
     date?: Date,
@@ -8,4 +8,6 @@ export interface IHeatMap {
     emojis?: Array<number>,
 }
 
-export interface IHeatMapModel extends IHeatMap, Document { }
+export interface HeatMapModel extends Model<IHeatMap> {
+    paginate(filter: object, options: object): any
+}

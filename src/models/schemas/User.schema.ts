@@ -1,9 +1,9 @@
 import { Schema } from 'mongoose';
 import validator from 'validator';
-import { toJSON } from './plugins';
-import { IUser } from '../../interfaces/User.interface';
+import { toJSON, paginate } from './plugins';
+import { IUser, UserModel } from '../../interfaces/User.interface';
 
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<IUser, UserModel>({
     discordId: {
         type: String,
         required: true,
@@ -29,5 +29,6 @@ const userSchema = new Schema<IUser>({
 
 // Plugins
 userSchema.plugin(toJSON);
+userSchema.plugin(paginate);
 
 export default userSchema;

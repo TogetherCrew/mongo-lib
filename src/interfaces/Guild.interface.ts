@@ -1,5 +1,5 @@
 import { Snowflake } from 'discord.js';
-import { Document } from 'mongoose';
+import { Model } from 'mongoose';
 
 export interface IGuild {
     guildId: Snowflake,
@@ -15,8 +15,12 @@ export interface IGuild {
     connectedAt: Date,
     isDisconnected: boolean,
     isInProgress: boolean,
+}
 
 
+export interface GuildModel extends Model<IGuild> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    paginate(filter: object, options: object): any
 }
 
 export interface IGuildUpdateBody {
@@ -30,5 +34,3 @@ export interface IGuildUpdateBody {
     isDisconnected?: boolean,
     isInProgress?: boolean
 }
-
-export interface IGuildModel extends IGuild, Document { }
