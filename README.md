@@ -6,16 +6,18 @@ All interactions with DB
 
 ```
 rawinfo {
+    datetime: string,
+    channel: string,
     type?: string,
     author?: string,
     content?: string,
-    user_Mentions?: Array<string>,
-    roles_Mentions?: Array<string>,
+    user_mentions?: Array<string>,
+    role_mentions?: Array<string>,
     reactions?: Array<string>,
-    replied_User?: string,
-    reference_Message?: number,
-    created_at?: Date,
+    replied_user?: string,
     channelId?: Snowflake,
+    messageId?: Snowflake
+    thread?: bool
 }
 ```
 
