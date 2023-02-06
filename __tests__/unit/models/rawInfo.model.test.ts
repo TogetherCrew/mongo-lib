@@ -6,17 +6,18 @@ describe('RawInfo model', () => {
         let heatMap: IRawInfo;
         beforeEach(() => {
             heatMap = {
+                datetime: "2023-02-03",
                 type: "REPLY",
+                channel: "Test",
                 author: "Boda#2954",
                 content: "Message Here",
-                user_Mentions: ["Beshoy#5456", "Sortoite#2577"],
-                roles_Mentions: ["Surrpot"],
+                user_mentions: ["Beshoy#5456", "Sortoite#2577"],
+                role_mentions: ["Surrpot"],
                 reactions: ["❤️"],
-                replied_User: "Sortoite#2577",
-                reference_Message: 1050119122215780352,
-                created_at: new Date(),
+                replied_user: "Sortoite#2577",
                 channelId: "1037490021462179915",
-                messageId: "1037490021462179915"
+                messageId: "1037490021462179915",
+                thread: false
 
             }
         });
