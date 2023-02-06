@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON, paginate } from './plugins';
+import { toJSON } from './plugins';
 import { IRawInfo } from '../../interfaces/RawInfo.interface';
 import mongooseUniqueValidator from 'mongoose-unique-validator';
 
