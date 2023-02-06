@@ -15,6 +15,7 @@ export interface IGuild {
     connectedAt: Date,
     isDisconnected: boolean,
     isInProgress: boolean,
+    icon: string
 }
 
 

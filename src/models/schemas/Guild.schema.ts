@@ -40,6 +40,10 @@ const guildSchema = new Schema<IGuild, GuildModel>({
     isDisconnected: {
         type: Boolean,
         default: false
+    },
+    icon: {
+        type: String,
+        required: true
     }
 });
 
