@@ -43,7 +43,6 @@ const guildSchema = new Schema<IGuild, GuildModel>({
     },
     icon: {
         type: String,
-        required: true
     }
 });
 
