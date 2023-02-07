@@ -39,9 +39,9 @@ const heatMapSchema = new Schema<IHeatMap>({
     reacted: [{
         type: Number
     }],
-    acc_names: {
+    acc_names: [{
         type: String
-    },
+    }],
 });
 
 // Plugins
