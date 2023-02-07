@@ -13,7 +13,7 @@ export interface IHeatMap {
     rep_mentioned?: Array<number>,
     reacter?: Array<number>,
     reacted?: Array<number>,
-    acc_names?: string,
+    acc_names?: Array<string>,
 }
 
 export interface HeatMapModel extends Model<IHeatMap> {
