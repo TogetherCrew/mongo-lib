@@ -6,18 +6,18 @@ All interactions with DB
 
 ```
 rawinfo {
-    datetime: string,
-    channel: string,
+    messageId: Snowflake,(unique)
     type?: string,
-    author?: string,
-    content?: string,
+    channel: string,
+    author: string,
+    content: string,
     user_mentions?: Array<string>,
     role_mentions?: Array<string>,
     reactions?: Array<string>,
     replied_user?: string,
-    channelId?: Snowflake,
-    messageId?: Snowflake
-    thread?: bool
+    channelId: Snowflake,
+    thread: bool,
+    datetime: string (format: "YYYY-MM-DD")
 }
 ```
 
@@ -47,11 +47,17 @@ User {
 
 ```
 HeatMap {
-    date?: Date,
+    date?: string,(format: "YYYY-MM-DD")
     channel?: string,
-    messages?: Array<number>,
-    interactions?: Array<number>,
-    emojis?: Array<number>,
+    thr_messages: Array<Array<number> >,
+    lone_messages: Array<Array<number> >,
+    replier: Array<Array<number> >,
+    replied: Array<Array<number> >,
+    mentioner: Array<Array<number> >,
+    mentioned: Array<Array<number> >,
+    reacter: Array<Array<number> >,
+    reacted: Array<Array<number> >,
+    account_names: Array<string>
 }
 ```
 
