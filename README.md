@@ -46,18 +46,19 @@ User {
 ### Schema for heatmap
 
 ```
+
 HeatMap {
     date?: string,(format: "YYYY-MM-DD")
     channel?: string,
-    thr_messages: Array<Array<number> >,
-    lone_messages: Array<Array<number> >,
-    replier: Array<Array<number> >,
-    replied: Array<Array<number> >,
-    mentioner: Array<Array<number> >,
-    mentioned: Array<Array<number> >,
-    reacter: Array<Array<number> >,
-    reacted: Array<Array<number> >,
-    account_names: Array<string>
+    thr_messages: Array<number>,
+    lone_messages: Array<number>,
+    replier: Array<number>,
+    replied: Array<number>,
+    mentioner: Array<number>,
+    mentioned: Array<number>,
+    reacter: Array<number>,
+    reacted: Array<number>,
+    account_name: string
 }
 ```
 
