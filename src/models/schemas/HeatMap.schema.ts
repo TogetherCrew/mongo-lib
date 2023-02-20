@@ -9,10 +9,10 @@ const heatMapSchema = new Schema<IHeatMap>({
     channel: {
         type: String
     },
-    lone_messages: [{
+    thr_messages: [{
         type: Number
     }],
-    thr_messages: [{
+    lone_messages: [{
         type: Number
     }],
     replier: [{
@@ -27,21 +27,13 @@ const heatMapSchema = new Schema<IHeatMap>({
     mentioned: [{
         type: Number
     }],
-    rep_mentioner: [{
-        type: Number
-    }],
-    rep_mentioned: [{
-        type: Number
-    }],
     reacter: [{
         type: Number
     }],
     reacted: [{
         type: Number
     }],
-    acc_names: [{
-        type: String
-    }],
+    account_name: String
 });
 
 // Plugins
