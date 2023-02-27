@@ -1,8 +1,9 @@
 import { Model } from 'mongoose';
+import { Snowflake } from 'discord.js';
 
 export interface IHeatMap {
     date?: Date,
-    channel?: string,
+    channelId?: Snowflake,
     thr_messages?: Array<number>,
     lone_messages?: Array<number>,
     replier?: Array<number>,

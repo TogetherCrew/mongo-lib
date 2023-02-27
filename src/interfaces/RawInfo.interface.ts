@@ -2,7 +2,6 @@ import { Model } from 'mongoose';
 import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
-    channel?: string,
     type?: string,
     author?: string,
     content?: string,
