@@ -1,15 +1,21 @@
 import { Snowflake } from 'discord.js';
-import { IGuildUpdateBody } from '../interfaces/Guild.interface'
-import { Guild } from '../models'
+import { IGuildUpdateBody, IGuildConfig } from '../interfaces/Guild.interface'
+import { Guild} from '../models'
+
+
 /**
  * Fetch all guild settings
+ * @param {Snowflake} guildId
  * @returns {Array<Promise<IGuild> >}
  */
-const fetchGuild = async () => {
-    const data = await Guild.find({ isDisconnected: false });
+const fetchGuild = async (guildId: Snowflake | null) => {
+    const config: IGuildConfig = { isDisconnected: false};
+    if(guildId !== null) {
+        config.guildId = guildId;
+    }
+    const data = await Guild.find(config);
     return data;
 }
-
 
 /**
  * update guild by guildId
