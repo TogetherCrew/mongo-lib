@@ -22,7 +22,6 @@ const userSchema = new Schema<IUser, UserModel>({
     verified: {
         type: Boolean,
     },
-    
     avatar: {
         type: String
     }

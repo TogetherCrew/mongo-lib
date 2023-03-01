@@ -8,6 +8,7 @@ All interactions with DB
 rawinfo {
     messageId: Snowflake,(unique)
     type?: string,
+    channel: string,
     author: string,
     content: string,
     user_mentions?: Array<string>,
@@ -48,7 +49,7 @@ User {
 
 HeatMap {
     date?: string,(format: "YYYY-MM-DD")
-    channelId?: Snowflake,
+    channel?: string,
     thr_messages: Array<number>,
     lone_messages: Array<number>,
     replier: Array<number>,

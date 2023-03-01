@@ -7,6 +7,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
     type: {
         type: String
     },
+    channel: {
+        type: String
+    },
     author: {
         type: String
     },

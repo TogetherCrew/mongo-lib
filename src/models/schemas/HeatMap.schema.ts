@@ -6,7 +6,7 @@ const heatMapSchema = new Schema<IHeatMap>({
     date: {
         type: String
     },
-    channelId: {
+    channel: {
         type: String
     },
     thr_messages: [{

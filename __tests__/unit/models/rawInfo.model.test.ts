@@ -8,6 +8,7 @@ describe('RawInfo model', () => {
             heatMap = {
                 datetime: "2023-02-03",
                 type: "REPLY",
+                channel: "Test",
                 author: "Boda#2954",
                 content: "Message Here",
                 user_mentions: ["Beshoy#5456", "Sortoite#2577"],
