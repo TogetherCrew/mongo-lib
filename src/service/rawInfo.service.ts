@@ -1,6 +1,7 @@
 import { Connection } from 'mongoose';
 import { IRawInfo, IGuild } from '../interfaces';
 import moment = require("moment");
+import { Snowflake } from 'discord.js';
 
 /**
  * Create rawInfo
@@ -39,10 +40,10 @@ const checkExist = async (connection: Connection, time: Date) => {
     return data.length > 0;
 }
 
-const getRangeId = async (connection: Connection) => {
+const getRangeId = async (connection: Connection, channelId: Snowflake) => {
     const model = connection.models.RawInfo;
-    const latest = await model.findOne().sort({ 'messageId': -1 });
-    const oldest = await model.findOne().sort({ 'messageId': 1})
+    const latest = await model.findOne({channelId: channelId}).sort({ 'messageId': -1 });
+    const oldest = await model.findOne({channelId: channelId}).sort({ 'messageId': 1})
     return [oldest, latest];
 }
 

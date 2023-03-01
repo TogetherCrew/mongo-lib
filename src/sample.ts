@@ -3,7 +3,6 @@ import { databaseService, heatmapService, rawInfoService } from './service';
 
 const heatmapSample = {
     date: moment("2022-02-01 08:30:26.127Z").toDate(),
-    channel: "db9",
     messages: [0, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 2, 0, 4, 3, 1, 2, 0, 1, 0, 1, 0, 2],
     interactions: [0, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 2, 0, 4, 3, 1, 2, 0, 1, 0, 1, 0, 2],
     emojis: [0, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 2, 0, 4, 3, 1, 2, 0, 1, 0, 1, 0, 2]
@@ -11,7 +10,6 @@ const heatmapSample = {
 const rawInfoSample = {
     datetime: "2023-02-03",
     type: "REPLY",
-    channel: "Test",
     author: "Boda#2954",
     content: "Message Here",
     user_mentions: ["Beshoy#5456", "Sortoite#2577"],
