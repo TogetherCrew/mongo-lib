@@ -12,11 +12,11 @@ async function createHeatMap(connection: Connection, data: IHeatMap) {
 
 /**
  * Create heatmaps
- * @param {IHeatMap} data
+ * @param {IHeatMap} heatmaps
  * @returns {Promise<IHeatMap>}
  */
-async function createHeatMaps(connection: Connection, data: IHeatMap[]) {
-    return connection.models.HeatMap.insertMany(data);
+async function createHeatMaps(connection: Connection, heatmaps: IHeatMap[]) {
+    return connection.models.HeatMap.insertMany(heatmaps.map((heatmap) => (heatmap)));
 }
 
 export default {
