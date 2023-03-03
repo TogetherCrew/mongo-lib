@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 
 export interface IHeatMap {
-    date?: Date,
+    date?: string,
     channel?: string,
     thr_messages?: Array<number>,
     lone_messages?: Array<number>,
