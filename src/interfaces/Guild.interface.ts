@@ -18,6 +18,10 @@ export interface IGuild {
     icon: string | null
 }
 
+export interface IGuildConfig {
+    guildId?: Snowflake,
+    isDisconnected: boolean,
+}
 
 export interface GuildModel extends Model<IGuild> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
