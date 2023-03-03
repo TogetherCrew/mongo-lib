@@ -1,8 +1,7 @@
-import moment = require("moment");
 import { databaseService, heatmapService, rawInfoService } from './service';
 
 const heatmapSample = {
-    date: moment("2022-02-01 08:30:26.127Z").toDate(),
+    date: "2022-02-01",
     channel: "db9",
     messages: [0, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 2, 0, 4, 3, 1, 2, 0, 1, 0, 1, 0, 2],
     interactions: [0, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 2, 0, 4, 3, 1, 2, 0, 1, 0, 1, 0, 2],
