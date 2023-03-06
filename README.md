@@ -6,9 +6,7 @@ All interactions with DB
 
 ```
 rawinfo {
-    messageId: Snowflake,(unique)
     type?: string,
-    channel: string,
     author: string,
     content: string,
     user_mentions?: Array<string>,
@@ -16,7 +14,9 @@ rawinfo {
     reactions?: Array<string>,
     replied_user?: string,
     channelId: Snowflake,
-    thread: bool,
+    messageId: Snowflake,(unique)
+    threadId: Snowflake,
+    thread: string,
     datetime: string (format: "YYYY-MM-DD")
 }
 ```
@@ -49,18 +49,33 @@ User {
 
 HeatMap {
     date?: string,(format: "YYYY-MM-DD")
-    channel?: string,
     thr_messages: Array<number>,
     lone_messages: Array<number>,
     replier: Array<number>,
+    replier_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
     replied: Array<number>,
     mentioner: Array<number>,
+    mentioner_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
     mentioned: Array<number>,
     reacter: Array<number>,
+    reacter_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
     reacted: Array<number>,
-    account_name: string
+    channelId: string,
+    account: string
 }
 ```
+
+### Schema for channels
+
+```
+
+Channels {
+    channel: string,
+    channelId: Snowflake,
+    last_update: Date
+}
+```
+
 
 ### Schema for token
 
