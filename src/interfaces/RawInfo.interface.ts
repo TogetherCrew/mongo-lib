@@ -1,5 +1,4 @@
 import { Model } from 'mongoose';
-import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
     type?: string,

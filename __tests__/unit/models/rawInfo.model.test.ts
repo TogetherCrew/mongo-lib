@@ -1,6 +1,5 @@
 import { RawInfo } from '../../../src/models';
 import { IRawInfo } from '../../../src/interfaces/RawInfo.interface'
-import { devNull } from 'os';
 
 describe('RawInfo model', () => {
     describe('rawInfo validation', () => {
