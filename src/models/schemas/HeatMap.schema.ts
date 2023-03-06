@@ -6,9 +6,6 @@ const heatMapSchema = new Schema<IHeatMap>({
     date: {
         type: String
     },
-    channel: {
-        type: String
-    },
     thr_messages: [{
         type: Number
     }],
@@ -18,11 +15,28 @@ const heatMapSchema = new Schema<IHeatMap>({
     replier: [{
         type: Number
     }],
+    replier_accounts: [{
+        account: {
+            type: String,
+        },
+        count: {
+            type: Number
+        }
+    }],
+    
     replied: [{
         type: Number
     }],
     mentioner: [{
         type: Number
+    }],
+    mentioner_accounts: [{
+        account: {
+            type: String,
+        },
+        count: {
+            type: Number
+        }
     }],
     mentioned: [{
         type: Number
@@ -30,10 +44,21 @@ const heatMapSchema = new Schema<IHeatMap>({
     reacter: [{
         type: Number
     }],
+    reacter_accounts: [{
+        account: {
+            type: String,
+        },
+        count: {
+            type: Number
+        }
+    }],
     reacted: [{
         type: Number
     }],
-    account_name: String
+    channelId: {
+        type: String
+    },
+    account: String
 });
 
 // Plugins
