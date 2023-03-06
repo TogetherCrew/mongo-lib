@@ -55,10 +55,10 @@ HeatMap {
     replier_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
     replied: Array<number>,
     mentioner: Array<number>,
-    mentioner_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
+    mentioner_accounts: Array<objects> [{account: "account name", count: "count of mention"}],
     mentioned: Array<number>,
     reacter: Array<number>,
-    reacter_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
+    reacter_accounts: Array<objects> [{account: "account name", count: "count of reaction"}],
     reacted: Array<number>,
     channelId: string,
     account: string
