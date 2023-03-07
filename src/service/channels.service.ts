@@ -28,7 +28,8 @@ const updateChannel = async (connection: Connection, channelId: Snowflake, chann
         { channelId: channelId },
         { 
             $set: { channel: channel },
-            $currentDate: { last_update: true }
+            $currentDate: { last_update: true },
+            $setOnInsert: { channelId: channelId}
         },
         { upsert: true } // create new document if channelId does not exist
      )
