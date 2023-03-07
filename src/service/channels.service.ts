@@ -29,7 +29,8 @@ const updateChannel = async (connection: Connection, channelId: Snowflake, chann
         { 
             $set: { channel: channel },
             $currentDate: { last_update: true }
-        }
+        },
+        { upsert: true } // create new document if channelId does not exist
      )
     } catch(e) {
         console.log(e);
