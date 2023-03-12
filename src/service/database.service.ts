@@ -1,8 +1,7 @@
 import mongoose, { Connection } from 'mongoose';
-import { heatMapSchema, rawInfoSchema } from '../models/schemas';
+import { heatMapSchema, rawInfoSchema, channelSchema } from '../models/schemas';
 import { Snowflake } from 'discord.js';
-import { IHeatMap } from '../interfaces/HeatMap.interface';
-import { IRawInfo } from '../interfaces/RawInfo.interface';
+import { IHeatMap, IRawInfo, IChannels} from '../interfaces';
 
 /**
  * connect to database (create with guildId if not exist)
@@ -14,6 +13,7 @@ function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
     const connection = mongoose.createConnection(dbURI, { dbName: guildId });
     connection.model<IHeatMap>('HeatMap', heatMapSchema);
     connection.model<IRawInfo>('RawInfo', rawInfoSchema);
+    connection.model<IChannels>('Channels', channelSchema);
     return connection;
 }
 

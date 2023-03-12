@@ -1,8 +1,6 @@
 import { Model } from 'mongoose';
-import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
-    channel?: string,
     type?: string,
     author?: string,
     content?: string,
@@ -11,9 +9,10 @@ export interface IRawInfo {
     role_mentions?: Array<string>,
     reactions?: Array<string>,
     replied_user?: string,
-    channelId?: Snowflake,
-    messageId: Snowflake,
-    thread?: boolean
+    channelId?: string,
+    messageId: string,
+    threadId: string,
+    thread?: string
 }
 
 export interface RawInfoModel extends Model<IRawInfo> {
