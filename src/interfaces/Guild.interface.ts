@@ -16,6 +16,16 @@ export interface IGuild {
     isDisconnected: boolean,
     isInProgress: boolean,
     icon: string | null
+    window: {
+        periodDiration: number,
+        periodStep: number
+    },
+    action: {
+        activeInteraction: number,
+        activeAccounts: number,
+        connectedInteractions: number,
+        connected_accounts: number
+    }
 }
 
 export interface IGuildConfig {
