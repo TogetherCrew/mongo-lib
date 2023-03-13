@@ -21,10 +21,10 @@ export interface IGuild {
         periodStep: number
     },
     action?: {
-        activeInteraction: number,
+        activeInteractions: number,
         activeAccounts: number,
         connectedInteractions: number,
-        connected_accounts: number
+        connectedAccounts: number
     }
 }
 
