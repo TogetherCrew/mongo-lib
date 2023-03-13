@@ -4,7 +4,7 @@ import guildSchema from "./Guild.schema";
 import heatMapSchema from './HeatMap.schema';
 import rawInfoSchema from './RawInfo.schema';
 import channelSchema from './Channels.schema';
-
+import MemberActivitySchema from "./MemberActivity.schema";
 
 export {
     userSchema,
@@ -12,5 +12,6 @@ export {
     guildSchema,
     heatMapSchema,
     rawInfoSchema,
-    channelSchema
+    channelSchema,
+    MemberActivitySchema
 }
