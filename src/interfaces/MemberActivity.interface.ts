@@ -2,9 +2,9 @@ import { Model } from 'mongoose';
 
 export interface IMemberActivity {
     lastDate: Date,
-    activeAccounts?: string,
-    joinedAccounts?: string,
-    connectedAccounts?: string,
+    activeAccounts?: Array<string>,
+    joinedAccounts?: Array<string>,
+    connectedAccounts?: Array<string>,
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {

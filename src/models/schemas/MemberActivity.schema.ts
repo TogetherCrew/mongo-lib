@@ -6,15 +6,15 @@ const MemberActivitySchema = new Schema<IMemberActivity, MemberActivityModel>({
     lastDate: {
         type: Date,
     },
-    activeAccounts: {
+    activeAccounts: [{
         type: String
-    },
-    joinedAccounts: {
+    }],
+    joinedAccounts: [{
         type: String
-    },
-    connectedAccounts: {
+    }],
+    connectedAccounts: [{
         type: String
-    }
+    }]
 });
 
 // Plugins
