@@ -18,7 +18,17 @@ describe('Guild model', () => {
                 connectedAt: moment("2022-02-01 08:30:26.127Z").toDate(),
                 isDisconnected: true,
                 isInProgress: false,
-                icon: null
+                icon: null,
+                window: {
+                    periodDiration: 10,
+                    periodStep: 10
+                },
+                action: {
+                    activeInteractions: 10,
+                    activeAccounts: 10,
+                    connectedInteractions: 10,
+                    connectedAccounts: 10
+                }
             };
         });
 

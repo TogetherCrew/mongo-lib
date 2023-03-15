@@ -13,7 +13,7 @@ describe('Channels model', () => {
             }
         });
 
-        test('should correctly validate a valid rawInfo', async () => {
+        test('should correctly validate a valid channel data', async () => {
             await expect(new Channels(channel).validate()).resolves.toBeUndefined();
         });
 

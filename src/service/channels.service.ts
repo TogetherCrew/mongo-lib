@@ -8,12 +8,11 @@ import { Snowflake } from 'discord.js';
  * @returns {Promise<IChannels>}
  */
 const createChannel = async (connection: Connection, data: IChannels) => {
-    const Channels = connection.models.Channels;
-    const now = new Date();
-    const dataWithTimestamp = { ...data, last_update: now };
-    return await Channels.create(dataWithTimestamp);
-}
-
+  const Channels = connection.models.Channels;
+  const now = new Date();
+  const dataWithTimestamp = { ...data, last_update: now };
+  return await Channels.create(dataWithTimestamp);
+};
 
 /**
  * update channel by channelId
@@ -22,22 +21,23 @@ const createChannel = async (connection: Connection, data: IChannels) => {
  * @returns {Promise<IChannels>}
  */
 const updateChannel = async (connection: Connection, channelId: Snowflake, channel: string) => {
-    try {
-        const Channels = connection.models.Channels;
-        await Channels.updateOne(
-        { channelId: channelId },
-        { 
-            $set: { channel: channel },
-            $currentDate: { last_update: true }
-        },
-        { upsert: true } // create new document if channelId does not exist
-     )
-    } catch(e) {
-        console.log(e);
-    }
-}
+  try {
+    const Channels = connection.models.Channels;
+    await Channels.updateOne(
+      { channelId },
+      {
+        $set: { channel },
+        $currentDate: { last_update: true },
+        $setOnInsert: { channelId },
+      },
+      { upsert: true }, // create new document if channelId does not exist
+    );
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export default {
-    createChannel,
-    updateChannel
-}
+  createChannel,
+  updateChannel,
+};

@@ -2,40 +2,50 @@ import { Snowflake } from 'discord.js';
 import { Model } from 'mongoose';
 
 export interface IGuild {
-    guildId: Snowflake,
-    user: Snowflake,
-    name: string,
-    selectedChannels?: [
-        {
-            channelId: Snowflake,
-            channelName?: string
-        }
-    ],
-    period?: Date,
-    connectedAt: Date,
-    isDisconnected: boolean,
-    isInProgress: boolean,
-    icon: string | null
+  guildId: Snowflake;
+  user: Snowflake;
+  name: string;
+  selectedChannels?: [
+    {
+      channelId: Snowflake;
+      channelName?: string;
+    },
+  ];
+  period?: Date;
+  connectedAt: Date;
+  isDisconnected: boolean;
+  isInProgress: boolean;
+  icon: string | null;
+  window?: {
+    periodDiration: number;
+    periodStep: number;
+  };
+  action?: {
+    activeInteractions: number;
+    activeAccounts: number;
+    connectedInteractions: number;
+    connectedAccounts: number;
+  };
 }
 
 export interface IGuildConfig {
-    guildId?: Snowflake,
-    isDisconnected: boolean,
+  guildId?: Snowflake;
+  isDisconnected: boolean;
 }
 
 export interface GuildModel extends Model<IGuild> {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    paginate(filter: object, options: object): any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  paginate(filter: object, options: object): any;
 }
 
 export interface IGuildUpdateBody {
-    selectedChannels?: [
-        {
-            channelId: Snowflake,
-            channelName?: string
-        }
-    ],
-    period?: Date,
-    isDisconnected?: boolean,
-    isInProgress?: boolean
+  selectedChannels?: [
+    {
+      channelId: Snowflake;
+      channelName?: string;
+    },
+  ];
+  period?: Date;
+  isDisconnected?: boolean;
+  isInProgress?: boolean;
 }

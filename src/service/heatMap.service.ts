@@ -7,7 +7,7 @@ import { IHeatMap } from '../interfaces/HeatMap.interface';
  * @returns {Promise<IHeatMap>}
  */
 async function createHeatMap(connection: Connection, data: IHeatMap) {
-    return connection.models.HeatMap.create(data);
+  return connection.models.HeatMap.create(data);
 }
 
 /**
@@ -16,10 +16,10 @@ async function createHeatMap(connection: Connection, data: IHeatMap) {
  * @returns {Promise<IHeatMap>}
  */
 async function createHeatMaps(connection: Connection, heatmaps: IHeatMap[]) {
-    return connection.models.HeatMap.insertMany(heatmaps.map((heatmap) => (heatmap)));
+  return connection.models.HeatMap.insertMany(heatmaps.map((heatmap) => heatmap));
 }
 
 export default {
-    createHeatMap,
-    createHeatMaps
-}
+  createHeatMap,
+  createHeatMaps,
+};
