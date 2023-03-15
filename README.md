@@ -52,16 +52,16 @@ HeatMap {
     thr_messages: Array<number>,
     lone_messages: Array<number>,
     replier: Array<number>,
-    replier_accounts: Array<objects> [{account: "account name", count: "count of reply"}],
+    replied_per_acc: Array<objects> [{account: "account name", count: "count of reply"}],
     replied: Array<number>,
     mentioner: Array<number>,
-    mentioner_accounts: Array<objects> [{account: "account name", count: "count of mention"}],
+    mentioner_per_acc: Array<objects> [{account: "account name", count: "count of mention"}],
     mentioned: Array<number>,
     reacter: Array<number>,
-    reacter_accounts: Array<objects> [{account: "account name", count: "count of reaction"}],
+    reacted_per_acc: Array<objects> [{account: "account name", count: "count of reaction"}],
     reacted: Array<number>,
     channelId: string,
-    account: string
+    account_name: string
 }
 ```
 
