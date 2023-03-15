@@ -3,18 +3,24 @@ import { toJSON, paginate } from './plugins';
 import { IMemberActivity, MemberActivityModel } from '../../interfaces/MemberActivity.interface';
 
 const MemberActivitySchema = new Schema<IMemberActivity, MemberActivityModel>({
-    lastDate: {
-        type: Date,
+  lastDate: {
+    type: Date,
+  },
+  activeAccounts: [
+    {
+      type: String,
     },
-    activeAccounts: [{
-        type: String
-    }],
-    joinedAccounts: [{
-        type: String
-    }],
-    connectedAccounts: [{
-        type: String
-    }]
+  ],
+  joinedAccounts: [
+    {
+      type: String,
+    },
+  ],
+  connectedAccounts: [
+    {
+      type: String,
+    },
+  ],
 });
 
 // Plugins

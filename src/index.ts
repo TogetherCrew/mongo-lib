@@ -8,6 +8,26 @@ import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivit
 import { databaseService, heatmapService, rawInfoService, guildService, channelsService } from './service';
 
 export {
-    User, Token, Guild, HeatMap, RawInfo, MemberActivity, IDiscordGuild, IDiscordOathBotCallback, IDiscordUser, IUser, IMemberActivity, MemberActivityModel, UserModel, IToken, TokenModel, IGuild, GuildModel,
-    databaseService, heatmapService, rawInfoService, guildService, channelsService
-}
+  User,
+  Token,
+  Guild,
+  HeatMap,
+  RawInfo,
+  MemberActivity,
+  IDiscordGuild,
+  IDiscordOathBotCallback,
+  IDiscordUser,
+  IUser,
+  IMemberActivity,
+  MemberActivityModel,
+  UserModel,
+  IToken,
+  TokenModel,
+  IGuild,
+  GuildModel,
+  databaseService,
+  heatmapService,
+  rawInfoService,
+  guildService,
+  channelsService,
+};

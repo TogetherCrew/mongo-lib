@@ -8,14 +8,19 @@
     "start": "node ./lib/index.js",
     "dev": "nodemon ./src/magic.ts",
     "test": "jest  --watch  --detectOpenHandles --runInBand",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Behzad-rabiei/tc-dbComm.git"
   },
-  "author": "",
+  "author": "Behzad Rabiei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Behzad-rabiei/tc-dbComm/issues"

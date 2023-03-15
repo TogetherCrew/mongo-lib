@@ -5,11 +5,4 @@ import { IToken } from './Token.interface';
 import { IChannels } from './Channels.interface';
 import { IMemberActivity } from './MemberActivity.interface';
 
-export {
-    IGuild,
-    IRawInfo,
-    IToken,
-    IHeatMap,
-    IChannels,
-    IMemberActivity
-}
+export { IGuild, IRawInfo, IToken, IHeatMap, IChannels, IMemberActivity };

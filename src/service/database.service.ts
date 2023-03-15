@@ -10,16 +10,15 @@ import { IHeatMap, IRawInfo, IChannels, IMemberActivity } from '../interfaces';
  * @returns {Connection}
  */
 function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
-    const connection = mongoose.createConnection(dbURI, { dbName: guildId });
-    connection.model<IHeatMap>('HeatMap', heatMapSchema);
-    connection.model<IRawInfo>('RawInfo', rawInfoSchema);
-    connection.model<IChannels>('Channels', channelSchema);
-    connection.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
+  const connection = mongoose.createConnection(dbURI, { dbName: guildId });
+  connection.model<IHeatMap>('HeatMap', heatMapSchema);
+  connection.model<IRawInfo>('RawInfo', rawInfoSchema);
+  connection.model<IChannels>('Channels', channelSchema);
+  connection.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
 
-    return connection;
+  return connection;
 }
 
 export default {
-    connectionFactory,
-}
-
+  connectionFactory,
+};

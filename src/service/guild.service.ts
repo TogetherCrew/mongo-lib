@@ -1,7 +1,6 @@
 import { Snowflake } from 'discord.js';
-import { IGuildUpdateBody, IGuildConfig } from '../interfaces/Guild.interface'
-import { Guild} from '../models'
-
+import { IGuildUpdateBody, IGuildConfig } from '../interfaces/Guild.interface';
+import { Guild } from '../models';
 
 /**
  * Fetch all guild settings
@@ -9,13 +8,13 @@ import { Guild} from '../models'
  * @returns {Array<Promise<IGuild> >}
  */
 const fetchGuild = async (guildId: Snowflake | null) => {
-    const config: IGuildConfig = { isDisconnected: false};
-    if(guildId !== null) {
-        config.guildId = guildId;
-    }
-    const data = await Guild.find(config);
-    return data;
-}
+  const config: IGuildConfig = { isDisconnected: false };
+  if (guildId !== null) {
+    config.guildId = guildId;
+  }
+  const data = await Guild.find(config);
+  return data;
+};
 
 /**
  * update guild by guildId
@@ -24,17 +23,16 @@ const fetchGuild = async (guildId: Snowflake | null) => {
  * @returns {Promise<IGuild>}
  */
 async function updateGuildByGuildId(guildId: Snowflake, updateBody: IGuildUpdateBody) {
-    const guild = await Guild.findOne({ guildId });
-    if (!guild) {
-        throw new Error('Guild not found');
-    }
-    Object.assign(guild, updateBody);
-    await guild.save();
-    return guild;
+  const guild = await Guild.findOne({ guildId });
+  if (!guild) {
+    throw new Error('Guild not found');
+  }
+  Object.assign(guild, updateBody);
+  await guild.save();
+  return guild;
 }
-
 
 export default {
-    fetchGuild,
-    updateGuildByGuildId
-}
+  fetchGuild,
+  updateGuildByGuildId,
+};
