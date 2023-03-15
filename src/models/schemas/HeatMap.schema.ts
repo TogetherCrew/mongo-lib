@@ -21,7 +21,7 @@ const heatMapSchema = new Schema<IHeatMap>({
       type: Number,
     },
   ],
-  replier_accounts: [
+  replied_per_acc: [
     {
       account: {
         type: String,
@@ -42,7 +42,7 @@ const heatMapSchema = new Schema<IHeatMap>({
       type: Number,
     },
   ],
-  mentioner_accounts: [
+  mentioner_per_acc: [
     {
       account: {
         type: String,
@@ -62,7 +62,7 @@ const heatMapSchema = new Schema<IHeatMap>({
       type: Number,
     },
   ],
-  reacter_accounts: [
+  reacted_per_acc: [
     {
       account: {
         type: String,
@@ -80,7 +80,7 @@ const heatMapSchema = new Schema<IHeatMap>({
   channelId: {
     type: String,
   },
-  account: String,
+  account_name: String,
 });
 
 // Plugins

@@ -6,16 +6,16 @@ export interface IHeatMap {
   thr_messages?: Array<number>;
   lone_messages?: Array<number>;
   replier?: Array<number>;
-  replier_accounts: Array<{ account: string; count: number }>;
+  replied_per_acc: Array<{ account: string; count: number }>;
   replied?: Array<number>;
   mentioner?: Array<number>;
-  mentioner_accounts: Array<{ account: string; count: number }>;
+  mentioner_per_acc: Array<{ account: string; count: number }>;
   mentioned?: Array<number>;
   reacter?: Array<number>;
-  reacter_accounts: Array<{ account: string; count: number }>;
+  reacted_per_acc: Array<{ account: string; count: number }>;
   reacted?: Array<number>;
   channelId: Snowflake;
-  account?: string;
+  account_name?: string;
 }
 
 export interface HeatMapModel extends Model<IHeatMap> {
