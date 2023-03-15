@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-
 function paginate(schema: any) {
   /**
    * @typedef {Object} QueryResult
@@ -20,7 +18,8 @@ function paginate(schema: any) {
    * @returns {Promise<QueryResult>}
    */
   schema.statics.paginate = async function (filter: any, options: any) {
-    let { sortBy, limit, page, skip } = options;
+    let { limit, page, skip } = options;
+    const { sortBy } = options;
     limit = limit && parseInt(limit, 10) > 0 ? parseInt(limit, 10) : 10;
     page = page && parseInt(page, 10) > 0 ? parseInt(page, 10) : 1;
     skip = (page - 1) * limit;

@@ -24,11 +24,11 @@ const updateChannel = async (connection: Connection, channelId: Snowflake, chann
   try {
     const Channels = connection.models.Channels;
     await Channels.updateOne(
-      { channelId: channelId },
+      { channelId },
       {
-        $set: { channel: channel },
+        $set: { channel },
         $currentDate: { last_update: true },
-        $setOnInsert: { channelId: channelId },
+        $setOnInsert: { channelId },
       },
       { upsert: true }, // create new document if channelId does not exist
     );

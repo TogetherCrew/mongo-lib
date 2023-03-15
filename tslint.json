@@ -2,5 +2,9 @@
     "extends": [
         "tslint:recommended",
         "tslint-config-prettier"
-    ]
+    ],
+    "rules": {
+        "array-type": false,
+        "no-console": false
+    }
 }

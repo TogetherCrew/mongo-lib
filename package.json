@@ -1,13 +1,13 @@
 {
-  "name": "tc-dbcomm",
-  "version": "1.0.0",
+  "name": "rndao-tc-dbcomm",
+  "version": "1.1.0",
   "description": "All interactions with DB",
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node ./lib/index.js",
     "dev": "nodemon ./src/magic.ts",
-    "test": "jest  --watch  --detectOpenHandles --runInBand",
+    "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
