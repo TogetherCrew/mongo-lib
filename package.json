@@ -1,5 +1,5 @@
 {
-  "name": "rndao-tc-dbcomm",
+  "name": "rn-tc-db",
   "version": "1.1.0",
   "description": "All interactions with DB",
   "main": "./lib/index.js",
