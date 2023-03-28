@@ -65,6 +65,63 @@ HeatMap {
 }
 ```
 
+### Schema for memberactivities
+
+```
+
+memberactivities {
+    first_end_date: datetime
+    all_active: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_consistent: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_vital: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_connected: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_paused: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_new_disengaged: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_disengaged: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_unpaused: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_returned: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_new_active: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_still_active: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_dropped: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_joined: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_disengaged_were_newly_active: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_disengaged_were_consistenly_active: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+    all_disengaged_were_vital: Obj {
+        "0": Set<str>,
+        "1": Set<str>, ...} # a new field is added to this object every day
+}
+```
+
 ### Schema for channels
 
 ```
