@@ -96,15 +96,18 @@ Guild {
     guildId: Snowflake,
     user: Snowflake,
     name?: string,
-    selectedChannels?: [
+    connectedAt?: Date,
+    isInProgress?: Boolean,
+    isDisconnected?: Boolean,
+    icon?: string,
+    selectedChannels?: Array<objects> [
         {
             channelId: Snowflake,
             channelName?: string
         }
     ],
     period?: Date,
-    connectedAt?: Date,
-    isInProgress?: Boolean
-    isDisconnected?: Boolean
+    aciton: [int],
+    window: [int]
 }
 ```

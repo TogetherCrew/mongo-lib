@@ -44,34 +44,62 @@ const guildSchema = new Schema<IGuild, GuildModel>({
   icon: {
     type: String,
   },
-  window: {
-    periodDiration: {
+  window: [
+    {
       type: Number,
       default: 7,
     },
-    periodStep: {
+    {
       type: Number,
       default: 1,
     },
-  },
-  action: {
-    activeInteractions: {
+  ],
+  action: [
+    {
       type: Number,
       default: 1,
     },
-    activeAccounts: {
+    {
       type: Number,
       default: 1,
     },
-    connectedInteractions: {
+    {
+      type: Number,
+      default: 1,
+    },
+    {
+      type: Number,
+      default: 4,
+    },
+    {
+      type: Number,
+      default: 3,
+    },
+    {
       type: Number,
       default: 5,
     },
-    connectedAccounts: {
+    {
       type: Number,
       default: 5,
     },
-  },
+    {
+      type: Number,
+      default: 4,
+    },
+    {
+      type: Number,
+      default: 3,
+    },
+    {
+      type: Number,
+      default: 3,
+    },
+    {
+      type: Number,
+      default: 2,
+    },
+  ],
 });
 
 // Plugins
