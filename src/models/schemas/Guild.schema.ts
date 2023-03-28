@@ -47,48 +47,57 @@ const guildSchema = new Schema<IGuild, GuildModel>({
   window: [
     {
       type: Number,
-      default: 7
+      default: 7,
     },
     {
       type: Number,
-      default: 1
+      default: 1,
     },
   ],
   action: [
     {
       type: Number,
-      default: 1
+      default: 1,
     },
     {
       type: Number,
-      default: 1
-    },    {
+      default: 1,
+    },
+    {
       type: Number,
-      default: 1
-    },    {
+      default: 1,
+    },
+    {
       type: Number,
-      default: 4
-    },    {
+      default: 4,
+    },
+    {
       type: Number,
-      default: 3
-    },    {
+      default: 3,
+    },
+    {
       type: Number,
-      default: 5
-    },    {
+      default: 5,
+    },
+    {
       type: Number,
-      default: 5
-    },    {
+      default: 5,
+    },
+    {
       type: Number,
-      default: 4
-    },    {
+      default: 4,
+    },
+    {
       type: Number,
-      default: 3
-    },    {
+      default: 3,
+    },
+    {
       type: Number,
-      default: 3
-    },    {
+      default: 3,
+    },
+    {
       type: Number,
-      default: 2
+      default: 2,
     },
   ],
 });
