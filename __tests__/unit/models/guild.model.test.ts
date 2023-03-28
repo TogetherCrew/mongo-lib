@@ -19,16 +19,8 @@ describe('Guild model', () => {
                 isDisconnected: true,
                 isInProgress: false,
                 icon: null,
-                window: {
-                    periodDiration: 10,
-                    periodStep: 10
-                },
-                action: {
-                    activeInteractions: 10,
-                    activeAccounts: 10,
-                    connectedInteractions: 10,
-                    connectedAccounts: 10
-                }
+                window: [7, 1],
+                action: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2]
             };
         });
 

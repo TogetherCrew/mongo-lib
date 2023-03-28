@@ -6,10 +6,24 @@ describe('MemberActivity model', () => {
         let memberActivity: IMemberActivity;
         beforeEach(() => {
             memberActivity = {
-                lastDate: new Date(),
-                activeAccounts: ['A', 'B'],
-                joinedAccounts: ['A', 'B'],
-                connectedAccounts: ['A', 'B']
+                first_end_date: new Date(),
+                all_active: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_consistent: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_vital: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_connected: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_paused: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_new_disengaged: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_disengaged: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_unpaused: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_returned: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_new_active: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_still_active: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_dropped: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_joined: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_disengaged_were_newly_active: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_disengaged_were_consistenly_active: {"0": ["A", "B"], "1": ["C", "D"]},
+                all_disengaged_were_vital: {"0": ["A", "B"], "1": ["C", "D"]},
+
             };
         });
 
