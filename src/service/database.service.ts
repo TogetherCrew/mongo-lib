@@ -3,8 +3,6 @@ import { heatMapSchema, rawInfoSchema, channelSchema, MemberActivitySchema } fro
 import { Snowflake } from 'discord.js';
 import { IHeatMap, IRawInfo, IChannels, IMemberActivity } from '../interfaces';
 
-const connectionMap = {} as { [key: string]: mongoose.Connection };
-
 /**
  * connect to database (create with guildId if not exist)
  * @param {Snowflake} guildId
@@ -12,9 +10,6 @@ const connectionMap = {} as { [key: string]: mongoose.Connection };
  * @returns {Connection}
  */
 function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
-  if (connectionMap.guildId) {
-    return connectionMap.guildId;
-  }
 
   const connection = mongoose.createConnection(dbURI, { dbName: guildId });
   connection.model<IHeatMap>('HeatMap', heatMapSchema);
@@ -22,7 +17,6 @@ function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
   connection.model<IChannels>('Channels', channelSchema);
   connection.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
 
-  connectionMap[guildId] = connection;
 
   return connection;
 }
