@@ -5,5 +5,15 @@ import heatMapSchema from './HeatMap.schema';
 import rawInfoSchema from './RawInfo.schema';
 import channelSchema from './Channels.schema';
 import MemberActivitySchema from './MemberActivity.schema';
+import accountSchema from './Account.schema';
 
-export { userSchema, tokenSchema, guildSchema, heatMapSchema, rawInfoSchema, channelSchema, MemberActivitySchema };
+export {
+  userSchema,
+  tokenSchema,
+  guildSchema,
+  heatMapSchema,
+  rawInfoSchema,
+  channelSchema,
+  MemberActivitySchema,
+  accountSchema,
+};

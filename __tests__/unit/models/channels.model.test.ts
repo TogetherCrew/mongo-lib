@@ -12,10 +12,8 @@ describe('Channels model', () => {
                 last_update: moment("2022-02-01 08:30:26.127Z").toDate()
             }
         });
-
         test('should correctly validate a valid channel data', async () => {
             await expect(new Channels(channel).validate()).resolves.toBeUndefined();
         });
-
     });
 });
