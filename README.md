@@ -70,7 +70,7 @@ HeatMap {
 ```
 
 memberactivities {
-    date: string
+    date: Date,
     all_active: Array<string>,
     all_consistent: Array<string>,
     all_vital: Array<string>,
