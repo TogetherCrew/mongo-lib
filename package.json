@@ -1,6 +1,6 @@
 {
   "name": "tc_dbcomm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "All interactions with DB",
   "main": "./lib/index.js",
   "scripts": {

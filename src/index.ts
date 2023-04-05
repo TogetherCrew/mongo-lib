@@ -5,7 +5,7 @@ import { IToken, TokenModel } from './interfaces/Token.interface';
 import { IGuild, GuildModel } from './interfaces/Guild.interface';
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
 
-import { databaseService, heatmapService, rawInfoService, guildService, channelsService } from './service';
+import { databaseService, heatmapService, rawInfoService, guildService, channelsService, memberActivityService } from './service';
 
 export {
   User,
@@ -30,4 +30,5 @@ export {
   rawInfoService,
   guildService,
   channelsService,
+  memberActivityService
 };
