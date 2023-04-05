@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Behzad-rabiei/tc-dbComm.git"
+    "url": "git+https://github.com/RnDAO/tc-dbComm.git"
   },
-  "author": "Behzad Rabiei",
+  "author": "Behzad Rabiei & MagicPalm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Behzad-rabiei/tc-dbComm/issues"
+    "url": "https://github.com/RnDAO/tc-dbComm/issues"
   },
-  "homepage": "https://github.com/Behzad-rabiei/tc-dbComm#readme",
+  "homepage": "https://github.com/RnDAO/tc-dbComm#readme",
   "dependencies": {
     "@types/mongoose-unique-validator": "^1.0.6",
     "discord.js": "^14.7.1",
