@@ -70,55 +70,23 @@ HeatMap {
 ```
 
 memberactivities {
-    first_end_date: datetime
-    all_active: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_consistent: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_vital: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_connected: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_paused: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_new_disengaged: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_disengaged: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_unpaused: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_returned: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_new_active: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_still_active: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_dropped: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_joined: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_disengaged_were_newly_active: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_disengaged_were_consistenly_active: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
-    all_disengaged_were_vital: Obj {
-        "0": Set<str>,
-        "1": Set<str>, ...} # a new field is added to this object every day
+    date: Date,
+    all_active: Array<string>,
+    all_consistent: Array<string>,
+    all_vital: Array<string>,
+    all_connected: Array<string>,
+    all_paused: Array<string>,
+    all_new_disengaged: Array<string>,
+    all_disengaged: Array<string>,
+    all_unpaused: Array<string>,
+    all_returned: Array<string>,
+    all_new_active: Array<string>,
+    all_still_active: Array<string>,
+    all_dropped: Array<string>,
+    all_joined: Array<string>,
+    all_disengaged_were_newly_active: Array<string>,
+    all_disengaged_were_consistenly_active: Array<string>,
+    all_disengaged_were_vital: Array<string>,
 }
 ```
 
