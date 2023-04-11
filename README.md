@@ -65,10 +65,10 @@ HeatMap {
 }
 ```
 
-### Schema for heatmap
+### Schema for accounts
 
 ```
-Account {
+Accounts {
     id: Snowflake,
     account: string,
     roles: Array<string>,
