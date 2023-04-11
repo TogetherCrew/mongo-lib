@@ -6,6 +6,7 @@ export interface IAccount {
   account: string;
   roles: Array<string>;
   joinDate: Date;
+  joinedChannel: Snowflake;
 }
 
 export interface AccountModel extends Model<IAccount> {

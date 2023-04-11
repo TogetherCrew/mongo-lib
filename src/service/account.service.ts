@@ -9,7 +9,8 @@ import { Snowflake } from 'discord.js';
  */
 const createAccount = async (connection: Connection, account: IAccount) => {
   try {
-    await connection.models.Account.create(account);
+    const model = connection.models.Account;
+    return await model.create(account);
   } catch (e) {
     return false;
   }
@@ -23,27 +24,23 @@ const createAccount = async (connection: Connection, account: IAccount) => {
 const fetchAccount = async (connection: Connection, id: Snowflake) => {
   const model = connection.models.Account;
   const data = await model.findOne({
-    id: id
+    id: id,
   });
   return data;
 };
 
 /**
  * update account everyday
- * @param {Snowflake} channelId
- * @param {String} channel
- * @returns {Promise<IChannels>}
+ * @param {Snowflake} id
+ * @param {IAccount} newAccount
+ * @returns {Promise<IAccount>}
  */
-const updateAccount = async (connection: Connection, channelId: Snowflake, channel: string) => {
+const updateAccount = async (connection: Connection, id: Snowflake, newAccount: IAccount) => {
   try {
-    const Channels = connection.models.Channels;
-    await Channels.updateOne(
-      { channelId },
-      {
-        $set: { channel },
-        $currentDate: { last_update: true },
-        $setOnInsert: { channelId },
-      },
+    const model = connection.models.Account;
+    return await model.updateOne(
+      { id },
+      newAccount,
       { upsert: true }, // create new document if channelId does not exist
     );
   } catch (e) {
@@ -51,9 +48,24 @@ const updateAccount = async (connection: Connection, channelId: Snowflake, chann
   }
 };
 
+/**
+ * update account everyday
+ * @param {Snowflake} id
+ * @returns {Promise<IAccount>}
+ */
+const removeAccount = async (connection: Connection, id: Snowflake) => {
+  try {
+    const model = connection.models.Account;
+    return await model.findOneAndRemove(
+      { id },
+    );
+  } catch (e) {
+    console.log(e);
+  }
+};
 export default {
-  createRawInfo,
-  fetchRawinfo,
-  checkExist,
-  getRangeId,
+  createAccount,
+  updateAccount,
+  fetchAccount,
+  removeAccount
 };
