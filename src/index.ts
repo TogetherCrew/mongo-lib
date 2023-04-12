@@ -3,9 +3,9 @@ import { IDiscordGuild, IDiscordOathBotCallback, IDiscordUser } from './interfac
 import { IUser, UserModel } from './interfaces/User.interface';
 import { IToken, TokenModel } from './interfaces/Token.interface';
 import { IGuild, GuildModel } from './interfaces/Guild.interface';
+import { IAccount, AccountModel} from './interfaces/Account.interface';
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
-
-import { databaseService, heatmapService, rawInfoService, guildService, channelsService } from './service';
+import { databaseService, heatmapService, rawInfoService, guildService, channelsService,  } from './service';
 
 export {
   User,
@@ -25,6 +25,8 @@ export {
   TokenModel,
   IGuild,
   GuildModel,
+  IAccount,
+  AccountModel,
   databaseService,
   heatmapService,
   rawInfoService,
