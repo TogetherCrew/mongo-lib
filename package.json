@@ -1,6 +1,6 @@
 {
   "name": "tc_dbcomm",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "All interactions with DB",
   "main": "./lib/index.js",
   "scripts": {
@@ -9,23 +9,21 @@
     "dev": "nodemon ./src/magic.ts",
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
+    "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Behzad-rabiei/tc-dbComm.git"
+    "url": "git+https://github.com/RnDAO/tc-dbComm.git"
   },
-  "author": "Behzad Rabiei",
+  "author": "Behzad Rabiei & MagicPalm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Behzad-rabiei/tc-dbComm/issues"
+    "url": "https://github.com/RnDAO/tc-dbComm/issues"
   },
-  "homepage": "https://github.com/Behzad-rabiei/tc-dbComm#readme",
+  "homepage": "https://github.com/RnDAO/tc-dbComm#readme",
   "dependencies": {
     "@types/mongoose-unique-validator": "^1.0.6",
     "discord.js": "^14.7.1",

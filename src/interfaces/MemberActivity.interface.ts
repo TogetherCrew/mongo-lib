@@ -1,23 +1,23 @@
 import { Model } from 'mongoose';
 
 export interface IMemberActivity {
-  first_end_date: Date;
-  all_active?: object;
-  all_consistent?: object;
-  all_vital?: object;
-  all_connected?: object;
-  all_paused?: object;
-  all_new_disengaged?: object;
-  all_disengaged?: object;
-  all_unpaused?: object;
-  all_returned?: object;
-  all_new_active?: object;
-  all_still_active?: object;
-  all_joined?: object;
-  all_dropped?: object;
-  all_disengaged_were_newly_active?: object;
-  all_disengaged_were_consistenly_active?: object;
-  all_disengaged_were_vital?: object;
+  date: Date;
+  all_active?: Array<string>;
+  all_consistent?: Array<string>;
+  all_vital?: Array<string>;
+  all_connected?: Array<string>;
+  all_paused?: Array<string>;
+  all_new_disengaged?: Array<string>;
+  all_disengaged?: Array<string>;
+  all_unpaused?: Array<string>;
+  all_returned?: Array<string>;
+  all_new_active?: Array<string>;
+  all_still_active?: Array<string>;
+  all_joined?: Array<string>;
+  all_dropped?: Array<string>;
+  all_disengaged_were_newly_active?: Array<string>;
+  all_disengaged_were_consistenly_active?: Array<string>;
+  all_disengaged_were_vital?: Array<string>;
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {

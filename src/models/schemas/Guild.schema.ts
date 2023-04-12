@@ -44,62 +44,26 @@ const guildSchema = new Schema<IGuild, GuildModel>({
   icon: {
     type: String,
   },
-  window: [
-    {
-      type: Number,
-      default: 7,
+  window: {
+    type: Array<number>,
+    default: [7, 1],
+    validate: {
+      validator: function (arr: Array<number>) {
+        return arr.length === 2;
+      },
+      message: 'Window must be an array with exactly 2 numbers',
     },
-    {
-      type: Number,
-      default: 1,
+  },
+  action: {
+    type: Array<number>,
+    default: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2],
+    validate: {
+      validator: function (arr: Array<number>) {
+        return arr.length === 11;
+      },
+      message: 'Action must be an array with exactly 11 numbers',
     },
-  ],
-  action: [
-    {
-      type: Number,
-      default: 1,
-    },
-    {
-      type: Number,
-      default: 1,
-    },
-    {
-      type: Number,
-      default: 1,
-    },
-    {
-      type: Number,
-      default: 4,
-    },
-    {
-      type: Number,
-      default: 3,
-    },
-    {
-      type: Number,
-      default: 5,
-    },
-    {
-      type: Number,
-      default: 5,
-    },
-    {
-      type: Number,
-      default: 4,
-    },
-    {
-      type: Number,
-      default: 3,
-    },
-    {
-      type: Number,
-      default: 3,
-    },
-    {
-      type: Number,
-      default: 2,
-    },
-  ],
+  },
 });
 
 // Plugins

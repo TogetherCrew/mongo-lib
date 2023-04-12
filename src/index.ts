@@ -1,11 +1,25 @@
 import { User, Token, Guild, HeatMap, RawInfo, MemberActivity } from './models';
-import { IDiscordGuild, IDiscordOathBotCallback, IDiscordUser } from './interfaces/Discord.interface';
+import {
+  IDiscordGuild,
+  IDiscordOathBotCallback,
+  IDiscordUser,
+  IDiscordGuildMember,
+  IDiscordChannel,
+} from './interfaces/Discord.interface';
 import { IUser, UserModel } from './interfaces/User.interface';
 import { IToken, TokenModel } from './interfaces/Token.interface';
 import { IGuild, GuildModel } from './interfaces/Guild.interface';
-import { IAccount, AccountModel} from './interfaces/Account.interface';
+import { IAccount, AccountModel } from './interfaces/Account.interface';
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
-import { databaseService, heatmapService, rawInfoService, guildService, channelsService,  } from './service';
+import {
+  databaseService,
+  heatmapService,
+  rawInfoService,
+  guildService,
+  channelsService,
+  memberActivityService,
+  accountService,
+} from './service';
 
 export {
   User,
@@ -17,6 +31,8 @@ export {
   IDiscordGuild,
   IDiscordOathBotCallback,
   IDiscordUser,
+  IDiscordGuildMember,
+  IDiscordChannel,
   IUser,
   IMemberActivity,
   MemberActivityModel,
@@ -32,4 +48,6 @@ export {
   rawInfoService,
   guildService,
   channelsService,
+  memberActivityService,
+  accountService
 };
