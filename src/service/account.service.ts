@@ -24,7 +24,7 @@ const createAccount = async (connection: Connection, account: IAccount) => {
 const fetchAccount = async (connection: Connection, id: Snowflake) => {
   const model = connection.models.Account;
   const data = await model.findOne({
-    id: id,
+    accountId: id,
   });
   return data;
 };
@@ -39,7 +39,7 @@ const updateAccount = async (connection: Connection, id: Snowflake, newAccount: 
   try {
     const model = connection.models.Account;
     return await model.updateOne(
-      { id },
+      { accountId: id },
       newAccount,
       { upsert: true }, // create new document if channelId does not exist
     );
@@ -56,9 +56,7 @@ const updateAccount = async (connection: Connection, id: Snowflake, newAccount: 
 const removeAccount = async (connection: Connection, id: Snowflake) => {
   try {
     const model = connection.models.Account;
-    return await model.findOneAndRemove(
-      { id },
-    );
+    return await model.findOneAndRemove({ accountId: id });
   } catch (e) {
     console.log(e);
   }
@@ -67,5 +65,5 @@ export default {
   createAccount,
   updateAccount,
   fetchAccount,
-  removeAccount
+  removeAccount,
 };

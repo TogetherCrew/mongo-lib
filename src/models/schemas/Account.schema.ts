@@ -1,10 +1,9 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
 import { IAccount, AccountModel } from '../../interfaces/Account.interface';
-import mongooseUniqueValidator from 'mongoose-unique-validator';
 
 const accountSchema = new Schema<IAccount, AccountModel>({
-  id: {
+  accountId: {
     type: String,
     unique: true,
   },
@@ -26,6 +25,5 @@ const accountSchema = new Schema<IAccount, AccountModel>({
 
 // Plugins
 accountSchema.plugin(toJSON);
-accountSchema.plugin(mongooseUniqueValidator);
 
 export default accountSchema;

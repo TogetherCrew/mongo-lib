@@ -2,7 +2,7 @@ import { Snowflake } from 'discord.js';
 import { Model } from 'mongoose';
 
 export interface IAccount {
-  id: Snowflake;
+  accountId: Snowflake;
   account: string;
   roles: Array<string>;
   joinDate: Date;

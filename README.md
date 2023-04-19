@@ -69,7 +69,7 @@ HeatMap {
 
 ```
 Accounts {
-    id: Snowflake,
+    accountId: Snowflake,
     account: string,
     roles: Array<string>,
     joinDate: Datetime,
