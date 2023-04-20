@@ -5,5 +5,6 @@ import HeatMap from './HeatMap.model';
 import RawInfo from './RawInfo.model';
 import Channels from './Channels.model';
 import MemberActivity from './memberActivity.model';
+import Account from './Account.model';
 
-export { User, Token, Guild, HeatMap, RawInfo, Channels, MemberActivity };
+export { User, Token, Guild, HeatMap, RawInfo, Channels, MemberActivity, Account };

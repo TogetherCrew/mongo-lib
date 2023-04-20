@@ -65,6 +65,18 @@ HeatMap {
 }
 ```
 
+### Schema for accounts
+
+```
+Accounts {
+    accountId: Snowflake,
+    account: string,
+    roles: Array<string>,
+    joinDate: Datetime,
+    joinedChannel: Snowflake
+}
+```
+
 ### Schema for memberactivities
 
 ```
