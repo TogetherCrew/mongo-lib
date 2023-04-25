@@ -11,7 +11,7 @@ async function createRawInfo(connection: Connection, data: IRawInfo) {
   try {
     const model = connection.models.RawInfo;
     const findout = await model.find({
-      created_at: data.messageId,
+      messageId: data.messageId,
     });
     if(findout) {
       // already exist

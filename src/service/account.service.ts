@@ -11,7 +11,7 @@ const createAccount = async (connection: Connection, account: IAccount) => {
   try {
     const model = connection.models.Account;
     const findout = await model.find({
-      created_at: account.accountId,
+      accountId: account.accountId,
     });
     if(findout) {
       // already exist
