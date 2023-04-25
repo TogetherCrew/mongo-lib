@@ -9,7 +9,15 @@ import moment = require('moment');
  */
 async function createRawInfo(connection: Connection, data: IRawInfo) {
   try {
-    await connection.models.RawInfo.create(data);
+    const model = connection.models.RawInfo;
+    const findout = await model.find({
+      created_at: data.messageId,
+    });
+    if(findout) {
+      // already exist
+      return false;
+    }
+    return await model.create(data);
   } catch (e) {
     console.log(e);
     return false;
