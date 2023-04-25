@@ -10,7 +10,6 @@ describe('Account model', () => {
         account: 'test_account',
         roles: ['admin'],
         joinDate: new Date(),
-        joinedChannel: "123123"
       };
     });
     test('should correctly validate a valid account data', async () => {
