@@ -12,6 +12,7 @@ const createAccount = async (connection: Connection, account: IAccount) => {
     const model = connection.models.Account;
     return await model.create(account);
   } catch (e) {
+    console.log(e);
     return false;
   }
 };
@@ -44,6 +45,7 @@ const updateAccount = async (connection: Connection, id: Snowflake, newAccount: 
       { upsert: true }, // create new document if channelId does not exist
     );
   } catch (e) {
+    console.log(e);
     return ;
   }
 };

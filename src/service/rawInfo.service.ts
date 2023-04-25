@@ -11,6 +11,7 @@ async function createRawInfo(connection: Connection, data: IRawInfo) {
   try {
     await connection.models.RawInfo.create(data);
   } catch (e) {
+    console.log(e);
     return false;
   }
 }
