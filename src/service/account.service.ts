@@ -13,7 +13,7 @@ const createAccount = async (connection: Connection, account: IAccount) => {
     const findout = await model.find({
       accountId: account.accountId,
     });
-    if(findout) {
+    if(findout.length) {
       // already exist
       return false;
     }

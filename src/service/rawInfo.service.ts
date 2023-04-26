@@ -13,7 +13,7 @@ async function createRawInfo(connection: Connection, data: IRawInfo) {
     const findout = await model.find({
       messageId: data.messageId,
     });
-    if(findout) {
+    if(findout.length) {
       // already exist
       return false;
     }
