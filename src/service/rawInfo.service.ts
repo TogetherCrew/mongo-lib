@@ -10,7 +10,7 @@ import moment = require('moment');
 async function createRawInfo(connection: Connection, data: IRawInfo) {
   try {
     const model = connection.models.RawInfo;
-    const findout = await model.find({
+    const findout = await model.findOne({
       messageId: data.messageId,
     });
     if(findout) {
