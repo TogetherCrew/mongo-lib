@@ -10,8 +10,16 @@ import { Snowflake } from 'discord.js';
 const createAccount = async (connection: Connection, account: IAccount) => {
   try {
     const model = connection.models.Account;
+    const findout = await model.find({
+      accountId: account.accountId,
+    });
+    if(findout) {
+      // already exist
+      return false;
+    }
     return await model.create(account);
   } catch (e) {
+    console.log(e);
     return false;
   }
 };
@@ -45,6 +53,7 @@ const updateAccount = async (connection: Connection, id: Snowflake, newAccount: 
     );
   } catch (e) {
     console.log(e);
+    return ;
   }
 };
 

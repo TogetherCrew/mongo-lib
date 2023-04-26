@@ -18,9 +18,6 @@ const accountSchema = new Schema<IAccount, AccountModel>({
   joinDate: {
     type: Date,
   },
-  joinedChannel: {
-    type: String
-  }
 });
 
 // Plugins

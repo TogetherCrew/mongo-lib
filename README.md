@@ -72,8 +72,7 @@ Accounts {
     accountId: Snowflake,
     account: string,
     roles: Array<string>,
-    joinDate: Datetime,
-    joinedChannel: Snowflake
+    joinDate: Datetime
 }
 ```
 

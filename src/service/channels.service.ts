@@ -23,7 +23,7 @@ const createChannel = async (connection: Connection, data: IChannels) => {
 const updateChannel = async (connection: Connection, channelId: Snowflake, channel: string) => {
   try {
     const Channels = connection.models.Channels;
-    await Channels.updateOne(
+    return await Channels.updateOne(
       { channelId },
       {
         $set: { channel },
