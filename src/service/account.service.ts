@@ -13,7 +13,6 @@ const createAccount = async (connection: Connection, account: IAccount) => {
     const findout = await model.findOne({
       accountId: account.accountId,
     });
-    console.log(findout);
     if(findout) {
       // already exist
       return false;

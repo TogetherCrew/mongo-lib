@@ -143,7 +143,7 @@ Guild {
         }
     ],
     period?: Date,
-    aciton: [int],
-    window: [int]
+    aciton: Array<number>,
+    window: Array<number>
 }
 ```
