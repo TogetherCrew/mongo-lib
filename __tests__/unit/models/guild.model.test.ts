@@ -21,8 +21,8 @@ describe('Guild model', () => {
         isDisconnected: true,
         isInProgress: false,
         icon: null,
-        // window: [7, 1],
-        // action: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2],
+        window: [7, 1],
+        action: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2],
       };
     });
 
