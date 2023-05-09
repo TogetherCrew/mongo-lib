@@ -7,5 +7,6 @@ export interface IChannels {
 }
 
 export interface ChannelsModel extends Model<IChannels> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
 }

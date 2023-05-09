@@ -13,7 +13,7 @@ const createAccount = async (connection: Connection, account: IAccount) => {
     const findout = await model.findOne({
       accountId: account.accountId,
     });
-    if(findout) {
+    if (findout) {
       // already exist
       return false;
     }
@@ -53,7 +53,7 @@ const updateAccount = async (connection: Connection, id: Snowflake, newAccount: 
     );
   } catch (e) {
     console.log(e);
-    return ;
+    return;
   }
 };
 

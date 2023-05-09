@@ -1,8 +1,8 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IAccount, AccountModel } from '../../interfaces/Account.interface';
+import { IGuildMember, GuildMemberModel } from '../../interfaces/GuildMember.interface';
 
-const accountSchema = new Schema<IAccount, AccountModel>({
+const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   accountId: {
     type: String,
     unique: true,
@@ -21,6 +21,6 @@ const accountSchema = new Schema<IAccount, AccountModel>({
 });
 
 // Plugins
-accountSchema.plugin(toJSON);
+guildMemberSchema.plugin(toJSON);
 
-export default accountSchema;
+export default guildMemberSchema;

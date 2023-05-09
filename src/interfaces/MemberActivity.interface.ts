@@ -21,5 +21,6 @@ export interface IMemberActivity {
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
 }

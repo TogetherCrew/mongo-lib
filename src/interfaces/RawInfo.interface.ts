@@ -16,5 +16,6 @@ export interface IRawInfo {
 }
 
 export interface RawInfoModel extends Model<IRawInfo> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
 }

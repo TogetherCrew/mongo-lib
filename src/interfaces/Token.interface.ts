@@ -10,5 +10,6 @@ export interface IToken {
 }
 
 export interface TokenModel extends Model<IToken> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
 }
