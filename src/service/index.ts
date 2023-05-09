@@ -3,7 +3,7 @@ import heatmapService from './heatMap.service';
 import rawInfoService from './rawInfo.service';
 import guildService from './guild.service';
 import channelsService from './channels.service';
-import accountService from './account.service';
+import guildMemberService from './guildMember.service';
 import memberActivityService from './memberActivity.service';
 
 export {
@@ -13,5 +13,5 @@ export {
   guildService,
   channelsService,
   memberActivityService,
-  accountService,
+  guildMemberService,
 };

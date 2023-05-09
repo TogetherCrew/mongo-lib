@@ -18,7 +18,7 @@ import {
   guildService,
   channelsService,
   memberActivityService,
-  accountService,
+  guildMemberService,
 } from './service';
 
 export {
@@ -49,5 +49,5 @@ export {
   guildService,
   channelsService,
   memberActivityService,
-  accountService
+  guildMemberService
 };
