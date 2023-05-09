@@ -1,9 +1,8 @@
 import { Snowflake } from 'discord.js';
 import { Model } from 'mongoose';
-import { IUser } from './User.interface';
 
 export interface IGuildMember {
-  user?: IUser;
+  discordId?: Snowflake;
   nick?: string;
   avatar?: string;
   roles: Snowflake[];
@@ -13,4 +12,10 @@ export interface IGuildMember {
 export interface GuildMemberModel extends Model<IGuildMember> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
+}
+
+export interface IGuildMemberUpdateBody {
+  nick?: string;
+  avatar?: string;
+  roles?: Snowflake[];
 }
