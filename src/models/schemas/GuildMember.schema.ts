@@ -3,11 +3,11 @@ import { toJSON } from './plugins';
 import { IGuildMember, GuildMemberModel } from '../../interfaces/GuildMember.interface';
 
 const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
-  accountId: {
+  user: {
     type: String,
     unique: true,
   },
-  account: {
+  nick: {
     type: String,
   },
   roles: [
@@ -15,8 +15,11 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
       type: String,
     },
   ],
-  joinDate: {
-    type: Date,
+  joined_at: {
+    type: String,
+  },
+  avatar: {
+    type: String,
   },
 });
 

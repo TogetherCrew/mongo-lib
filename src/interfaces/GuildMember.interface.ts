@@ -1,11 +1,13 @@
 import { Snowflake } from 'discord.js';
 import { Model } from 'mongoose';
+import { IUser } from './User.interface';
 
 export interface IGuildMember {
-  accountId: Snowflake;
-  account: string;
-  roles: Array<string>;
-  joinDate: Date;
+  user?: IUser;
+  nick?: string;
+  avatar?: string;
+  roles: Snowflake[];
+  joined_at: string;
 }
 
 export interface GuildMemberModel extends Model<IGuildMember> {
