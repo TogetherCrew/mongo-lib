@@ -9,7 +9,7 @@ import {
 import { IUser, UserModel } from './interfaces/User.interface';
 import { IToken, TokenModel } from './interfaces/Token.interface';
 import { IGuild, GuildModel } from './interfaces/Guild.interface';
-import { IAccount, AccountModel } from './interfaces/Account.interface';
+import { IGuildMember, GuildMemberModel } from './interfaces/GuildMember.interface';
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
 import {
   databaseService,
@@ -18,7 +18,7 @@ import {
   guildService,
   channelsService,
   memberActivityService,
-  accountService,
+  guildMemberService,
 } from './service';
 
 export {
@@ -41,13 +41,13 @@ export {
   TokenModel,
   IGuild,
   GuildModel,
-  IAccount,
-  AccountModel,
+  IGuildMember,
+  GuildMemberModel,
   databaseService,
   heatmapService,
   rawInfoService,
   guildService,
   channelsService,
   memberActivityService,
-  accountService
+  guildMemberService
 };

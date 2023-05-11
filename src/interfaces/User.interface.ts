@@ -20,5 +20,6 @@ export interface IUser {
 }
 
 export interface UserModel extends Model<IUser> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
 }
