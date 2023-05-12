@@ -65,14 +65,15 @@ HeatMap {
 }
 ```
 
-### Schema for accounts
+### Schema for guildMembers
 
 ```
-Accounts {
-    accountId: Snowflake,
-    account: string,
-    roles: Array<string>,
-    joinDate: Datetime
+GuildMember {
+  discordId?: Snowflake;
+  nick?: string;
+  avatar?: string;
+  roles: Snowflake[];
+  joined_at: string;
 }
 ```
 
