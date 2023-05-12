@@ -3,19 +3,18 @@ import { Model } from 'mongoose';
 import { IUser } from './User.interface';
 
 export interface IGuildMember {
-  user?: IUser;
-  nick?: string;
-  avatar?: string;
-  roles: Snowflake[];
-  joined_at: string;
+  user?: IUser,
+  nick?: string,
+  avatar?: string,
+  roles: Snowflake[],
+  joined_at: string,
 }
 
 export interface IGuildMemberUpdateBody {
-  user?: IUser;
-  nick?: string;
-  avatar?: string;
-  roles?: Snowflake[];
-  joined_at?: string;
+  nick?: string,
+  avatar?: string,
+  roles?: Snowflake[],
+  joined_at?: string,
 }
 
 export interface GuildMemberModel extends Model<IGuildMember> {
