@@ -10,6 +10,14 @@ export interface IGuildMember {
   joined_at: string;
 }
 
+export interface IGuildMemberUpdateBody {
+  user?: IUser;
+  nick?: string;
+  avatar?: string;
+  roles?: Snowflake[];
+  joined_at?: string;
+}
+
 export interface GuildMemberModel extends Model<IGuildMember> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
