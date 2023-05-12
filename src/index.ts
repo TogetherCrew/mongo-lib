@@ -6,19 +6,14 @@ import {
   IDiscordGuildMember,
   IDiscordChannel,
 } from './interfaces/Discord.interface';
-import { IUser, UserModel } from './interfaces/User.interface';
-import { IToken, TokenModel } from './interfaces/Token.interface';
-import { IGuild, GuildModel } from './interfaces/Guild.interface';
-import { IGuildMember, GuildMemberModel } from './interfaces/GuildMember.interface';
+import { IUser, IUserUpdateBody, UserModel } from './interfaces/User.interface';
+import { IToken, ITokenUpdateBody, TokenModel } from './interfaces/Token.interface';
+import { IGuild, IGuildUpdateBody, GuildModel } from './interfaces/Guild.interface';
+import { IGuildMember, IGuildMemberUpdateBody, GuildMemberModel } from './interfaces/GuildMember.interface';
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
 import {
   databaseService,
   heatmapService,
-  rawInfoService,
-  guildService,
-  channelsService,
-  memberActivityService,
-  guildMemberService,
 } from './service';
 
 export {
@@ -34,20 +29,19 @@ export {
   IDiscordGuildMember,
   IDiscordChannel,
   IUser,
+  IUserUpdateBody,
   IMemberActivity,
   MemberActivityModel,
   UserModel,
   IToken,
+  ITokenUpdateBody,
   TokenModel,
   IGuild,
+  IGuildUpdateBody,
   GuildModel,
   IGuildMember,
+  IGuildMemberUpdateBody,
   GuildMemberModel,
   databaseService,
   heatmapService,
-  rawInfoService,
-  guildService,
-  channelsService,
-  memberActivityService,
-  guildMemberService
 };

@@ -19,6 +19,12 @@ export interface IUser {
   public_flags?: number;
 }
 
+export interface IUserUpdateBody {
+  avatar?: string,
+  email?: string,
+  verified?: boolean,
+}
+
 export interface UserModel extends Model<IUser> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   paginate(filter: object, options: object): any;
