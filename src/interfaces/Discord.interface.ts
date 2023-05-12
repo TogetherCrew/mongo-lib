@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Snowflake } from 'discord.js';
+import { IUser } from './User.interface';
 
 export interface IDiscordUser {
     id: Snowflake;
@@ -17,21 +18,6 @@ export interface IDiscordUser {
     flags?: number;
     premium_type?: number;
     public_flags?: number;
-}
-
-export interface IDiscordGuildMember {
-    user?: IDiscordUser;
-    nick?: string | null;
-    avatar?: string | null;
-    roles: string[]; // Array of role object IDs (snowflakes)
-    joined_at: string; // ISO8601 timestamp
-    premium_since?: string | null; // ISO8601 timestamp or null
-    deaf: boolean;
-    mute: boolean;
-    flags: number;
-    pending?: boolean;
-    permissions?: string;
-    communication_disabled_until?: string | null; // ISO8601 timestamp or null
 }
 
 export interface IDiscordGuild {
@@ -137,3 +123,19 @@ export interface IDiscordOathBotCallback {
     scope: string;
     guild: IDiscordGuild;
 }
+
+export interface IDiscordGuildMember {
+    user?: IUser;
+    nick?: string;
+    avatar?: string;
+    roles: Snowflake[];
+    joined_at: string;
+    premium_since?: string;
+    deaf: boolean;
+    mute: boolean;
+    flags: number;
+    pending?: boolean;
+    permissions?: string;
+    communication_disabled_until?: string;
+}
+

@@ -3,7 +3,7 @@ import { toJSON } from './plugins';
 import { IGuildMember, GuildMemberModel } from '../../interfaces/GuildMember.interface';
 
 const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
-  user: {
+  discordId: {
     type: String,
     unique: true,
   },
