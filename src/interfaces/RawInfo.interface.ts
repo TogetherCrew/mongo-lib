@@ -1,8 +1,9 @@
 import { Model } from 'mongoose';
+import { Snowflake } from 'discord.js';
 
 export interface IRawInfo {
   type?: string;
-  author?: string;
+  author?: Snowflake;
   content?: string;
   datetime?: string;
   user_mentions?: Array<string>;

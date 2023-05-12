@@ -7,7 +7,7 @@ All interactions with DB
 ```
 rawinfo {
     type?: string,
-    author: string,
+    author: Snowflake,
     content: string,
     user_mentions?: Array<string>,
     role_mentions?: Array<string>,
