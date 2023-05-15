@@ -6,10 +6,10 @@ export interface IRawInfo {
   author?: Snowflake;
   content?: string;
   datetime?: string;
-  user_mentions?: Array<string>;
+  user_mentions?: Array<Snowflake>;
   role_mentions?: Array<string>;
-  reactions?: Array<string>;
-  replied_user?: string;
+  reactions?: Array<Snowflake>;
+  replied_user?: Snowflake;
   channelId?: string;
   messageId: string;
   threadId: string;
