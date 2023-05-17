@@ -7,12 +7,12 @@ All interactions with DB
 ```
 rawinfo {
     type?: string,
-    author: string,
+    author: Snowflake,
     content: string,
-    user_mentions?: Array<string>,
-    role_mentions?: Array<string>,
+    user_mentions?: Array<Snowflake>,
+    role_mentions?: Array<Snowflake>,
     reactions?: Array<string>,
-    replied_user?: string,
+    replied_user?: Snowflake,
     channelId: Snowflake,
     messageId: Snowflake,(unique)
     threadId: Snowflake,
