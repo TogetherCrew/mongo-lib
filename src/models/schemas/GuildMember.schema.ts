@@ -7,7 +7,7 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
     type: String,
     unique: true,
   },
-  nick: {
+  username: {
     type: String,
   },
   roles: [
@@ -15,12 +15,18 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
       type: String,
     },
   ],
-  joined_at: {
-    type: String,
+  joinedAt: {
+    type: Date,
   },
   avatar: {
     type: String,
   },
+  isBot: {
+    type: Boolean
+  },
+  discriminator: {
+    type: String
+  }
 });
 
 // Plugins
