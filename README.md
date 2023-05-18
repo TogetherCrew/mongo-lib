@@ -7,12 +7,12 @@ All interactions with DB
 ```
 rawinfo {
     type?: string,
-    author: Snowflake,
+    author: string,
     content: string,
-    user_mentions?: Array<Snowflake>,
-    role_mentions?: Array<Snowflake>,
+    user_mentions?: Array<string>,
+    role_mentions?: Array<string>,
     reactions?: Array<string>,
-    replied_user?: Snowflake,
+    replied_user?: string,
     channelId: Snowflake,
     messageId: Snowflake,(unique)
     threadId: Snowflake,
@@ -69,12 +69,15 @@ HeatMap {
 
 ```
 GuildMember {
-  discordId?: Snowflake;
-  nick?: string;
-  avatar?: string;
-  roles: Snowflake[];
-  joined_at: string;
+  discordId: Snowflake,
+  username: string,
+  avatar?: string | null,
+  roles: Snowflake[],
+  joinedAt: Date | null,
+  isBot?: boolean,
+  discriminator: string
 }
+
 ```
 
 ### Schema for memberactivities
