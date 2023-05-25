@@ -1,5 +1,5 @@
-import { Snowflake } from 'discord.js';
-import { Model } from 'mongoose';
+import { type Snowflake } from 'discord.js';
+import { type Model } from 'mongoose';
 
 export interface IToken {
   token: string;
@@ -14,6 +14,5 @@ export interface ITokenUpdateBody {
 }
 
 export interface TokenModel extends Model<IToken> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  paginate(filter: object, options: object): any;
+  paginate: (filter: object, options: object) => any;
 }
