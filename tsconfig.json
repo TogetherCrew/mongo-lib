@@ -1,35 +1,17 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "declaration": true,
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "target": "es6",
-        "sourceMap": true,
-        "outDir": "./lib",
-        "baseUrl": "./",
-        "incremental": true,
-        "strict": true,
-        "noImplicitAny": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
+      "target": "es2016",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true
     },
     "include": [
-        "src/**/*",
-        "__tests__/**/*",
-        "src/index.ts",
-        "src/connection.js.ts"
-    ],
-    "ts-node": {
-        "transpileOnly": true,
-        "files": true
-    },
-    "exclude": [
-        "./coverage",
-        "./lib",
-        "__tests__",
-        "jest.config.js"
-    ],
-}
+      "./src/**/*",
+      "./__test__/**/*",
+      ".eslintrc.json",
+      "jest.config.ts"
+    ]
+  }
