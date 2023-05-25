@@ -1,5 +1,13 @@
 import { User, Token, Guild, HeatMap, RawInfo, MemberActivity } from './models';
-import { guildMemberSchema, guildSchema, heatMapSchema, MemberActivitySchema, rawInfoSchema, tokenSchema, userSchema } from './models/schemas';
+import {
+  guildMemberSchema,
+  guildSchema,
+  heatMapSchema,
+  MemberActivitySchema,
+  rawInfoSchema,
+  tokenSchema,
+  userSchema,
+} from './models/schemas';
 import {
   IDiscordGuild,
   IDiscordOathBotCallback,
@@ -14,10 +22,7 @@ import { IGuildMember, IGuildMemberUpdateBody, GuildMemberModel } from './interf
 import { IRawInfo, RawInfoModel } from './interfaces/RawInfo.interface';
 
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
-import {
-  databaseService,
-  heatmapService,
-} from './service';
+import { databaseService, heatmapService } from './service';
 
 export {
   User,
@@ -55,5 +60,5 @@ export {
   MemberActivitySchema,
   rawInfoSchema,
   tokenSchema,
-  userSchema
+  userSchema,
 };

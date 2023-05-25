@@ -10,7 +10,7 @@ export interface IToken {
 }
 
 export interface ITokenUpdateBody {
-  blacklisted?: boolean
+  blacklisted?: boolean;
 }
 
 export interface TokenModel extends Model<IToken> {

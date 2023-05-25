@@ -23,14 +23,14 @@ export interface IGuild {
 export interface IGuildUpdateBody {
   selectedChannels?: [
     {
-      channelId: Snowflake,
-      channelName?: string,
+      channelId: Snowflake;
+      channelName?: string;
     },
   ];
-  period?: Date,
-  isDisconnected?: boolean,
-  isInProgress?: boolean,
-  icon?: string | null,
+  period?: Date;
+  isDisconnected?: boolean;
+  isInProgress?: boolean;
+  icon?: string | null;
 }
 
 export interface GuildModel extends Model<IGuild> {

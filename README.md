@@ -24,10 +24,9 @@ docker compose -f docker-compose.test.yml up --exit-code-from app --build
 
 Note: This will create a /coverage folder where you can review the coverage details.
 
-
 ## Schema for rawinfo
 
-```
+```ts
 rawinfo {
     type?: string,
     author: string,
@@ -46,7 +45,7 @@ rawinfo {
 
 ### Schema for user
 
-```
+```ts
 User {
     discordId: Snowflake,
     username?: string,
@@ -68,8 +67,7 @@ User {
 
 ### Schema for heatmap
 
-```
-
+```ts
 HeatMap {
     date?: string,(format: "YYYY-MM-DD")
     thr_messages: Array<number>,
@@ -90,7 +88,7 @@ HeatMap {
 
 ### Schema for guildMembers
 
-```
+```ts
 GuildMember {
   discordId: Snowflake,
   username: string,
@@ -105,8 +103,7 @@ GuildMember {
 
 ### Schema for memberactivities
 
-```
-
+```ts
 memberactivities {
     date: Date,
     all_active: Array<string>,
@@ -130,8 +127,7 @@ memberactivities {
 
 ### Schema for channels
 
-```
-
+```ts
 Channels {
     channel: string,
     channelId: Snowflake,
@@ -139,10 +135,9 @@ Channels {
 }
 ```
 
-
 ### Schema for token
 
-```
+```ts
 Token {
     token: string,
     user: Snowflake,
@@ -154,7 +149,7 @@ Token {
 
 ### Schema for guild
 
-```
+```ts
 Guild {
     guildId: Snowflake,
     user: Snowflake,

@@ -1,22 +1,13 @@
 {
-    "compilerOptions": {
-      "target": "es2016",
-      "module": "commonjs",
-      "outDir": "./dist",
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "skipLibCheck": true
-    },
-    "include": [
-      "./src/**/*",
-      "./__test__/**/*",
-      ".eslintrc.json",
-      "jest.config.ts"
-    ],
-    "exclude": [
-      "./__test__/**/*",
-      ".eslintrc.json",
-      "jest.config.ts"   
-    ]
-  }
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*", "./__test__/**/*", ".eslintrc.json", "jest.config.ts"],
+  "exclude": ["./__test__/**/*", ".eslintrc.json", "jest.config.ts"]
+}

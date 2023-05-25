@@ -20,9 +20,9 @@ export interface IUser {
 }
 
 export interface IUserUpdateBody {
-  avatar?: string,
-  email?: string,
-  verified?: boolean,
+  avatar?: string;
+  email?: string;
+  verified?: boolean;
 }
 
 export interface UserModel extends Model<IUser> {
