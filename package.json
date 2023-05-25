@@ -9,7 +9,6 @@
     "dev": "nodemon ./src/magic.ts",
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "prepare": "npm run build",
     "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -25,7 +24,6 @@
   },
   "homepage": "https://github.com/RnDAO/tc-dbComm#readme",
   "dependencies": {
-    "@types/mongoose-unique-validator": "^1.0.6",
     "discord.js": "^14.7.1",
     "joi": "^17.7.0",
     "moment": "^2.29.4",
@@ -35,6 +33,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
+    "@types/mongoose-unique-validator": "^1.0.6",
     "@types/node": "^18.11.18",
     "@types/validator": "^13.7.17",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
