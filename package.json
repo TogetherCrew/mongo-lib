@@ -2,10 +2,10 @@
   "name": "tc_dbcomm",
   "version": "2.2.3",
   "description": "All interactions with DB",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./lib/index.js",
+    "start": "node ./dist/src/index.js",
     "dev": "nodemon ./src/magic.ts",
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
