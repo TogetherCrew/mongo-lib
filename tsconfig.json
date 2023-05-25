@@ -13,5 +13,10 @@
       "./__test__/**/*",
       ".eslintrc.json",
       "jest.config.ts"
+    ],
+    "exclude": [
+      "./__test__/**/*",
+      ".eslintrc.json",
+      "jest.config.ts"   
     ]
   }

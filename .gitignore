@@ -3,7 +3,7 @@ src/config/dev.env
 src/config/test.env
 
 /node_modules
-/lib
+/dist
 /coverage
 /.nyc_output
 src/config/*.env
