@@ -11,7 +11,7 @@ import { IUser, IUserUpdateBody, UserModel } from './interfaces/User.interface';
 import { IToken, ITokenUpdateBody, TokenModel } from './interfaces/Token.interface';
 import { IGuild, IGuildUpdateBody, GuildModel } from './interfaces/Guild.interface';
 import { IGuildMember, IGuildMemberUpdateBody, GuildMemberModel } from './interfaces/GuildMember.interface';
-import { IRawInfo, RawInfoModel } from './interfaces/RawInfo.interface';
+import { IRawInfo, IRawInfoUpdateBody, RawInfoModel } from './interfaces/RawInfo.interface';
 
 import { IMemberActivity, MemberActivityModel } from './interfaces/MemberActivity.interface';
 import {
@@ -33,6 +33,7 @@ export {
   IDiscordChannel,
   IUser,
   IRawInfo,
+  IRawInfoUpdateBody,
   IUserUpdateBody,
   IMemberActivity,
   MemberActivityModel,
