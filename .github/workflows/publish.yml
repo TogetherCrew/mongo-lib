@@ -1,0 +1,9 @@
+name: CI Pipeline
+
+on: pull_request
+
+jobs:
+  ci:
+    uses: TogetherCrew/operations/.github/workflows/publish.ts.yml@main
+    secrets:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

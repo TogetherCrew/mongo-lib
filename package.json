@@ -1,6 +1,6 @@
 {
-  "name": "tc_dbcomm",
-  "version": "2.2.3",
+  "name": "@togethercrew.dev/db",
+  "version": "2.2.4",
   "description": "All interactions with DB",
   "main": "./dist/index.js",
   "scripts": {
