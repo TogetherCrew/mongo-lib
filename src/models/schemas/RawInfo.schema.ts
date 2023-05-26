@@ -5,7 +5,7 @@ import mongooseUniqueValidator from 'mongoose-unique-validator';
 
 const rawInfoSchema = new Schema<IRawInfo>({
   type: {
-    type: String,
+    type: Number,
   },
   author: {
     type: String,
@@ -31,20 +31,24 @@ const rawInfoSchema = new Schema<IRawInfo>({
   replied_user: {
     type: String,
   },
-  datetime: {
-    type: String,
-  },
-  channelId: {
-    type: String,
+  createdDate: {
+    type: Date,
   },
   messageId: {
     type: String,
     unique: true,
   },
+  channelId: {
+    type: String,
+  },
+  channelName: {
+    type: String
+  },
+
   threadId: {
     type: String,
   },
-  thread: {
+  threadName: {
     type: String,
   },
 });
