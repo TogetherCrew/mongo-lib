@@ -28,18 +28,19 @@ Note: This will create a /coverage folder where you can review the coverage deta
 
 ```ts
 rawinfo {
-    type?: string,
-    author: string,
-    content: string,
-    user_mentions?: Array<string>,
-    role_mentions?: Array<string>,
-    reactions?: Array<string>,
-    replied_user?: string,
-    channelId: Snowflake,
-    messageId: Snowflake,(unique)
-    threadId: Snowflake,
-    thread: string,
-    datetime: string (format: "YYYY-MM-DD")
+  type: number,
+  author: Snowflake,
+  content: string,
+  createdDate: Date,
+  user_mentions: Array<Snowflake>,
+  role_mentions: Array<Snowflake>,
+  reactions: Array<Snowflake>,
+  replied_user: Snowflake | null | undefined,
+  messageId: Snowflake,
+  channelId: Snowflake,
+  channelName: string | null,
+  threadId: Snowflake | null,
+  threadName: string | null,
 }
 ```
 
