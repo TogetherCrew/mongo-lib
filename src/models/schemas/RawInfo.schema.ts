@@ -42,7 +42,7 @@ const rawInfoSchema = new Schema<IRawInfo>({
     type: String,
   },
   channelName: {
-    type: String
+    type: String,
   },
 
   threadId: {
