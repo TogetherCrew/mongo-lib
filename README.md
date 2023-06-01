@@ -13,10 +13,9 @@ docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -e VALIDATE_DO
 ```
 
 Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncaught target signal 11 (Segmentation fault) - core dumped`.
-=======
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/maintainability)](https://codeclimate.com/github/RnDAO/tc-dbComm/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/test_coverage)](https://codeclimate.com/github/RnDAO/tc-dbComm/test_coverage)
-
 
 ## Schema for rawinfo
 
