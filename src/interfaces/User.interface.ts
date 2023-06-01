@@ -1,5 +1,5 @@
-import { Snowflake } from 'discord.js';
-import { Model } from 'mongoose';
+import { type Snowflake } from 'discord.js';
+import { type Model } from 'mongoose';
 
 export interface IUser {
   discordId: Snowflake;
@@ -20,12 +20,11 @@ export interface IUser {
 }
 
 export interface IUserUpdateBody {
-  avatar?: string,
-  email?: string,
-  verified?: boolean,
+  avatar?: string;
+  email?: string;
+  verified?: boolean;
 }
 
 export interface UserModel extends Model<IUser> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  paginate(filter: object, options: object): any;
+  paginate: (filter: object, options: object) => any;
 }

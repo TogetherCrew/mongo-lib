@@ -1,26 +1,25 @@
-import { Model } from 'mongoose';
+import { type Model } from 'mongoose';
 
 export interface IMemberActivity {
   date: Date;
-  all_active?: Array<string>;
-  all_consistent?: Array<string>;
-  all_vital?: Array<string>;
-  all_connected?: Array<string>;
-  all_paused?: Array<string>;
-  all_new_disengaged?: Array<string>;
-  all_disengaged?: Array<string>;
-  all_unpaused?: Array<string>;
-  all_returned?: Array<string>;
-  all_new_active?: Array<string>;
-  all_still_active?: Array<string>;
-  all_joined?: Array<string>;
-  all_dropped?: Array<string>;
-  all_disengaged_were_newly_active?: Array<string>;
-  all_disengaged_were_consistenly_active?: Array<string>;
-  all_disengaged_were_vital?: Array<string>;
+  all_active?: string[];
+  all_consistent?: string[];
+  all_vital?: string[];
+  all_connected?: string[];
+  all_paused?: string[];
+  all_new_disengaged?: string[];
+  all_disengaged?: string[];
+  all_unpaused?: string[];
+  all_returned?: string[];
+  all_new_active?: string[];
+  all_still_active?: string[];
+  all_joined?: string[];
+  all_dropped?: string[];
+  all_disengaged_were_newly_active?: string[];
+  all_disengaged_were_consistenly_active?: string[];
+  all_disengaged_were_vital?: string[];
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  paginate(filter: object, options: object): any;
+  paginate: (filter: object, options: object) => any;
 }

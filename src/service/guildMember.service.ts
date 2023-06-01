@@ -19,7 +19,6 @@ async function createGuildMembers(connection: Connection, guildMembers: IGuildMe
   return connection.models.GuildMember.insertMany(guildMembers.map((guildMember) => guildMember));
 }
 
-
 /**
  * update guildMember
  * @param {Object} filter

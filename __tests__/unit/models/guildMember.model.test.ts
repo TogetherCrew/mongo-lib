@@ -1,6 +1,6 @@
 import { GuildMember } from '../../../src/models';
 import { IGuildMember } from '../../../src/interfaces/GuildMember.interface';
-import moment from "moment";
+import moment from 'moment';
 
 describe('Account model', () => {
   describe('account validation', () => {
@@ -10,10 +10,10 @@ describe('Account model', () => {
         discordId: '123',
         username: 'Behzad#11',
         roles: ['admin'],
-        joinedAt: moment("2022-02-01 08:30:26.127Z").toDate(),
-        avatar: "100",
+        joinedAt: moment('2022-02-01 08:30:26.127Z').toDate(),
+        avatar: '100',
         isBot: true,
-        discriminator: 'str'
+        discriminator: 'str',
       };
     });
     test('should correctly validate a valid guildMember data', async () => {

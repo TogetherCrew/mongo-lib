@@ -1,5 +1,5 @@
-import { Model } from 'mongoose';
-import { Snowflake } from 'discord.js';
+import { type Model } from 'mongoose';
+import { type Snowflake } from 'discord.js';
 
 export interface IRawInfo {
   type: number,
@@ -26,6 +26,5 @@ export interface IRawInfoUpdateBody {
 }
 
 export interface RawInfoModel extends Model<IRawInfo> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  paginate(filter: object, options: object): any;
+  paginate: (filter: object, options: object) => any;
 }

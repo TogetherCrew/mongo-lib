@@ -2,13 +2,37 @@
 
 All interactions with DB
 
+## Features
+
+### Linter
+
+The CI Pipeline uses [super-linter](https://github.com/super-linter/super-linter). You can run it locally with the following command:
+
+```bash
+docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -e VALIDATE_DOCKERFILE_HADOLINT=false -v $(pwd):/tmp/lint github/super-linter:slim-latest
+```
+
+Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncaught target signal 11 (Segmentation fault) - core dumped`.
+=======
 [![Maintainability](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/maintainability)](https://codeclimate.com/github/RnDAO/tc-dbComm/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/test_coverage)](https://codeclimate.com/github/RnDAO/tc-dbComm/test_coverage)
 
 
 ## Schema for rawinfo
 
+### Tests
+
+The CI Pipeline uses the `test` target from the Dockerfile to run the tests. You can run it locally with the following command:
+
+```bash
+docker compose -f docker-compose.test.yml up --exit-code-from app --build
 ```
+
+Note: This will create a /coverage folder where you can review the coverage details.
+
+## Schema for rawinfo
+
+```ts
 rawinfo {
   type: number,
   author: Snowflake,
@@ -28,7 +52,7 @@ rawinfo {
 
 ### Schema for user
 
-```
+```ts
 User {
     discordId: Snowflake,
     username?: string,
@@ -50,8 +74,7 @@ User {
 
 ### Schema for heatmap
 
-```
-
+```ts
 HeatMap {
     date?: string,(format: "YYYY-MM-DD")
     thr_messages: Array<number>,
@@ -72,7 +95,7 @@ HeatMap {
 
 ### Schema for guildMembers
 
-```
+```ts
 GuildMember {
   discordId: Snowflake,
   username: string,
@@ -87,8 +110,7 @@ GuildMember {
 
 ### Schema for memberactivities
 
-```
-
+```ts
 memberactivities {
     date: Date,
     all_active: Array<string>,
@@ -112,8 +134,7 @@ memberactivities {
 
 ### Schema for channels
 
-```
-
+```ts
 Channels {
     channel: string,
     channelId: Snowflake,
@@ -121,10 +142,9 @@ Channels {
 }
 ```
 
-
 ### Schema for token
 
-```
+```ts
 Token {
     token: string,
     user: Snowflake,
@@ -136,7 +156,7 @@ Token {
 
 ### Schema for guild
 
-```
+```ts
 Guild {
     guildId: Snowflake,
     user: Snowflake,

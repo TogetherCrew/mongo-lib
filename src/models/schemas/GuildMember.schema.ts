@@ -22,11 +22,11 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
     type: String,
   },
   isBot: {
-    type: Boolean
+    type: Boolean,
   },
   discriminator: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 // Plugins
