@@ -1,35 +1,25 @@
 {
   "compilerOptions": {
-      "module": "commonjs",
-      "declaration": true,
-      "removeComments": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "target": "es2017",
-      "sourceMap": true,
-      "outDir": "./dist",
-      "baseUrl": "./",
-      "incremental": true,
-      "strict": true,
-      "noImplicitAny": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-      "src/**/*",
-      "__tests__/**/*",
-      "src/index.ts",
-      "src/connection.js.ts"
-  ],
+  "include": ["src/**/*", "__tests__/**/*", "src/index.ts", "src/connection.js.ts"],
   "ts-node": {
-      "transpileOnly": true,
-      "files": true
+    "transpileOnly": true,
+    "files": true
   },
-  "exclude": [
-      "./coverage",
-      "./lib",
-      "__tests__",
-      "jest.config.js"
-  ],
+  "exclude": ["./coverage", "./lib", "__tests__", "jest.config.js"]
 }
