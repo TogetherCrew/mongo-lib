@@ -17,8 +17,6 @@ Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncau
 [![Maintainability](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/maintainability)](https://codeclimate.com/github/RnDAO/tc-dbComm/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/test_coverage)](https://codeclimate.com/github/RnDAO/tc-dbComm/test_coverage)
 
-## Schema for rawinfo
-
 ### Tests
 
 The CI Pipeline uses the `test` target from the Dockerfile to run the tests. You can run it locally with the following command:
@@ -29,7 +27,9 @@ docker compose -f docker-compose.test.yml up --exit-code-from app --build
 
 Note: This will create a /coverage folder where you can review the coverage details.
 
-## Schema for rawinfo
+## Schema
+
+### rawinfo
 
 ```ts
 rawinfo {
@@ -49,7 +49,7 @@ rawinfo {
 }
 ```
 
-### Schema for user
+### user
 
 ```ts
 User {
@@ -71,7 +71,7 @@ User {
 }
 ```
 
-### Schema for heatmap
+### heatmap
 
 ```ts
 HeatMap {
@@ -92,7 +92,7 @@ HeatMap {
 }
 ```
 
-### Schema for guildMembers
+### guildMembers
 
 ```ts
 GuildMember {
@@ -107,7 +107,7 @@ GuildMember {
 
 ```
 
-### Schema for memberactivities
+### memberactivities
 
 ```ts
 memberactivities {
@@ -131,7 +131,7 @@ memberactivities {
 }
 ```
 
-### Schema for channels
+### channels
 
 ```ts
 Channels {
@@ -141,7 +141,7 @@ Channels {
 }
 ```
 
-### Schema for token
+### token
 
 ```ts
 Token {
@@ -153,7 +153,7 @@ Token {
 }
 ```
 
-### Schema for guild
+### guild
 
 ```ts
 Guild {
