@@ -176,3 +176,24 @@ Guild {
     window: Array<number>
 }
 ```
+
+### Schema for channel
+
+```ts
+Channel {
+    id: Snowflake,
+    name?: string | null,
+    parent_id?: string | null,
+}
+```
+
+
+### Schema for role
+
+```ts
+Role {
+    id: Snowflake,
+    name: string,
+    color: number,
+}
+```
