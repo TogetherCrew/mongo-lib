@@ -18,6 +18,8 @@
   "ignorePatterns": [
     "coverage",
     "dist",
-    "__tests__/"
+    "__tests__/",
+    "jest.config.ts",
+    "*.yml"
   ]
 }

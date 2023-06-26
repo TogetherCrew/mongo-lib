@@ -12,13 +12,15 @@ The CI Pipeline uses [super-linter](https://github.com/super-linter/super-linter
 docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -e VALIDATE_DOCKERFILE_HADOLINT=false -v $(pwd):/tmp/lint github/super-linter:slim-latest
 ```
 
+```bash
+Windows: docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -e VALIDATE_DOCKERFILE_HADOLINT=false -v "$(Resolve-Path .):/tmp/lint" github/super-linter:slim-latest
+```
+
 Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncaught target signal 11 (Segmentation fault) - core dumped`.
-=======
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/maintainability)](https://codeclimate.com/github/RnDAO/tc-dbComm/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/52d516c2ad7c262adb37/test_coverage)](https://codeclimate.com/github/RnDAO/tc-dbComm/test_coverage)
 
-
-## Schema for rawinfo
 
 ### Tests
 
@@ -30,7 +32,7 @@ docker compose -f docker-compose.test.yml up --exit-code-from app --build
 
 Note: This will create a /coverage folder where you can review the coverage details.
 
-## Schema for rawinfo
+### Schema for rawinfo
 
 ```ts
 rawinfo {

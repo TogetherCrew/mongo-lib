@@ -8,7 +8,14 @@ import {
   roleSchema,
 } from '../models/schemas/';
 import { type Snowflake } from 'discord.js';
-import { type IHeatMap, type IRawInfo, type IMemberActivity, type IGuildMember, type IChannel, type IRole } from '../interfaces';
+import {
+  type IHeatMap,
+  type IRawInfo,
+  type IMemberActivity,
+  type IGuildMember,
+  type IChannel,
+  type IRole,
+} from '../interfaces';
 
 /**
  * connect to database (create with guildId if not exist)
