@@ -1,9 +1,9 @@
 import { GuildMember } from '../../../src/models';
-import { IGuildMember } from '../../../src/interfaces/GuildMember.interface';
+import { IGuildMember } from '../../../src/interfaces';
 import moment from 'moment';
 
-describe('Account model', () => {
-  describe('account validation', () => {
+describe('guildMember model', () => {
+  describe('guildMember validation', () => {
     let guildMember: IGuildMember;
     beforeEach(() => {
       guildMember = {

@@ -1,7 +1,14 @@
-import mongoose, { Connection } from 'mongoose';
-import { heatMapSchema, rawInfoSchema, MemberActivitySchema, guildMemberSchema } from '../models/schemas/';
-import { Snowflake } from 'discord.js';
-import { IHeatMap, IRawInfo, IMemberActivity, IGuildMember } from '../interfaces';
+import mongoose, { type Connection } from 'mongoose';
+import {
+  heatMapSchema,
+  rawInfoSchema,
+  MemberActivitySchema,
+  guildMemberSchema,
+  channelSchema,
+  roleSchema,
+} from '../models/schemas/';
+import { type Snowflake } from 'discord.js';
+import { type IHeatMap, type IRawInfo, type IMemberActivity, type IGuildMember, type IChannel, type IRole } from '../interfaces';
 
 /**
  * connect to database (create with guildId if not exist)
@@ -15,6 +22,8 @@ function connectionFactory(guildId: Snowflake, dbURI: string): Connection {
   connection.model<IRawInfo>('RawInfo', rawInfoSchema);
   connection.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
   connection.model<IGuildMember>('GuildMember', guildMemberSchema);
+  connection.model<IChannel>('Channel', channelSchema);
+  connection.model<IRole>('Role', roleSchema);
   return connection;
 }
 

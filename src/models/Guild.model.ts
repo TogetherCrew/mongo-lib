@@ -1,5 +1,5 @@
 import { model } from 'mongoose';
 import { guildSchema } from './schemas';
-import { IGuild, GuildModel } from '../interfaces/Guild.interface';
+import { type IGuild, type GuildModel } from '../interfaces';
 
 export default model<IGuild, GuildModel>('Guild', guildSchema);

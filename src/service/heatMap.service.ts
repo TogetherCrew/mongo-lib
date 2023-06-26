@@ -1,5 +1,6 @@
-import { Connection } from 'mongoose';
-import { IHeatMap } from '../interfaces/HeatMap.interface';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import { type Connection } from 'mongoose';
+import { type IHeatMap } from '../interfaces';
 
 /**
  * Create heatmap
@@ -7,7 +8,7 @@ import { IHeatMap } from '../interfaces/HeatMap.interface';
  * @returns {Promise<IHeatMap>}
  */
 async function createHeatMap(connection: Connection, data: IHeatMap) {
-  return connection.models.HeatMap.create(data);
+  return await connection.models.HeatMap.create(data);
 }
 
 /**
@@ -16,7 +17,7 @@ async function createHeatMap(connection: Connection, data: IHeatMap) {
  * @returns {Promise<IHeatMap>}
  */
 async function createHeatMaps(connection: Connection, heatmaps: IHeatMap[]) {
-  return connection.models.HeatMap.insertMany(heatmaps.map((heatmap) => heatmap));
+  return await connection.models.HeatMap.insertMany(heatmaps.map((heatmap) => heatmap));
 }
 
 export default {

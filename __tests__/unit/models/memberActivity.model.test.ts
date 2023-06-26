@@ -1,5 +1,5 @@
 import { MemberActivity } from '../../../src/models';
-import { IMemberActivity } from '../../../src/interfaces/MemberActivity.interface';
+import { IMemberActivity } from '../../../src/interfaces';
 
 describe('MemberActivity model', () => {
   describe('MemberActivity validation', () => {
