@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IGuildMember, GuildMemberModel } from '../../interfaces/GuildMember.interface';
+import { IGuildMember, GuildMemberModel } from '../../interfaces';
 
 const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   discordId: {

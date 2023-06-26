@@ -1,5 +1,5 @@
 import { Guild } from '../../../src/models';
-import { IGuild } from '../../../src/interfaces/Guild.interface';
+import { IGuild } from '../../../src/interfaces';
 import moment from 'moment';
 
 describe('Guild model', () => {
@@ -22,7 +22,7 @@ describe('Guild model', () => {
         isInProgress: false,
         icon: null,
         window: [7, 1],
-        action: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2, 2, 1],
+        action: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2],
       };
     });
 

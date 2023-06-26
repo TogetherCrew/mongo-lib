@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/promise-function-async */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 function paginate(schema: any) {
   /**
    * @typedef {Object} QueryResult
@@ -41,6 +44,7 @@ function paginate(schema: any) {
 
     docsPromise = docsPromise.exec();
 
+    // eslint-disable-next-line @typescript-eslint/return-await
     return Promise.all([countPromise, docsPromise]).then((values) => {
       const [totalResults, results] = values;
       const totalPages = Math.ceil(totalResults / limit);

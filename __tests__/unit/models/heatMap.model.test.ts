@@ -1,5 +1,5 @@
 import { HeatMap } from '../../../src/models';
-import { IHeatMap } from '../../../src/interfaces/HeatMap.interface';
+import { IHeatMap } from '../../../src/interfaces';
 
 describe('HeatMap model', () => {
   describe('heatMap validation', () => {

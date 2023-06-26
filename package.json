@@ -1,14 +1,14 @@
 {
   "name": "@togethercrew.dev/db",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "All interactions with DB",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
-    "dev": "nodemon ./src/magic.ts",
+    "dev": "nodemon ./src/index.ts",
     "test": "jest --detectOpenHandles",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/unit/models/**/*.ts\" ",
     "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
