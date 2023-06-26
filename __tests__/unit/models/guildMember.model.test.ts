@@ -1,5 +1,5 @@
 import { GuildMember } from '../../../src/models';
-import { IGuildMember } from '../../../src/interfaces/GuildMember.interface';
+import { IGuildMember } from '../../../src/interfaces';
 import moment from 'moment';
 
 describe('guildMember model', () => {

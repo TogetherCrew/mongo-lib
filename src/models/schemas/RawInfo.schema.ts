@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { type IRawInfo } from '../../interfaces/RawInfo.interface';
+import { type IRawInfo } from '../../interfaces';
 import mongooseUniqueValidator from 'mongoose-unique-validator';
 
 const rawInfoSchema = new Schema<IRawInfo>({

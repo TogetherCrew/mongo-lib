@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { IHeatMap } from '../interfaces/HeatMap.interface';
+import { IHeatMap } from '../interfaces';
 
 /**
  * Create heatmap

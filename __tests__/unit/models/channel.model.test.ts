@@ -7,7 +7,7 @@ describe('Channel model', () => {
         beforeEach(() => {
             channel = {
                 id: '123',
-                name: 'Behzad#11',
+                name: 'channel1',
                 parent_id: 'admin',
             };
         });

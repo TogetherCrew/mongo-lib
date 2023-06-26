@@ -1,5 +1,5 @@
 import { User } from '../../../src/models';
-import { IUser } from '../../../src/interfaces/User.interface';
+import { IUser } from '../../../src/interfaces';
 
 describe('User model', () => {
   describe('User validation', () => {

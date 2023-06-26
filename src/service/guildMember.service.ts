@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { IGuildMember, IGuildMemberUpdateBody } from '../interfaces/GuildMember.interface';
+import { IGuildMember, IGuildMemberUpdateBody } from '../interfaces';
 
 /**
  * Create guildMember

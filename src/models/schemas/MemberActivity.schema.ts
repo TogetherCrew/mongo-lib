@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON, paginate } from './plugins';
-import { type IMemberActivity, type MemberActivityModel } from '../../interfaces/MemberActivity.interface';
+import { type IMemberActivity, type MemberActivityModel } from '../../interfaces';
 
 const MemberActivitySchema = new Schema<IMemberActivity, MemberActivityModel>({
   date: {

@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { paginate, toJSON } from './plugins';
-import { IGuild, GuildModel } from '../../interfaces/Guild.interface';
+import { IGuild, GuildModel } from '../../interfaces';
 
 const guildSchema = new Schema<IGuild, GuildModel>({
   guildId: {

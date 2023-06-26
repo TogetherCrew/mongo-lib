@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IChannel, ChannelModel } from '../../interfaces/Channel.interface';
+import { IChannel, ChannelModel } from '../../interfaces';
 
 const channelSchema = new Schema<IChannel, ChannelModel>({
     id: {
