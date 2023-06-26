@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/promise-function-async */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-async function paginate(schema: any): Promise<any> {
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+function paginate(schema: any) {
   /**
    * @typedef {Object} QueryResult
    * @property {Document[]} results - Results found
@@ -42,7 +44,8 @@ async function paginate(schema: any): Promise<any> {
 
     docsPromise = docsPromise.exec();
 
-    return await Promise.all([countPromise, docsPromise]).then(async (values) => {
+    // eslint-disable-next-line @typescript-eslint/return-await
+    return Promise.all([countPromise, docsPromise]).then((values) => {
       const [totalResults, results] = values;
       const totalPages = Math.ceil(totalResults / limit);
       const result = {
@@ -52,7 +55,7 @@ async function paginate(schema: any): Promise<any> {
         totalPages,
         totalResults,
       };
-      return await Promise.resolve(result);
+      return Promise.resolve(result);
     });
   };
 }
