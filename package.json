@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
-    "dev": "nodemon ./src/magic.ts",
+    "dev": "nodemon ./src/x.ts",
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepublishOnly": "npm test",
