@@ -7,3 +7,4 @@ export * from './GuildMember.interface';
 export * from './Channel.interface';
 export * from './Role.interface';
 export * from './User.interface';
+export * from './Discord.interface';
