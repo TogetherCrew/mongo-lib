@@ -59,7 +59,7 @@ const guildSchema = new Schema<IGuild, GuildModel>({
     default: [1, 1, 1, 4, 3, 5, 5, 4, 3, 3, 2],
     validate: {
       validator: function (arr: Array<number>) {
-        return arr.length === 11;
+        return arr.length === 13;
       },
       message: 'Action must be an array with exactly 11 numbers',
     },
