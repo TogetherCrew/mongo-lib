@@ -3,14 +3,14 @@ import { toJSON } from './plugins';
 import { IChannel, ChannelModel } from '../../interfaces';
 
 const channelSchema = new Schema<IChannel, ChannelModel>({
-  id: {
+  channelId: {
     type: String,
     unique: true,
   },
   name: {
     type: String,
   },
-  parent_id: {
+  parentId: {
     type: String,
   },
 });

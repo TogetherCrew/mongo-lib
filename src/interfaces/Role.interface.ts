@@ -2,7 +2,7 @@ import { type Snowflake } from 'discord.js';
 import { type Model } from 'mongoose';
 
 export interface IRole {
-  id: Snowflake;
+  roleId: Snowflake;
   name: string;
   color: number;
 }

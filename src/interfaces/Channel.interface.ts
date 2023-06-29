@@ -2,14 +2,14 @@ import { type Snowflake } from 'discord.js';
 import { type Model } from 'mongoose';
 
 export interface IChannel {
-  id: Snowflake;
+  channelId: Snowflake;
   name?: string | null;
-  parent_id?: string | null;
+  parentId?: string | null;
 }
 
 export interface IChannelUpdateBody {
   name?: string | null;
-  parent_id?: string | null;
+  parentId?: string | null;
 }
 
 export interface ChannelModel extends Model<IChannel> {

@@ -3,7 +3,7 @@ import { toJSON } from './plugins';
 import { IRole, RoleModel } from '../../interfaces';
 
 const roleSchema = new Schema<IRole, RoleModel>({
-  id: {
+  roleId: {
     type: String,
     unique: true,
   },
