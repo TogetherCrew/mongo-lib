@@ -6,9 +6,9 @@ describe('Channel model', () => {
     let channel: IChannel;
     beforeEach(() => {
       channel = {
-        id: '123',
+        channelId: '123',
         name: 'channel1',
-        parent_id: 'admin',
+        parentId: 'admin',
       };
     });
     test('should correctly validate a valid Channel data', async () => {

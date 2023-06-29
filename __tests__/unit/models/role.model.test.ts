@@ -6,7 +6,7 @@ describe('Role model', () => {
     let role: IRole;
     beforeEach(() => {
       role = {
-        id: '123',
+        roleId: '123',
         name: 'role1',
         color: 1234,
       };
