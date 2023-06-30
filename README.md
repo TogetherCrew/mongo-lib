@@ -129,7 +129,7 @@ memberactivities {
     all_dropped: Array<string>,
     all_joined: Array<string>,
     all_disengaged_were_newly_active: Array<string>,
-    all_disengaged_were_consistenly_active: Array<string>,
+    all_disengaged_were_consistently_active: Array<string>,
     all_disengaged_were_vital: Array<string>,
 }
 ```
