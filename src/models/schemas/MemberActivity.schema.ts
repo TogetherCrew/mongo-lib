@@ -76,7 +76,7 @@ const MemberActivitySchema = new Schema<IMemberActivity, MemberActivityModel>({
       type: String,
     },
   ],
-  all_disengaged_were_consistenly_active: [
+  all_disengaged_were_consistently_active: [
     {
       type: String,
     },

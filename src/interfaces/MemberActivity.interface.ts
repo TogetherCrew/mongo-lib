@@ -16,7 +16,7 @@ export interface IMemberActivity {
   all_joined?: string[];
   all_dropped?: string[];
   all_disengaged_were_newly_active?: string[];
-  all_disengaged_were_consistenly_active?: string[];
+  all_disengaged_were_consistently_active?: string[];
   all_disengaged_were_vital?: string[];
 }
 

@@ -43,6 +43,7 @@ describe('MemberActivity model', () => {
           'Ene SS Rawa#0855',
         ],
         all_still_active: [],
+        all_disengaged_were_consistently_active: [],
       };
     });
 
