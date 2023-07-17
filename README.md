@@ -131,6 +131,11 @@ memberactivities {
     all_disengaged_were_newly_active: Array<string>,
     all_disengaged_were_consistently_active: Array<string>,
     all_disengaged_were_vital: Array<string>,
+    all_lurker: Array<string>,
+    all_about_to_disengage: Array<string>,
+    all_disengaged_in_past: Array<string>,
+    all_joined_day: Array<string>,
+
 }
 ```
 
