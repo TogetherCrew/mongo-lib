@@ -86,6 +86,26 @@ const MemberActivitySchema = new Schema<IMemberActivity, MemberActivityModel>({
       type: String,
     },
   ],
+  all_lurker: [
+    {
+      type: String,
+    },
+  ],
+  all_about_to_disengage: [
+    {
+      type: String,
+    },
+  ],
+  all_disengaged_in_past: [
+    {
+      type: String,
+    },
+  ],
+  all_joined_day: [
+    {
+      type: String,
+    },
+  ],
 });
 
 // Plugins

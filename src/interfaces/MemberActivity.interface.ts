@@ -18,6 +18,11 @@ export interface IMemberActivity {
   all_disengaged_were_newly_active?: string[];
   all_disengaged_were_consistently_active?: string[];
   all_disengaged_were_vital?: string[];
+  all_lurker?: string[];
+  all_about_to_disengage?: string[];
+  all_disengaged_in_past?: string[];
+  all_joined_day?: string[];
+
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {
