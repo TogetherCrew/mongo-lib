@@ -22,7 +22,6 @@ export interface IMemberActivity {
   all_about_to_disengage?: string[];
   all_disengaged_in_past?: string[];
   all_joined_day?: string[];
-
 }
 
 export interface MemberActivityModel extends Model<IMemberActivity> {

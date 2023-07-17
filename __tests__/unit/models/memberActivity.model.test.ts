@@ -44,11 +44,10 @@ describe('MemberActivity model', () => {
         ],
         all_still_active: [],
         all_disengaged_were_consistently_active: [],
-        all_lurker: ["sepehr"],
-        all_about_to_disengage: ["sepehr"],
-        all_disengaged_in_past: ["sepehr"],
-        all_joined_day: ["sepehr"],
-
+        all_lurker: ['sepehr'],
+        all_about_to_disengage: ['sepehr'],
+        all_disengaged_in_past: ['sepehr'],
+        all_joined_day: ['sepehr'],
       };
     });
 
