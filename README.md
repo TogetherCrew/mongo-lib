@@ -105,7 +105,8 @@ GuildMember {
   roles: Snowflake[],
   joinedAt: Date | null,
   isBot?: boolean,
-  discriminator: string
+  discriminator?: string,
+  permissions?: string;
 }
 
 ```
@@ -136,16 +137,6 @@ memberactivities {
     all_disengaged_in_past: Array<string>,
     all_joined_day: Array<string>,
 
-}
-```
-
-### Schema for channels
-
-```ts
-Channels {
-    channel: string,
-    channelId: Snowflake,
-    last_update: Date
 }
 ```
 
@@ -191,6 +182,7 @@ Channel {
     id: Snowflake,
     name?: string | null,
     parent_id?: string | null,
+    permissionOverwrites?: IOverwrite[]
 }
 ```
 

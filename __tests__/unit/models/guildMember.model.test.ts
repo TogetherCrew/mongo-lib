@@ -14,6 +14,7 @@ describe('guildMember model', () => {
         avatar: '100',
         isBot: true,
         discriminator: 'str',
+        permissions: '137411140513354n',
       };
     });
     test('should correctly validate a valid guildMember data', async () => {
