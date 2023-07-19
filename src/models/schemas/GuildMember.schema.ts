@@ -27,6 +27,9 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   discriminator: {
     type: String,
   },
+  permissions: {
+    type: String,
+  },
 });
 
 // Plugins

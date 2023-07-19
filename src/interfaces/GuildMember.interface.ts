@@ -9,6 +9,7 @@ export interface IGuildMember {
   joinedAt: Date | null;
   isBot?: boolean;
   discriminator: string;
+  permissions?: string;
 }
 
 export interface IGuildMemberUpdateBody {
@@ -17,6 +18,7 @@ export interface IGuildMemberUpdateBody {
   roles?: Snowflake[];
   discriminator?: string;
   joinedAt?: Date | null;
+  permissions?: string;
 }
 
 export interface GuildMemberModel extends Model<IGuildMember> {
