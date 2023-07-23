@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IRole, RoleModel } from '../../interfaces';
+import { type IRole, type RoleModel } from '../../interfaces';
 
 const roleSchema = new Schema<IRole, RoleModel>({
   roleId: {
@@ -13,6 +13,15 @@ const roleSchema = new Schema<IRole, RoleModel>({
   color: {
     type: Number,
   },
+  deletedAt: {
+    type: Date,
+    default: null,
+  },
+});
+
+roleSchema.method('softDelete', function softDelete() {
+  this.deletedAt = Date.now();
+  this.save();
 });
 
 // Plugins

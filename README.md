@@ -107,6 +107,7 @@ GuildMember {
   isBot?: boolean,
   discriminator?: string,
   permissions?: string;
+  deletedAt?: Date | null
 }
 
 ```
@@ -182,7 +183,8 @@ Channel {
     id: Snowflake,
     name?: string | null,
     parent_id?: string | null,
-    permissionOverwrites?: IOverwrite[]
+    permissionOverwrites?: IOverwrite[],
+    deletedAt?: Date | null
 }
 ```
 
@@ -194,5 +196,6 @@ Role {
     id: Snowflake,
     name: string,
     color: number,
+    deletedAt?: Date | null
 }
 ```

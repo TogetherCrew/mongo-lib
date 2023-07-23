@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import validator from 'validator';
 import { toJSON, paginate } from './plugins';
-import { IUser, UserModel } from '../../interfaces';
+import { type IUser, type UserModel } from '../../interfaces';
 
 const userSchema = new Schema<IUser, UserModel>(
   {

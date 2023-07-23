@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IHeatMap } from '../../interfaces';
+import { type IHeatMap } from '../../interfaces';
 
 const heatMapSchema = new Schema<IHeatMap>({
   date: {

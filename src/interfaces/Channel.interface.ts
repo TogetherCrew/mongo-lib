@@ -13,14 +13,19 @@ export interface IChannel {
   name?: string | null;
   parentId?: string | null;
   permissionOverwrites?: IOverwrite[];
+  deletedAt?: Date | null;
 }
 
 export interface IChannelUpdateBody {
   name?: string | null;
   parentId?: string | null;
   permissionOverwrites?: IOverwrite[];
+  deletedAt?: Date | null;
+}
+export interface IChannelMethods {
+  softDelete: () => void;
 }
 
-export interface ChannelModel extends Model<IChannel> {
+export interface ChannelModel extends Model<IChannel, Record<string, unknown>, IChannelMethods> {
   paginate: (filter: object, options: object) => any;
 }

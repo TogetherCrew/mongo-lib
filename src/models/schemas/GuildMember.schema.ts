@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IGuildMember, GuildMemberModel } from '../../interfaces';
+import { type IGuildMember, type GuildMemberModel } from '../../interfaces';
 
 const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   discordId: {
@@ -30,6 +30,11 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   permissions: {
     type: String,
   },
+});
+
+guildMemberSchema.method('softDelete', function softDelete() {
+  this.deletedAt = Date.now();
+  this.save();
 });
 
 // Plugins
