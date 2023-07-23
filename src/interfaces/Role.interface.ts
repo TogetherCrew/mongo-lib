@@ -5,13 +5,13 @@ export interface IRole {
   roleId: Snowflake;
   name: string;
   color: number;
-  deletedAt?: Date | null
+  deletedAt?: Date | null;
 }
 
 export interface IRoleUpdateBody {
   name?: string;
   color?: number;
-  deletedAt?: Date | null
+  deletedAt?: Date | null;
 }
 
 export interface IRoleMethods {

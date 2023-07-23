@@ -15,9 +15,8 @@ const roleSchema = new Schema<IRole, RoleModel>({
   },
   deletedAt: {
     type: Date,
-    default: null
-  }
-
+    default: null,
+  },
 });
 
 roleSchema.method('softDelete', function softDelete() {

@@ -26,8 +26,8 @@ const channelSchema = new Schema<IChannel, ChannelModel>({
   ],
   deletedAt: {
     type: Date,
-    default: null
-  }
+    default: null,
+  },
 });
 
 channelSchema.method('softDelete', function softDelete() {
