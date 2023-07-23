@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { IChannel, ChannelModel } from '../../interfaces';
+import { type IChannel, type ChannelModel } from '../../interfaces';
 
 const channelSchema = new Schema<IChannel, ChannelModel>({
   channelId: {
@@ -24,6 +24,15 @@ const channelSchema = new Schema<IChannel, ChannelModel>({
       deny: String,
     },
   ],
+  deletedAt: {
+    type: Date,
+    default: null
+  }
+});
+
+channelSchema.method('softDelete', function softDelete() {
+  this.deletedAt = Date.now();
+  this.save();
 });
 
 // Plugins

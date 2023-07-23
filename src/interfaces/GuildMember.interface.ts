@@ -10,6 +10,7 @@ export interface IGuildMember {
   isBot?: boolean;
   discriminator: string;
   permissions?: string;
+  deletedAt?: Date | null
 }
 
 export interface IGuildMemberUpdateBody {
@@ -19,8 +20,14 @@ export interface IGuildMemberUpdateBody {
   discriminator?: string;
   joinedAt?: Date | null;
   permissions?: string;
+  deletedAt?: Date | null
 }
 
-export interface GuildMemberModel extends Model<IGuildMember> {
+export interface IGuildMemberMethods {
+  softDelete: () => void;
+}
+
+
+export interface GuildMemberModel extends Model<IGuildMember, Record<string, unknown>, IGuildMemberMethods> {
   paginate: (filter: object, options: object) => any;
 }

@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
 import { tokenTypes } from '../../config/tokens';
-import { IToken } from '../../interfaces';
+import { type IToken } from '../../interfaces';
 
 const tokenSchema = new Schema<IToken>(
   {
