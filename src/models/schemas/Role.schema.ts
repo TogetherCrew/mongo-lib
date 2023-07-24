@@ -19,9 +19,9 @@ const roleSchema = new Schema<IRole, RoleModel>({
   },
 });
 
-roleSchema.method('softDelete', function softDelete() {
+roleSchema.method('softDelete', async function softDelete() {
   this.deletedAt = Date.now();
-  this.save();
+  await this.save();
 });
 
 // Plugins

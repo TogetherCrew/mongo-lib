@@ -30,9 +30,9 @@ const channelSchema = new Schema<IChannel, ChannelModel>({
   },
 });
 
-channelSchema.method('softDelete', function softDelete() {
+channelSchema.method('softDelete', async function softDelete() {
   this.deletedAt = Date.now();
-  this.save();
+  await this.save();
 });
 
 // Plugins
