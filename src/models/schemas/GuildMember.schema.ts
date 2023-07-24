@@ -30,6 +30,10 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   permissions: {
     type: String,
   },
+  deletedAt: {
+    type: Date,
+    default: null,
+  },
 });
 
 guildMemberSchema.method('softDelete', async function softDelete() {
