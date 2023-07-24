@@ -32,9 +32,9 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
   },
 });
 
-guildMemberSchema.method('softDelete', function softDelete() {
+guildMemberSchema.method('softDelete', async function softDelete() {
   this.deletedAt = Date.now();
-  this.save();
+  await this.save();
 });
 
 // Plugins
