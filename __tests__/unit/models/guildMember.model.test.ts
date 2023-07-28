@@ -15,6 +15,9 @@ describe('guildMember model', () => {
         isBot: true,
         discriminator: 'str',
         permissions: '137411140513354n',
+        globalName: 'Behzad',
+        nickname: 'Beh',
+
       };
     });
     test('should correctly validate a valid guildMember data', async () => {
