@@ -106,8 +106,10 @@ GuildMember {
   joinedAt: Date | null,
   isBot?: boolean,
   discriminator?: string,
-  permissions?: string;
-  deletedAt?: Date | null
+  permissions?: string,
+  deletedAt?: Date | null,
+  globalName?: string | null;
+  nickname?: string | null;
 }
 
 ```

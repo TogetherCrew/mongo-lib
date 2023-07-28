@@ -11,6 +11,8 @@ export interface IGuildMember {
   discriminator: string;
   permissions?: string;
   deletedAt?: Date | null;
+  globalName?: string | null;
+  nickname?: string | null;
 }
 
 export interface IGuildMemberUpdateBody {
@@ -21,6 +23,8 @@ export interface IGuildMemberUpdateBody {
   joinedAt?: Date | null;
   permissions?: string;
   deletedAt?: Date | null;
+  globalName?: string | null;
+  nickname?: string | null;
 }
 
 export interface IGuildMemberMethods {
