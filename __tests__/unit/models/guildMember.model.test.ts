@@ -17,7 +17,6 @@ describe('guildMember model', () => {
         permissions: '137411140513354n',
         globalName: 'Behzad',
         nickname: 'Beh',
-
       };
     });
     test('should correctly validate a valid guildMember data', async () => {
