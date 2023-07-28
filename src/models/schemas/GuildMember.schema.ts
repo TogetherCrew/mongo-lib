@@ -34,6 +34,12 @@ const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
     type: Date,
     default: null,
   },
+  globalName: {
+    type: String,
+  },
+  nickname: {
+    type: String,
+  },
 });
 
 guildMemberSchema.method('softDelete', async function softDelete() {
