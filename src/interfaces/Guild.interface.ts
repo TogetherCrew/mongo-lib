@@ -5,12 +5,10 @@ export interface IGuild {
   guildId: Snowflake;
   user: Snowflake;
   name: string;
-  selectedChannels?: [
-    {
-      channelId: Snowflake;
-      channelName?: string;
-    },
-  ];
+  selectedChannels?: Array<{
+    channelId: Snowflake;
+    channelName?: string;
+  }>;
   period?: Date;
   connectedAt: Date;
   isDisconnected: boolean;
@@ -21,12 +19,10 @@ export interface IGuild {
 }
 
 export interface IGuildUpdateBody {
-  selectedChannels?: [
-    {
-      channelId: Snowflake;
-      channelName?: string;
-    },
-  ];
+  selectedChannels?: Array<{
+    channelId: Snowflake;
+    channelName?: string;
+  }>;
   period?: Date;
   isDisconnected?: boolean;
   isInProgress?: boolean;
