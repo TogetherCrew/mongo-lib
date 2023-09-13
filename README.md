@@ -71,6 +71,10 @@ User {
     flags?: number,
     premium_type?: number,
     public_flags?: number,
+    twitterIdStr?: string,
+    twitterScreenName?: string,
+    twitterProfileBannerUrl?: string,
+
 }
 ```
 
