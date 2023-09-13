@@ -19,12 +19,12 @@ export interface IUser {
   public_flags?: number;
   twitterIdStr?: string;
   twitterScreenName?: string;
-  twitterProfileBannerUrl?: string;
+  twitterProfileImageUrl?: string;
 }
 
 export interface IUserUpdateBody {
   avatar?: string;
-  twitterProfileBannerUrl?: string;
+  twitterProfileImageUrl?: string;
   twitterScreenName?: string;
   email?: string;
   verified?: boolean;

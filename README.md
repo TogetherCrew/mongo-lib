@@ -73,7 +73,7 @@ User {
     public_flags?: number,
     twitterIdStr?: string,
     twitterScreenName?: string,
-    twitterProfileBannerUrl?: string,
+    twitterProfileImageUrl?: string,
 
 }
 ```
