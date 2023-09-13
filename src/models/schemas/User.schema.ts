@@ -36,7 +36,6 @@ const userSchema = new Schema<IUser, UserModel>(
     twitterProfileBannerUrl: {
       type: String,
     },
-
   },
   { timestamps: true },
 );
