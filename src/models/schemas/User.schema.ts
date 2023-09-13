@@ -25,6 +25,18 @@ const userSchema = new Schema<IUser, UserModel>(
     avatar: {
       type: String,
     },
+    twitterIdStr: {
+      type: String,
+    },
+
+    twitterScreenName: {
+      type: String,
+    },
+
+    twitterProfileBannerUrl: {
+      type: String,
+    },
+
   },
   { timestamps: true },
 );
