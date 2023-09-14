@@ -25,6 +25,17 @@ const userSchema = new Schema<IUser, UserModel>(
     avatar: {
       type: String,
     },
+    twitterId: {
+      type: String,
+    },
+
+    twitterUsername: {
+      type: String,
+    },
+
+    twitterProfileImageUrl: {
+      type: String,
+    },
   },
   { timestamps: true },
 );
