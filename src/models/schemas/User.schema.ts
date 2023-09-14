@@ -36,6 +36,10 @@ const userSchema = new Schema<IUser, UserModel>(
     twitterProfileImageUrl: {
       type: String,
     },
+    twitterConnectedAt: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true },
 );

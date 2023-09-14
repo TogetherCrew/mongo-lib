@@ -20,6 +20,7 @@ export interface IUser {
   twitterId?: string | null;
   twitterUsername?: string | null;
   twitterProfileImageUrl?: string | null;
+  twitterConnectedAt: Date | null;
 }
 
 export interface IUserUpdateBody {
@@ -27,6 +28,7 @@ export interface IUserUpdateBody {
   twitterId?: string | null;
   twitterUsername?: string | null;
   twitterProfileImageUrl?: string | null;
+  twitterConnectedAt: Date | null;
   email?: string;
   verified?: boolean;
 }

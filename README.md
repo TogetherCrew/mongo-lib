@@ -74,6 +74,7 @@ User {
     twitterId?: string,
     twitterUsername?: string,
     twitterProfileImageUrl?: string,
+    twitterConnectedAt?:string,
 
 }
 ```
