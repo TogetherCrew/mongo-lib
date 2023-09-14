@@ -38,7 +38,6 @@ const userSchema = new Schema<IUser, UserModel>(
     },
     twitterConnectedAt: {
       type: Date,
-      default: null,
     },
   },
   { timestamps: true },
