@@ -25,11 +25,11 @@ const userSchema = new Schema<IUser, UserModel>(
     avatar: {
       type: String,
     },
-    twitterIdStr: {
+    twitterId: {
       type: String,
     },
 
-    twitterScreenName: {
+    twitterUsername: {
       type: String,
     },
 

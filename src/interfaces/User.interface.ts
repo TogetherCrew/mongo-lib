@@ -17,15 +17,16 @@ export interface IUser {
   flags?: number;
   premium_type?: number;
   public_flags?: number;
-  twitterIdStr?: string;
-  twitterScreenName?: string;
+  twitterId?: string;
+  twitterUsername?: string;
   twitterProfileImageUrl?: string;
 }
 
 export interface IUserUpdateBody {
   avatar?: string;
+  twitterId?: string;
+  twitterUsername?: string;
   twitterProfileImageUrl?: string;
-  twitterScreenName?: string;
   email?: string;
   verified?: boolean;
 }
