@@ -49,6 +49,7 @@ rawinfo {
   channelName: string | null,
   threadId: Snowflake | null,
   threadName: string | null,
+  isGeneratedByWebhook: boolean
 }
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "@togethercrew.dev/db",
-  "version": "2.4.99",
+  "version": "2.5.00",
   "description": "All interactions with DB",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

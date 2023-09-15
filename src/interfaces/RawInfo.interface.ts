@@ -15,6 +15,7 @@ export interface IRawInfo {
   channelName: string | null;
   threadId: Snowflake | null;
   threadName: string | null;
+  isGeneratedByWebhook?: boolean;
 }
 
 export interface IRawInfoUpdateBody {
@@ -23,6 +24,7 @@ export interface IRawInfoUpdateBody {
   threadId?: Snowflake | null;
   threadName?: string | null;
   content?: string;
+  isGeneratedByWebhook: boolean;
 }
 
 export interface RawInfoModel extends Model<IRawInfo> {
