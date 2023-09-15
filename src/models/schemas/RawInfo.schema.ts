@@ -51,6 +51,9 @@ const rawInfoSchema = new Schema<IRawInfo>({
   threadName: {
     type: String,
   },
+  isGeneratedByWebhook: {
+    type: Boolean,
+  },
 });
 
 // Plugins
