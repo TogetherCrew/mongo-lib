@@ -24,7 +24,7 @@ export interface IRawInfoUpdateBody {
   threadId?: Snowflake | null;
   threadName?: string | null;
   content?: string;
-  isGeneratedByWebhook: boolean;
+  isGeneratedByWebhook?: boolean;
 }
 
 export interface RawInfoModel extends Model<IRawInfo> {
