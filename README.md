@@ -1,6 +1,9 @@
-# dbComm
+# mongo-lib
 
-All interactions with DB
+Interactions with mongo database.
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/19418cb220f07e7b9292/maintainability)](https://codeclimate.com/github/TogetherCrew/mongo-lib/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/19418cb220f07e7b9292/test_coverage)](https://codeclimate.com/github/TogetherCrew/mongo-lib/test_coverage)
 
 ## Features
 
