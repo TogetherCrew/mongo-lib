@@ -21,6 +21,7 @@ export interface IUser {
   twitterUsername?: string | null;
   twitterProfileImageUrl?: string | null;
   twitterConnectedAt?: Date | null;
+  twitterIsInProgress?: boolean | null;
 }
 
 export interface IUserUpdateBody {
@@ -29,6 +30,7 @@ export interface IUserUpdateBody {
   twitterUsername?: string | null;
   twitterProfileImageUrl?: string | null;
   twitterConnectedAt?: Date | null;
+  twitterIsInProgress?: boolean | null;
   email?: string;
   verified?: boolean;
 }
