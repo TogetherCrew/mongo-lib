@@ -76,6 +76,7 @@ User {
     twitterUsername?: string,
     twitterProfileImageUrl?: string,
     twitterConnectedAt?:string,
+    twitterIsInProgress?:boolean
 
 }
 ```

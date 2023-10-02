@@ -39,6 +39,9 @@ const userSchema = new Schema<IUser, UserModel>(
     twitterConnectedAt: {
       type: Date,
     },
+    twitterIsInProgress: {
+      type: Boolean,
+    },
   },
   { timestamps: true },
 );
