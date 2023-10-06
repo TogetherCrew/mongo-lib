@@ -4,12 +4,12 @@ import { type Model, type Types } from 'mongoose';
 export interface IUser {
   discordId: Snowflake;
   email?: string;
-  communities?: [Types.ObjectId];
+  communities?: Types.ObjectId[];
 }
 
 export interface IUserUpdateBody {
   email?: string;
-  communities?: [Types.ObjectId];
+  communities?: Types.ObjectId[];
 }
 
 export interface UserModel extends Model<IUser> {

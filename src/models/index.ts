@@ -7,5 +7,5 @@ import GuildMember from './GuildMember.model';
 import Channel from './Channel.model';
 import Role from './Role.model';
 import Community from './Community.model';
-import Platfrom from './Platfrom.model';
-export { User, Token, HeatMap, RawInfo, MemberActivity, GuildMember, Channel, Role, Community, Platfrom };
+import Platform from './Platfrom.model';
+export { User, Token, HeatMap, RawInfo, MemberActivity, GuildMember, Channel, Role, Community, Platform };
