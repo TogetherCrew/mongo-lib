@@ -9,7 +9,7 @@
     "start": "node ./dist/index.js",
     "dev": "nodemon ./src/index.ts",
     "test": "jest --detectOpenHandles",
-    "format": "prettier --write \"src/**/*.ts\" \"__tests__/unit/models/**/*.ts\" ",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"*.ts\" ",
     "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
