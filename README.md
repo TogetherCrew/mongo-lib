@@ -32,56 +32,39 @@ docker compose -f docker-compose.test.yml up --exit-code-from app --build
 
 Note: This will create a /coverage folder where you can review the coverage details.
 
-### Schema for rawinfo
 
-```ts
-rawinfo {
-  type: number,
-  author: Snowflake,
-  content: string,
-  createdDate: Date,
-  user_mentions: Array<Snowflake>,
-  role_mentions: Array<Snowflake>,
-  reactions: Array<Snowflake>,
-  replied_user: Snowflake | null | undefined,
-  messageId: Snowflake,
-  channelId: Snowflake,
-  channelName: string | null,
-  threadId: Snowflake | null,
-  threadName: string | null,
-  isGeneratedByWebhook: boolean
-}
-```
-
-### Schema for user
+### User interface
 
 ```ts
 User {
-    discordId: Snowflake,
-    username?: string,
-    discriminator?: string,
-    avatar?: string,
-    bot?: boolean,
-    system?: boolean,
-    mfa_enabled?: boolean,
-    banner?: string,
-    accent_color?: number
-    locale?: string,
-    verified?: boolean
-    email?: string,
-    flags?: number,
-    premium_type?: number,
-    public_flags?: number,
-    twitterId?: string,
-    twitterUsername?: string,
-    twitterProfileImageUrl?: string,
-    twitterConnectedAt?:string,
-    twitterIsInProgress?:boolean
-
+  discordId: Snowflake,
+  email?: string,
+  communities?: [Types.ObjectId]
 }
 ```
 
-### Schema for heatmap
+### Community interface
+
+```ts
+Community {
+    name: string,
+    avatarURL?: string,
+    users?: [Types.ObjectId],
+    platforms?: [Types.ObjectId],
+}
+```
+
+### Platform interface
+
+```ts
+Platform {
+    name: string,
+    community: Types.ObjectId,
+    metadata?: Record<string, any>, // dynamic object since structure can change
+    disconnectedAt?: Date | null,
+}
+```
+### Heatmap interface
 
 ```ts
 HeatMap {
@@ -102,7 +85,7 @@ HeatMap {
 }
 ```
 
-### Schema for guildMembers
+### GuildMembers interface
 
 ```ts
 GuildMember {
@@ -121,7 +104,52 @@ GuildMember {
 
 ```
 
-### Schema for memberactivities
+### Channel interface
+
+```ts
+Channel {
+    id: Snowflake,
+    name?: string | null,
+    parent_id?: string | null,
+    permissionOverwrites?: IOverwrite[],
+    deletedAt?: Date | null
+}
+```
+
+
+### Role interface
+
+```ts
+Role {
+    id: Snowflake,
+    name: string,
+    color: number,
+    deletedAt?: Date | null
+}
+```
+
+### Rawinfo interface
+
+```ts
+rawinfo {
+  type: number,
+  author: Snowflake,
+  content: string,
+  createdDate: Date,
+  user_mentions: Array<Snowflake>,
+  role_mentions: Array<Snowflake>,
+  reactions: Array<Snowflake>,
+  replied_user: Snowflake | null | undefined,
+  messageId: Snowflake,
+  channelId: Snowflake,
+  channelName: string | null,
+  threadId: Snowflake | null,
+  threadName: string | null,
+  isGeneratedByWebhook: boolean
+}
+```
+
+### Memberactivities interface
 
 ```ts
 memberactivities {
@@ -150,7 +178,7 @@ memberactivities {
 }
 ```
 
-### Schema for token
+### Token interface
 
 ```ts
 Token {
@@ -159,52 +187,5 @@ Token {
     type: string,
     expires: Date,
     blacklisted?: boolean
-}
-```
-
-### Schema for guild
-
-```ts
-Guild {
-    guildId: Snowflake,
-    user: Snowflake,
-    name?: string,
-    connectedAt?: Date,
-    isInProgress?: Boolean,
-    isDisconnected?: Boolean,
-    icon?: string,
-    selectedChannels?: Array<objects> [
-        {
-            channelId: Snowflake,
-            channelName?: string
-        }
-    ],
-    period?: Date,
-    aciton: Array<number>,
-    window: Array<number>
-}
-```
-
-### Schema for channel
-
-```ts
-Channel {
-    id: Snowflake,
-    name?: string | null,
-    parent_id?: string | null,
-    permissionOverwrites?: IOverwrite[],
-    deletedAt?: Date | null
-}
-```
-
-
-### Schema for role
-
-```ts
-Role {
-    id: Snowflake,
-    name: string,
-    color: number,
-    deletedAt?: Date | null
 }
 ```
