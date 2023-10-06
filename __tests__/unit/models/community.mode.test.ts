@@ -13,7 +13,7 @@ describe('Community model', () => {
         name: 'community1',
         users: [new Types.ObjectId()],
         avatarURL: 'avatarURL',
-        platforms: [new Types.ObjectId(), new Types.ObjectId()]
+        platforms: [new Types.ObjectId(), new Types.ObjectId()],
       };
     });
 

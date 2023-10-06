@@ -6,7 +6,6 @@ import { Types } from 'mongoose';
 // setupTestDB();
 
 describe('User model', () => {
-
   describe('User validation', () => {
     let user: IUser;
 
@@ -14,7 +13,7 @@ describe('User model', () => {
       user = {
         discordId: '1234',
         email: 'email@yahoo.com',
-        communities: [new Types.ObjectId(), new Types.ObjectId()]
+        communities: [new Types.ObjectId(), new Types.ObjectId()],
       };
     });
 

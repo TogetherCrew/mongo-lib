@@ -40,4 +40,3 @@ userSchema.plugin(toJSON);
 userSchema.plugin(paginate);
 
 export default userSchema;
-

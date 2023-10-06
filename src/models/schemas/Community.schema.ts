@@ -35,7 +35,6 @@ const communitySchema = new Schema<ICommunity, CommunityModel>(
 communitySchema.plugin(toJSON);
 communitySchema.plugin(paginate);
 
-
 communitySchema.pre('remove', async function (this: Document) {
   const communityId = this._id;
 

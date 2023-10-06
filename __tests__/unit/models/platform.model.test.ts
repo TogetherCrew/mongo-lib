@@ -14,9 +14,9 @@ describe('Platform model', () => {
         community: new Types.ObjectId(),
         metadata: {
           guildId: 'guildId',
-          selectedChannels: ['c1', 'c2']
+          selectedChannels: ['c1', 'c2'],
         },
-        disconnectedAt: null
+        disconnectedAt: null,
       };
     });
 
@@ -32,7 +32,6 @@ describe('Platform model', () => {
 
     //     const platform = new Platform({ name: 'platform', community: community._id });
     //     await platform.save();
-
 
     //     community.platforms?.push(platform._id);
     //     await community.save();

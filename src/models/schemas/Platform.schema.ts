@@ -36,4 +36,3 @@ platformSchema.pre('remove', async function (this: Document) {
 });
 
 export default platformSchema;
-
