@@ -19,29 +19,12 @@ const userSchema = new Schema<IUser, UserModel>(
       },
       unique: true,
     },
-    verified: {
-      type: Boolean,
-    },
-    avatar: {
-      type: String,
-    },
-    twitterId: {
-      type: String,
-    },
-
-    twitterUsername: {
-      type: String,
-    },
-
-    twitterProfileImageUrl: {
-      type: String,
-    },
-    twitterConnectedAt: {
-      type: Date,
-    },
-    twitterIsInProgress: {
-      type: Boolean,
-    },
+    communities: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Community',
+      },
+    ],
   },
   { timestamps: true },
 );

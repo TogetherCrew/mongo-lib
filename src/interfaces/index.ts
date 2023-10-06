@@ -1,4 +1,3 @@
-export * from './Guild.interface';
 export * from './RawInfo.interface';
 export * from './HeatMap.interface';
 export * from './Token.interface';
@@ -8,3 +7,5 @@ export * from './Channel.interface';
 export * from './Role.interface';
 export * from './User.interface';
 export * from './Discord.interface';
+export * from './Community.interface';
+export * from './Platfrom.interface';
