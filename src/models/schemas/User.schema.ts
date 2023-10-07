@@ -1,6 +1,7 @@
-import { Schema } from 'mongoose';
+import { Schema, type Document } from 'mongoose';
 import validator from 'validator';
 import { toJSON, paginate } from './plugins';
+import { Community } from '../index';
 import { type IUser, type UserModel } from '../../interfaces';
 
 const userSchema = new Schema<IUser, UserModel>(
@@ -28,6 +29,11 @@ const userSchema = new Schema<IUser, UserModel>(
   },
   { timestamps: true },
 );
+
+userSchema.pre('remove', async function (this: Document) {
+  const userId = this._id;
+  await Community.updateMany({ users: userId }, { $pull: { users: userId } });
+});
 
 // Plugins
 userSchema.plugin(toJSON);
