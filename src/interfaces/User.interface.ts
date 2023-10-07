@@ -1,38 +1,15 @@
 import { type Snowflake } from 'discord.js';
-import { type Model } from 'mongoose';
+import { type Model, type Types } from 'mongoose';
 
 export interface IUser {
   discordId: Snowflake;
-  username?: string;
-  discriminator?: string;
-  avatar?: string;
-  bot?: boolean;
-  system?: boolean;
-  mfa_enabled?: boolean;
-  banner?: string;
-  accent_color?: number;
-  locale?: string;
-  verified?: boolean;
   email?: string;
-  flags?: number;
-  premium_type?: number;
-  public_flags?: number;
-  twitterId?: string | null;
-  twitterUsername?: string | null;
-  twitterProfileImageUrl?: string | null;
-  twitterConnectedAt?: Date | null;
-  twitterIsInProgress?: boolean | null;
+  communities?: [Types.ObjectId];
 }
 
 export interface IUserUpdateBody {
-  avatar?: string;
-  twitterId?: string | null;
-  twitterUsername?: string | null;
-  twitterProfileImageUrl?: string | null;
-  twitterConnectedAt?: Date | null;
-  twitterIsInProgress?: boolean | null;
   email?: string;
-  verified?: boolean;
+  communities?: [Types.ObjectId];
 }
 
 export interface UserModel extends Model<IUser> {
