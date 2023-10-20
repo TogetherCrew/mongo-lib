@@ -20,8 +20,6 @@ describe('User model', () => {
     test('should correctly validate a valid user', async () => {
       await expect(new User(user).validate()).resolves.toBeUndefined();
     });
-
-
   });
 
   // describe('Cascade deletes', () => {
