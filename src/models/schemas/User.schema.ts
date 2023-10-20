@@ -1,5 +1,4 @@
 import { Schema, type Document } from 'mongoose';
-import validator from 'validator';
 import { toJSON, paginate } from './plugins';
 import { Community } from '../index';
 import { type IUser, type UserModel } from '../../interfaces';
@@ -15,10 +14,6 @@ const userSchema = new Schema<IUser, UserModel>(
       type: String,
       trim: true,
       lowercase: true,
-      validate(value: string) {
-        if (!validator.isEmail(value)) throw new Error('Email Address is not valid');
-      },
-      unique: true,
     },
     communities: [
       {
