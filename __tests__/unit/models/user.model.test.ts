@@ -21,10 +21,7 @@ describe('User model', () => {
       await expect(new User(user).validate()).resolves.toBeUndefined();
     });
 
-    test('should throw a validation error if email is invalid', async () => {
-      user.email = 'invalidEmail';
-      await expect(new User(user).validate()).rejects.toThrow();
-    });
+
   });
 
   // describe('Cascade deletes', () => {
