@@ -43,6 +43,7 @@ User {
   discordId: Snowflake,
   email?: string,
   communities?: [Types.ObjectId]
+  tcaAt?: Date;
 }
 ```
 
@@ -54,6 +55,7 @@ Community {
     avatarURL?: string,
     users?: [Types.ObjectId],
     platforms?: [Types.ObjectId],
+    tcaAt?: Date;
 }
 ```
 
@@ -65,6 +67,7 @@ Platform {
     community: Types.ObjectId,
     metadata?: Record<string, any>, // dynamic object since structure can change
     disconnectedAt?: Date | null,
+    isInProgress?: boolean;
 }
 ```
 ### Heatmap interface

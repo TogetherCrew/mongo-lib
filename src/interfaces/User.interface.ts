@@ -5,11 +5,13 @@ export interface IUser {
   discordId: Snowflake;
   email?: string;
   communities?: Types.ObjectId[];
+  tcaAt?: Date;
 }
 
 export interface IUserUpdateBody {
   email?: string;
   communities?: Types.ObjectId[];
+  tcaAt?: Date;
 }
 
 export interface UserModel extends Model<IUser> {
