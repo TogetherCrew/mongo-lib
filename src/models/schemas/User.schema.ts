@@ -21,6 +21,9 @@ const userSchema = new Schema<IUser, UserModel>(
         ref: 'Community',
       },
     ],
+    tcaAt: {
+      type: Date,
+    },
   },
   { timestamps: true },
 );

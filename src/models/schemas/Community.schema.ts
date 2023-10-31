@@ -26,6 +26,9 @@ const communitySchema = new Schema<ICommunity, CommunityModel>(
         ref: 'Platform',
       },
     ],
+    tcaAt: {
+      type: Date,
+    },
   },
 
   { timestamps: true },

@@ -5,6 +5,7 @@ export interface ICommunity {
   avatarURL?: string;
   users: Types.ObjectId[];
   platforms?: Types.ObjectId[];
+  tcaAt?: Date;
 }
 
 export interface ICommunityUpdateBody {
@@ -12,6 +13,7 @@ export interface ICommunityUpdateBody {
   avatarURL?: string;
   users?: Types.ObjectId[];
   platforms?: Types.ObjectId[];
+  tcaAt?: Date;
 }
 
 export interface CommunityModel extends Model<ICommunity> {

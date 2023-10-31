@@ -21,6 +21,10 @@ const platformSchema = new Schema<IPlatform, PlatformModel>(
       type: Date,
       default: null,
     },
+    isInProgress: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   { timestamps: true },
