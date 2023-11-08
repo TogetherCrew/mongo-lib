@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { toJSON, paginate } from './plugins';
 import { type IRole, type RoleModel } from '../../interfaces';
 
 const roleSchema = new Schema<IRole, RoleModel>({
@@ -26,5 +26,6 @@ roleSchema.method('softDelete', async function softDelete() {
 
 // Plugins
 roleSchema.plugin(toJSON);
+roleSchema.plugin(paginate);
 
 export default roleSchema;

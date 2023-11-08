@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { toJSON, paginate } from './plugins';
 import { type IHeatMap } from '../../interfaces';
 
 const heatMapSchema = new Schema<IHeatMap>({
@@ -85,5 +85,6 @@ const heatMapSchema = new Schema<IHeatMap>({
 
 // Plugins
 heatMapSchema.plugin(toJSON);
+heatMapSchema.plugin(paginate);
 
 export default heatMapSchema;

@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { toJSON, paginate } from './plugins';
 import { type IChannel, type ChannelModel } from '../../interfaces';
 
 const channelSchema = new Schema<IChannel, ChannelModel>({
@@ -37,5 +37,6 @@ channelSchema.method('softDelete', async function softDelete() {
 
 // Plugins
 channelSchema.plugin(toJSON);
+channelSchema.plugin(paginate);
 
 export default channelSchema;
