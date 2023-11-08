@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { toJSON } from './plugins';
+import { toJSON, paginate } from './plugins';
 import { type IGuildMember, type GuildMemberModel } from '../../interfaces';
 
 const guildMemberSchema = new Schema<IGuildMember, GuildMemberModel>({
@@ -49,5 +49,6 @@ guildMemberSchema.method('softDelete', async function softDelete() {
 
 // Plugins
 guildMemberSchema.plugin(toJSON);
+guildMemberSchema.plugin(paginate);
 
 export default guildMemberSchema;
