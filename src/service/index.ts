@@ -1,3 +1,3 @@
-import databaseService from './database.service';
+import DatabaseManager from './databaseManager';
 
-export { databaseService };
+export { DatabaseManager };

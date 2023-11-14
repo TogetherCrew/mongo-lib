@@ -6,7 +6,7 @@ import {
   guildMemberSchema,
   channelSchema,
   roleSchema,
-} from '../models/schemas/';
+} from '../models/schemas';
 import {
   type IHeatMap,
   type IRawInfo,
