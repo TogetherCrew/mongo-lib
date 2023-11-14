@@ -44,7 +44,6 @@ export default class DatabaseManager {
       db.model<IChannel>('Channel', channelSchema);
       db.model<IRole>('Role', roleSchema);
       this.modelCache[db.name] = true;
-
     }
   }
 }
