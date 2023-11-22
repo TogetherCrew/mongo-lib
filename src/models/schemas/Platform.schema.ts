@@ -21,6 +21,10 @@ const platformSchema = new Schema<IPlatform, PlatformModel>(
       type: Date,
       default: null,
     },
+    connectedAt: {
+      type: Date,
+      default: new Date(),
+    },
     isInProgress: {
       type: Boolean,
       default: true,
