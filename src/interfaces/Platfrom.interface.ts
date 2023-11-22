@@ -6,6 +6,7 @@ export interface IPlatform {
   metadata?: Record<string, any>; // dynamic object since structure can change
   disconnectedAt?: Date | null;
   isInProgress?: boolean;
+  connectedAt?: Date;
 }
 
 export interface IPlatformUpdateBody {
