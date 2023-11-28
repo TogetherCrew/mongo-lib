@@ -23,7 +23,7 @@ const platformSchema = new Schema<IPlatform, PlatformModel>(
     },
     isInProgress: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
