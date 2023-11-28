@@ -67,7 +67,7 @@ Platform {
     community: Types.ObjectId,
     metadata?: Record<string, any>, // dynamic object since structure can change
     disconnectedAt?: Date | null,
-    isInProgress?: boolean;
+    connectedAt?: Date | null;
 }
 ```
 ### Heatmap interface
