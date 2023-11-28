@@ -5,7 +5,6 @@ export interface IPlatform {
   community: Types.ObjectId;
   metadata?: Record<string, any>; // dynamic object since structure can change
   disconnectedAt?: Date | null;
-  isInProgress?: boolean;
 }
 
 export interface IPlatformUpdateBody {
@@ -13,7 +12,6 @@ export interface IPlatformUpdateBody {
   community?: Types.ObjectId;
   metadata?: Record<string, any>;
   disconnectedAt?: Date | null;
-  isInProgress?: boolean;
 }
 
 export interface PlatformModel extends Model<IPlatform> {
