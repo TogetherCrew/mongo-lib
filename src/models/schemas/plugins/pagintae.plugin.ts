@@ -39,17 +39,6 @@ function paginate(schema: any) {
       sort = '-createdAt';
     }
 
-    if (options.populate) {
-      options.populate.split(',').forEach((populateOption: string) => {
-        docsPromise = docsPromise.populate(
-          populateOption
-            .split('.')
-            .reverse()
-            .reduce((a: any, b: string) => ({ path: b, populate: a }), {}),
-        );
-      });
-    }
-
     const countPromise = this.countDocuments(filter).exec();
     let docsPromise = this.find(filter).sort(sort).skip(skip).limit(limit);
 
