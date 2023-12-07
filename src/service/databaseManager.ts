@@ -28,14 +28,14 @@ export default class DatabaseManager {
     return DatabaseManager.instance;
   }
 
-  public getTenantDb(tenantId: Snowflake): Connection {
+  public async getTenantDb(tenantId: Snowflake): Promise<Connection> {
     const dbName = tenantId;
     const db = mongoose.connection.useDb(dbName, { useCache: true });
-    this.setupModels(db);
+    await this.setupModels(db);
     return db;
   }
 
-  private setupModels(db: Connection): void {
+  private async setupModels(db: Connection): Promise<void> {
     if (!this.modelCache[db.name]) {
       db.model<IHeatMap>('HeatMap', heatMapSchema);
       db.model<IRawInfo>('RawInfo', rawInfoSchema);
