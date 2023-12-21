@@ -189,7 +189,7 @@ memberactivities {
 ```ts
 Token {
     token: string,
-    user: Snowflake,
+    user: Types.ObjectId,
     type: string,
     expires: Date,
     blacklisted?: boolean

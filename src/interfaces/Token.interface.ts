@@ -1,9 +1,9 @@
-import { type Snowflake } from 'discord.js';
-import { type Model } from 'mongoose';
+import { type Model, type Types } from 'mongoose';
+
 
 export interface IToken {
   token: string;
-  user: Snowflake;
+  user: Types.ObjectId;
   type: string;
   expires: Date;
   blacklisted?: boolean;
