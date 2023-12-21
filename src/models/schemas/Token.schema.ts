@@ -11,7 +11,7 @@ const tokenSchema = new Schema<IToken>(
       index: true,
     },
     user: {
-      type: String,
+      type: Schema.Types.ObjectId,
       ref: 'User',
       required: true,
     },

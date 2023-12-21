@@ -1,5 +1,6 @@
 import { Token } from '../../../src/models';
 import { IToken } from '../../../src/interfaces';
+import { Types } from 'mongoose';
 import moment from 'moment';
 
 describe('Token model', () => {
@@ -7,7 +8,7 @@ describe('Token model', () => {
     let token: IToken;
     beforeEach(() => {
       token = {
-        user: '1234',
+        user: new Types.ObjectId(),
         token: '4321',
         type: 'access',
         expires: moment('2022-02-01 08:30:26.127Z').toDate(),
