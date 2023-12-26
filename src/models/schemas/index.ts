@@ -8,6 +8,7 @@ import channelSchema from './Channel.schema';
 import roleSchema from './Role.schema';
 import communitySchema from './Community.schema';
 import platformSchema from './Platform.schema';
+import announcementSchema from './Announcement.schema';
 
 export {
   userSchema,
@@ -20,4 +21,5 @@ export {
   roleSchema,
   communitySchema,
   platformSchema,
+  announcementSchema,
 };

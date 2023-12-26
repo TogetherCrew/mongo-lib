@@ -9,3 +9,4 @@ export * from './User.interface';
 export * from './Discord.interface';
 export * from './Community.interface';
 export * from './Platfrom.interface';
+export * from './Announcement.interface';
