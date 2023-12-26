@@ -8,6 +8,7 @@ const announcementDataSchema = new Schema(
     platform: {
       type: Schema.Types.ObjectId,
       required: true,
+      ref: 'Platform',
     },
     template: {
       type: String,
@@ -25,6 +26,7 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
     community: {
       type: Schema.Types.ObjectId,
       required: true,
+      ref: 'Community',
     },
     title: {
       type: String,
