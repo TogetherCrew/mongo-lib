@@ -6,6 +6,7 @@ interface IAnnouncementData<T> {
   platform: Types.ObjectId;
   template: string;
   options: T;
+  deletedAt?: Date;
 }
 
 export interface IAnnouncement {

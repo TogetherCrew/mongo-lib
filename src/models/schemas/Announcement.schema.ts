@@ -17,6 +17,7 @@ const announcementDataSchema = new Schema(
     options: {
       type: Schema.Types.Mixed,
     },
+    deletedAt: Date,
   },
   { _id: false },
 );
