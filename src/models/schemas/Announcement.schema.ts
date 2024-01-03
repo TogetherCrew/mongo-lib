@@ -58,7 +58,7 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
 );
 
 AnnouncementSchema.method('softDelete', async function softDelete(userId: ObjectId) {
-  if(this?.logicalStaffBeforeSoftDelete !== undefined){
+  if (this?.logicalStaffBeforeSoftDelete !== undefined) {
     await this.logicalStaffBeforeSoftDelete(this);
   }
 
@@ -68,10 +68,10 @@ AnnouncementSchema.method('softDelete', async function softDelete(userId: Object
 });
 
 AnnouncementSchema.pre('remove', async function (this: any) {
-  if(this?.logicalStaffBeforeRemove !== undefined){
+  if (this?.logicalStaffBeforeRemove !== undefined) {
     await this.logicalStaffBeforeRemove(this);
   }
-})
+});
 
 // Plugins
 AnnouncementSchema.plugin(toJSON);

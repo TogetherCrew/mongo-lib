@@ -37,10 +37,7 @@ platformSchema.plugin(paginate);
 platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
   await Community.updateOne({ platforms: platformId }, { $pull: { platforms: platformId } });
-  await Announcement.updateMany(
-    { "data.platform": platformId },
-    { $pull: { data: { platform : platformId} } }
-  );
+  await Announcement.updateMany({ 'data.platform': platformId }, { $pull: { data: { platform: platformId } } });
 });
 
 export default platformSchema;
