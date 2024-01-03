@@ -1,6 +1,6 @@
 import { type Model, type Types } from 'mongoose';
 
-type IDiscordOptions = { channelIds: string[] } | { roleIds: string[] } | { userIds: string[] };
+type IDiscordOptions = { channelIds?: string[] } | { roleIds?: string[] } | { usernames?: string[] };
 
 interface IAnnouncementData<T> {
   platform: Types.ObjectId;
