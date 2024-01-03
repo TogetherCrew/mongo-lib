@@ -17,6 +17,7 @@ const announcementDataSchema = new Schema(
     options: {
       type: Schema.Types.Mixed,
     },
+    deletedAt: Date,
   },
   { _id: false },
 );
@@ -57,9 +58,19 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
 );
 
 AnnouncementSchema.method('softDelete', async function softDelete(userId: ObjectId) {
+  if (this?.logicalStaffBeforeSoftDelete !== undefined) {
+    await this.logicalStaffBeforeSoftDelete(this);
+  }
+
   this.deletedAt = Date.now();
   this.deletedBy = userId;
   await this.save();
+});
+
+AnnouncementSchema.pre('remove', async function (this: any) {
+  if (this?.logicalStaffBeforeRemove !== undefined) {
+    await this.logicalStaffBeforeRemove(this);
+  }
 });
 
 // Plugins

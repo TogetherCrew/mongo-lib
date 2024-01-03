@@ -6,6 +6,7 @@ interface IAnnouncementData<T> {
   platform: Types.ObjectId;
   template: string;
   options: T;
+  deletedAt?: Date;
 }
 
 export interface IAnnouncement {
@@ -25,6 +26,8 @@ export interface IAnnouncement {
 
 export interface IAnnouncementMethods {
   softDelete: () => void;
+  logicalStaffBeforeSoftDelete?: (document: IAnnouncement) => void;
+  logicalStaffBeforeRemove?: (document: IAnnouncement) => void;
 }
 
 export interface AnnouncementModel extends Model<IAnnouncement, Record<string, unknown>, IAnnouncementMethods> {
