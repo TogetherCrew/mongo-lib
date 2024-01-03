@@ -26,6 +26,8 @@ export interface IAnnouncement {
 
 export interface IAnnouncementMethods {
   softDelete: () => void;
+  logicalStaffBeforeSoftDelete?: (document: IAnnouncement) => void;
+  logicalStaffBeforeRemove?: (document: IAnnouncement) => void;
 }
 
 export interface AnnouncementModel extends Model<IAnnouncement, Record<string, unknown>, IAnnouncementMethods> {

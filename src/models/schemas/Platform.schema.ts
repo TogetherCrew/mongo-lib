@@ -1,7 +1,7 @@
 import { Schema, type Document } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IPlatform, type PlatformModel } from '../../interfaces';
-import { Community } from '../index';
+import { Announcement, Community } from '../index';
 
 const platformSchema = new Schema<IPlatform, PlatformModel>(
   {
@@ -37,6 +37,10 @@ platformSchema.plugin(paginate);
 platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
   await Community.updateOne({ platforms: platformId }, { $pull: { platforms: platformId } });
+  await Announcement.updateMany(
+    { "data.platform": platformId },
+    { $pull: { data: { platform : platformId} } }
+  );
 });
 
 export default platformSchema;
