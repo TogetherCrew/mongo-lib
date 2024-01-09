@@ -2,6 +2,7 @@ import { Schema } from 'mongoose';
 import { type IAnnouncement, type AnnouncementModel } from '../../interfaces/Announcement.interface';
 import { type ObjectId } from 'mongodb';
 import { paginate, toJSON } from './plugins';
+import { EventEmitter } from 'events';
 
 const announcementDataSchema = new Schema(
   {
@@ -57,20 +58,17 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
   { timestamps: true },
 );
 
+const announcementEmitter = new EventEmitter();
 AnnouncementSchema.method('softDelete', async function softDelete(userId: ObjectId) {
-  if (this?.logicalStaffBeforeSoftDelete !== undefined) {
-    await this.logicalStaffBeforeSoftDelete(this);
-  }
-
+  announcementEmitter.emit('announcement:softDelete', this);
+  
   this.deletedAt = Date.now();
   this.deletedBy = userId;
   await this.save();
 });
 
 AnnouncementSchema.pre('remove', async function (this: any) {
-  if (this?.logicalStaffBeforeRemove !== undefined) {
-    await this.logicalStaffBeforeRemove(this);
-  }
+  announcementEmitter.emit('announcement:remove', this);
 });
 
 // Plugins
@@ -78,3 +76,4 @@ AnnouncementSchema.plugin(toJSON);
 AnnouncementSchema.plugin(paginate);
 
 export default AnnouncementSchema;
+export { announcementEmitter };
