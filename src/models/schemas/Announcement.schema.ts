@@ -61,7 +61,7 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
 const announcementEmitter = new EventEmitter();
 AnnouncementSchema.method('softDelete', async function softDelete(userId: ObjectId) {
   announcementEmitter.emit('announcement:softDelete', this);
-  
+
   this.deletedAt = Date.now();
   this.deletedBy = userId;
   await this.save();
