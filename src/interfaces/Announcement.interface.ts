@@ -1,4 +1,4 @@
-import { type Model, type Types } from 'mongoose';
+import { type Model, type Types, type ObjectId } from 'mongoose';
 
 type IDiscordOptions = { channelIds?: string[] } | { roleIds?: string[] } | { usernames?: string[] };
 
@@ -25,9 +25,7 @@ export interface IAnnouncement {
 }
 
 export interface IAnnouncementMethods {
-  softDelete: () => void;
-  logicalStaffBeforeSoftDelete?: (document: IAnnouncement) => void;
-  logicalStaffBeforeRemove?: (document: IAnnouncement) => void;
+  softDelete: (userId: ObjectId) => void;
 }
 
 export interface AnnouncementModel extends Model<IAnnouncement, Record<string, unknown>, IAnnouncementMethods> {
