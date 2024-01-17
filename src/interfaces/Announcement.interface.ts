@@ -11,7 +11,7 @@ interface IAnnouncementData<T> {
 
 export interface IAnnouncement {
   community: Types.ObjectId;
-  title: string;
+  title?: string;
   scheduledAt: Date;
   draft: boolean;
   jobId?: number;
