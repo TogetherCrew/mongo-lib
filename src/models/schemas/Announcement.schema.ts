@@ -32,7 +32,7 @@ const AnnouncementSchema = new Schema<IAnnouncement, AnnouncementModel>(
     },
     title: {
       type: String,
-      required: true,
+      required: false,
     },
     scheduledAt: {
       type: Date,
