@@ -25,6 +25,7 @@ export interface IGuildMemberUpdateBody {
   deletedAt?: Date | null;
   globalName?: string | null;
   nickname?: string | null;
+  isBot?: boolean;
 }
 
 export interface IGuildMemberMethods {
