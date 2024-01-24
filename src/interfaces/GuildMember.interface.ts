@@ -7,7 +7,7 @@ export interface IGuildMember {
   avatar?: string | null;
   roles: Snowflake[];
   joinedAt: Date | null;
-  isBot?: boolean;
+  isBot?: boolean | null;
   discriminator: string;
   permissions?: string;
   deletedAt?: Date | null;
@@ -25,7 +25,7 @@ export interface IGuildMemberUpdateBody {
   deletedAt?: Date | null;
   globalName?: string | null;
   nickname?: string | null;
-  isBot?: boolean;
+  isBot?: boolean | null;
 }
 
 export interface IGuildMemberMethods {
