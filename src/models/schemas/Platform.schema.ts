@@ -35,12 +35,12 @@ platformSchema.plugin(toJSON);
 platformSchema.plugin(paginate);
 
 const announcementDeletion = async (platformId: any): Promise<void> => {
-  // ?in case the platformID (inputted platformID) of each item in the data array field matches, delete that announcement. 
-  const announcementsWithAllDataOnSamePlatformIds =  await Announcement.aggregate([
+  // ?in case the platformID (inputted platformID) of each item in the data array field matches, delete that announcement.
+  const announcementsWithAllDataOnSamePlatformIds = await Announcement.aggregate([
     {
       $match: {
-        "data.platform": platformId,
-      }
+        'data.platform': platformId,
+      },
     },
     {
       $project: {
@@ -48,24 +48,24 @@ const announcementDeletion = async (platformId: any): Promise<void> => {
           $not: [
             {
               $elemMatch: {
-                "data.platform": { $ne: platformId }
-              }
-            }
-          ]
-        }
-      }
+                'data.platform': { $ne: platformId },
+              },
+            },
+          ],
+        },
+      },
     },
     {
       $match: {
-        allMatch: true
-      }
-    }
-  ])
-  const idsToDelete = announcementsWithAllDataOnSamePlatformIds.map(announcement => announcement._id)
-  await Announcement.deleteMany({ _id: { $in: idsToDelete } })
+        allMatch: true,
+      },
+    },
+  ]);
+  const idsToDelete = announcementsWithAllDataOnSamePlatformIds.map((announcement) => announcement._id);
+  await Announcement.deleteMany({ _id: { $in: idsToDelete } });
 
   await Announcement.updateMany({ 'data.platform': platformId }, { $pull: { data: { platform: platformId } } });
-}
+};
 
 platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
