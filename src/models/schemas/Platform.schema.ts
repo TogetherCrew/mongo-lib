@@ -1,4 +1,4 @@
-import { Schema, type Document } from 'mongoose';
+import { Schema, type Document, Types } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IPlatform, type PlatformModel } from '../../interfaces';
 import { Announcement, Community } from '../index';
@@ -38,26 +38,28 @@ const announcementDeletion = async (platformId: any): Promise<void> => {
   // ?in case the platformID (inputted platformID) of each item in the data array field matches, delete that announcement.
   const announcementsWithAllDataOnSamePlatformIds = await Announcement.aggregate([
     {
-      $match: {
-        'data.platform': platformId,
-      },
-    },
-    {
       $project: {
-        allMatch: {
-          $not: [
-            {
-              $elemMatch: {
-                'data.platform': { $ne: platformId },
+        matchNumber: {
+          $size: {
+            $filter: {
+              input: '$data',
+              as: 'item',
+              cond: {
+                $eq: ['$$item.platform', new Types.ObjectId(platformId)],
               },
             },
-          ],
+          },
+        },
+        allNumber: {
+          $size: '$data',
         },
       },
     },
     {
       $match: {
-        allMatch: true,
+        $expr: {
+          $eq: ['$allNumber', '$matchNumber'],
+        },
       },
     },
   ]);
