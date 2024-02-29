@@ -14,6 +14,7 @@ export interface IChannel {
   parentId?: string | null;
   permissionOverwrites?: IOverwrite[];
   deletedAt?: Date | null;
+  type: number
 }
 
 export interface IChannelUpdateBody {
@@ -21,6 +22,7 @@ export interface IChannelUpdateBody {
   parentId?: string | null;
   permissionOverwrites?: IOverwrite[];
   deletedAt?: Date | null;
+  type?: number
 }
 export interface IChannelMethods {
   softDelete: () => void;

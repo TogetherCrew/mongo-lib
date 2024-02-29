@@ -118,7 +118,8 @@ Channel {
     name?: string | null,
     parent_id?: string | null,
     permissionOverwrites?: IOverwrite[],
-    deletedAt?: Date | null
+    deletedAt?: Date | null,
+    type: number
 }
 ```
 
