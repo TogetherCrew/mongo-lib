@@ -9,6 +9,7 @@ describe('Channel model', () => {
         channelId: '123',
         name: 'channel1',
         parentId: 'admin',
+        type: 1,
         permissionOverwrites: [
           {
             id: '1122334455', // example Snowflake ID for the role or member

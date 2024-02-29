@@ -13,6 +13,9 @@ const channelSchema = new Schema<IChannel, ChannelModel>({
   parentId: {
     type: String,
   },
+  type: {
+    type: Number,
+  },
   permissionOverwrites: [
     {
       id: String, // or use mongoose.Schema.Types.ObjectId if Snowflake is an ObjectId
