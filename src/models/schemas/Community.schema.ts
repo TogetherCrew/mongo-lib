@@ -29,8 +29,35 @@ const communitySchema = new Schema<ICommunity, CommunityModel>(
     tcaAt: {
       type: Date,
     },
+    roles: [{
+      roleType: {
+        type: String,
+        enum: ['view', 'admin'],
+        required: true,
+      },
+      source: {
+        platform: {
+          type: String,
+          enum: ['discord'], 
+          required: true,
+        },
+        identifierType: {
+          type: String,
+          enum: ['member', 'role'],
+          required: true,
+        },
+        identifierValues: [{
+          type: String,
+          required: true,
+        }],
+        platformId: {
+          type: Schema.Types.ObjectId,
+          ref: 'Platform',
+          required: true,
+        },
+      },
+    }]
   },
-
   { timestamps: true },
 );
 
