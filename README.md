@@ -56,6 +56,7 @@ Community {
     users?: [Types.ObjectId],
     platforms?: [Types.ObjectId],
     tcaAt?: Date;
+    roles?: ICommunityRoles[];
 }
 ```
 
