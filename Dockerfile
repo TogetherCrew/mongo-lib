@@ -4,7 +4,7 @@ COPY . .
 RUN npm ci
 
 FROM base AS test
-CMD [ "npx", "jest", "--runInBand", "--coverage" ]
+CMD [ "npx", "jest", "--coverage" ]
 
 FROM base AS build
 RUN npm run build
