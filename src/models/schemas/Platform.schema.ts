@@ -73,6 +73,11 @@ platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
   await Community.updateOne({ platforms: platformId }, { $pull: { platforms: platformId } });
   await announcementDeletion(platformId);
+  await Community.updateMany(
+    {},
+    { $pull: { roles: { 'source.platformId': platformId } } },
+    { multi: true }
+  )
 });
 
 platformSchema.post('save', async function () {

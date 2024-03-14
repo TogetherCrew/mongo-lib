@@ -43,6 +43,8 @@ describe('Platform model', () => {
         await platform.remove();
         communityDoc = await Community.findById(community.id);
         expect(communityDoc?.platforms).toEqual([]);
+        expect(communityDoc?.roles).toEqual([]);
+
         const platformDoc = await Platform.findById(platform._id);
         expect(platformDoc).toBe(null);
       });
