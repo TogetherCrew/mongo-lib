@@ -1,7 +1,7 @@
 import { Schema, type Document, Types } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IPlatform, type PlatformModel } from '../../interfaces';
-import { Announcement, Community } from '../index';
+import { Announcement, Community, Platform, User } from '../index';
 
 const platformSchema = new Schema<IPlatform, PlatformModel>(
   {
@@ -73,6 +73,41 @@ platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
   await Community.updateOne({ platforms: platformId }, { $pull: { platforms: platformId } });
   await announcementDeletion(platformId);
+  await Community.updateMany({}, { $pull: { roles: { 'source.platformId': platformId } } }, { multi: true });
+});
+
+platformSchema.post('save', async function () {
+  const platformId = this._id;
+  const platform = await Platform.findById(platformId);
+  if (platform !== null) {
+    const community = await Community.findById(platform.community);
+    if (community !== null) {
+      const user = await User.findById(community?.users[0]);
+      if (user !== null) {
+        await Community.updateOne(
+          { _id: community._id },
+          {
+            $addToSet: {
+              platforms: platform._id,
+              roles: {
+                $each: [
+                  {
+                    roleType: 'admin',
+                    source: {
+                      platform: 'discord',
+                      identifierType: 'member',
+                      identifierValues: [user.discordId],
+                      platformId: platform._id,
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        );
+      }
+    }
+  }
 });
 
 export default platformSchema;

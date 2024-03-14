@@ -1,5 +1,4 @@
----
-version: '3.9'
+version: "3.9"
 
 services:
   app:
@@ -7,5 +6,28 @@ services:
       context: .
       target: test
       dockerfile: Dockerfile
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - DB_USER=root
+      - DB_PASSWORD=pass
+      - DB_NAME=RnDAO
     volumes:
       - ./coverage:/project/coverage
+    depends_on:
+      mongo:
+        condition: service_healthy
+  mongo:
+    image: "mongo:5.0.10"
+    environment:
+      - MONGO_INITDB_DATABASE=RnDAO
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    healthcheck:
+      test: echo 'db.stats().ok' | mongosh localhost:27017/test --quiet
+      interval: 60s
+      timeout: 10s
+      retries: 2
+      start_period: 40s
+ 
+

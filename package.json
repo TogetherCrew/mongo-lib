@@ -1,6 +1,6 @@
 {
   "name": "@togethercrew.dev/db",
-  "version": "3.0.32",
+  "version": "3.0.33",
   "description": "All interactions with DB",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node ./dist/index.js",
     "dev": "nodemon ./src/index.ts",
-    "test": "jest --detectOpenHandles",
+    "test": "env-cmd -f ./src/config/test.env jest --runInBand --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"*.ts\" ",
     "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",
