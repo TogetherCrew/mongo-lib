@@ -33,9 +33,6 @@ describe('Community model', () => {
         const platform = new Platform({ name: 'platform', community: community._id });
         await platform.save();
 
-        community.platforms?.push(platform._id);
-        await community.save();
-
         await community.remove();
 
         const userDoc = await User.findById(user._id);
