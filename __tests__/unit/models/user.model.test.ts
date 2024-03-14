@@ -34,7 +34,6 @@ describe('User model', () => {
 
       const communityDoc = await Community.findById(community._id);
       expect(communityDoc?.users).not.toContain(user._id);
-
     });
   });
 });

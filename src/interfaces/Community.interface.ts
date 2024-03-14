@@ -7,7 +7,7 @@ export interface ICommunityRoles {
     identifierType: 'member' | 'role';
     identifierValues: string[];
     platformId: Types.ObjectId;
-  }
+  };
 }
 export interface ICommunity {
   name: string;
@@ -15,7 +15,7 @@ export interface ICommunity {
   users: Types.ObjectId[];
   platforms?: Types.ObjectId[];
   tcaAt?: Date;
-  roles?: ICommunityRoles[]
+  roles?: ICommunityRoles[];
 }
 
 export interface ICommunityUpdateBody {
@@ -24,7 +24,7 @@ export interface ICommunityUpdateBody {
   users?: Types.ObjectId[];
   platforms?: Types.ObjectId[];
   tcaAt?: Date;
-  roles?: ICommunityRoles[]
+  roles?: ICommunityRoles[];
 }
 
 export interface CommunityModel extends Model<ICommunity> {

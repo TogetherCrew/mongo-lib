@@ -73,11 +73,7 @@ platformSchema.pre('remove', async function (this: Document) {
   const platformId = this._id;
   await Community.updateOne({ platforms: platformId }, { $pull: { platforms: platformId } });
   await announcementDeletion(platformId);
-  await Community.updateMany(
-    {},
-    { $pull: { roles: { 'source.platformId': platformId } } },
-    { multi: true }
-  )
+  await Community.updateMany({}, { $pull: { roles: { 'source.platformId': platformId } } }, { multi: true });
 });
 
 platformSchema.post('save', async function () {
@@ -94,18 +90,20 @@ platformSchema.post('save', async function () {
             $addToSet: {
               platforms: platform._id,
               roles: {
-                $each: [{
-                  roleType: 'admin',
-                  source: {
-                    platform: 'discord',
-                    identifierType: 'member',
-                    identifierValues: [user.discordId],
-                    platformId: platform._id,
-                  }
-                }]
-              }
-            }
-          }
+                $each: [
+                  {
+                    roleType: 'admin',
+                    source: {
+                      platform: 'discord',
+                      identifierType: 'member',
+                      identifierValues: [user.discordId],
+                      platformId: platform._id,
+                    },
+                  },
+                ],
+              },
+            },
+          },
         );
       }
     }
