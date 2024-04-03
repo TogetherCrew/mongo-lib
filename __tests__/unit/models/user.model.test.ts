@@ -14,6 +14,7 @@ describe('User model', () => {
         discordId: '1234',
         email: 'email@yahoo.com',
         communities: [new Types.ObjectId(), new Types.ObjectId()],
+        unverifiedTelegramUsername: "alex_jane"
       };
     });
 
