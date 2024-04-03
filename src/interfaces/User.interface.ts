@@ -6,12 +6,14 @@ export interface IUser {
   email?: string;
   communities?: Types.ObjectId[];
   tcaAt?: Date;
+  unverifiedTelegramUsername?: string;
 }
 
 export interface IUserUpdateBody {
   email?: string;
   communities?: Types.ObjectId[];
   tcaAt?: Date;
+  unverifiedTelegramUsername?: string;
 }
 
 export interface UserModel extends Model<IUser> {
