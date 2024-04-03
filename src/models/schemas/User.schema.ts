@@ -25,8 +25,8 @@ const userSchema = new Schema<IUser, UserModel>(
       type: Date,
     },
     unverifiedTelegramUsername: {
-      type: String
-    }
+      type: String,
+    },
   },
   { timestamps: true },
 );
