@@ -44,6 +44,7 @@ User {
   email?: string,
   communities?: [Types.ObjectId]
   tcaAt?: Date;
+  unverifiedTelegramUsername?:string;
 }
 ```
 
@@ -56,6 +57,7 @@ Community {
     users?: [Types.ObjectId],
     platforms?: [Types.ObjectId],
     tcaAt?: Date;
+    roles?: ICommunityRoles[];
 }
 ```
 

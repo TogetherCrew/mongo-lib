@@ -14,6 +14,7 @@ describe('User model', () => {
         discordId: '1234',
         email: 'email@yahoo.com',
         communities: [new Types.ObjectId(), new Types.ObjectId()],
+        unverifiedTelegramUsername: 'alex_jane',
       };
     });
 
@@ -22,9 +23,8 @@ describe('User model', () => {
     });
   });
 
-  // describe('Cascade deletes', () => {
-
-  //   test('should remove user reference from community when user is deleted', async () => {
+  // describe('Middlewares', () => {
+  //   test('Pre Remove: should remove user reference from community when user is deleted', async () => {
   //     const user = new User({ discordId: 'discordId' });
   //     await user.save();
 
@@ -35,7 +35,6 @@ describe('User model', () => {
 
   //     const communityDoc = await Community.findById(community._id);
   //     expect(communityDoc?.users).not.toContain(user._id);
-
   //   });
   // });
 });

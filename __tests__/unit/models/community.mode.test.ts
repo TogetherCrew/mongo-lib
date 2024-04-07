@@ -20,22 +20,17 @@ describe('Community model', () => {
     test('should correctly validate a valid community', async () => {
       await expect(new Community(community).validate()).resolves.toBeUndefined();
     });
-
-    // describe('Cascade deletes', () => {
-
-    //   test('should clean up when community is deleted', async () => {
+    // describe('Middlewares', () => {
+    //   test('Pre Remove: should clean up when community is deleted', async () => {
     //     const user = new User({ discordId: 'discordId' });
     //     await user.save();
 
     //     const community = new Community({ users: [user._id], name: 'community' });
     //     await community.save();
-    //     user.communities?.push(community._id)
+    //     user.communities?.push(community._id);
 
     //     const platform = new Platform({ name: 'platform', community: community._id });
     //     await platform.save();
-
-    //     community.platforms?.push(platform._id);
-    //     await community.save();
 
     //     await community.remove();
 
