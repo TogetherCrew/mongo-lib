@@ -76,7 +76,12 @@ platformSchema.pre('remove', async function (this: Document) {
   await Community.updateMany({}, { $pull: { roles: { 'source.platformId': platformId } } }, { multi: true });
 });
 
+platformSchema.pre('save', function () {
+  this.$locals.wasNew = this.isNew
+});
+
 platformSchema.post('save', async function () {
+  if (this.$locals.wasNew === false) return;
   const platformId = this._id;
   const platform = await Platform.findById(platformId);
   if (platform !== null) {
