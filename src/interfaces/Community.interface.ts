@@ -1,11 +1,13 @@
 import { type Model, type Types } from 'mongoose';
+import { type IGuildMember } from './GuildMember.interface';
+import { type IRole } from './Role.interface';
 
 export interface ICommunityRoles {
   roleType: 'view' | 'admin';
   source: {
     platform: 'discord';
     identifierType: 'member' | 'role';
-    identifierValues: any;
+    identifierValues: string[] | IGuildMember[] | IRole[] | any[];
     platformId: Types.ObjectId;
   };
 }

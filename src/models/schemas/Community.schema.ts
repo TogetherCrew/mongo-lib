@@ -49,7 +49,7 @@ const communitySchema = new Schema<ICommunity, CommunityModel>(
           },
           identifierValues: [
             {
-              type: String,
+              type: Schema.Types.Mixed,
               required: true,
             },
           ],
