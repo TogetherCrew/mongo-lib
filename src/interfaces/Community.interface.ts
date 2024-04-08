@@ -7,7 +7,7 @@ export interface ICommunityRoles {
   source: {
     platform: 'discord';
     identifierType: 'member' | 'role';
-    identifierValues: string[] | IGuildMember[] | IRole[];
+    identifierValues: string[] | IGuildMember[] | IRole[] | any[];
     platformId: Types.ObjectId;
   };
 }
