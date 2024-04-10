@@ -75,8 +75,9 @@ platformSchema.pre('remove', async function (this: Document) {
   await announcementDeletion(platformId);
   await Community.updateMany({}, { $pull: { roles: { 'source.platformId': platformId } } }, { multi: true });
   await Module.updateMany(
-    { 'options.platforms.platform': platformId },
+    {},
     { $pull: { 'options.platforms': { platform: platformId } } },
+    { multi: true }
   );
 });
 
