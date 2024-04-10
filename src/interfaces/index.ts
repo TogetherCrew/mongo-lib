@@ -10,3 +10,4 @@ export * from './Discord.interface';
 export * from './Community.interface';
 export * from './Platfrom.interface';
 export * from './Announcement.interface';
+export * from './Module.interface';
