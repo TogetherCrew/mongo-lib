@@ -9,7 +9,7 @@ import roleSchema from './Role.schema';
 import communitySchema from './Community.schema';
 import platformSchema from './Platform.schema';
 import announcementSchema, { announcementEmitter } from './Announcement.schema';
-
+import moduleSchema from './Module.schema';
 export {
   userSchema,
   tokenSchema,
@@ -23,4 +23,5 @@ export {
   platformSchema,
   announcementSchema,
   announcementEmitter,
+  moduleSchema
 };
