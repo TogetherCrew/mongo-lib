@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node ./dist/index.js",
     "dev": "nodemon ./src/index.ts",
-    "test": "jest --detectOpenHandles",
+    "test": "env-cmd -f ./src/config/test.env jest --runInBand --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"*.ts\" ",
     "prepublishOnly": "npm test",
     "version": "npm run format && git add -A src",

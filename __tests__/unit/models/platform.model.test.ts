@@ -1,9 +1,9 @@
-import { Platform, Community, User } from '../../../src/models';
+import { Platform, Community, User, Module } from '../../../src/models';
 import { IPlatform } from '../../../src/interfaces';
 import { Types } from 'mongoose';
-// import setupTestDB from '../../utils/setupTestDB';
+import setupTestDB from '../../utils/setupTestDB';
 
-// setupTestDB();
+setupTestDB();
 
 describe('Platform model', () => {
   describe('Platform validation', () => {
@@ -24,58 +24,69 @@ describe('Platform model', () => {
       await expect(new Platform(platform).validate()).resolves.toBeUndefined();
     });
 
-    // describe('Middlewares', () => {
-    //   test('Pre Remove: should clean up when platform is deleted', async () => {
-    //     const user = new User({ discordId: 'discordId' });
-    //     await user.save();
+    describe('Middlewares', () => {
+      test('Pre Remove: should clean up when platform is deleted', async () => {
+        const user = new User({ discordId: 'discordId' });
+        await user.save();
 
-    //     const community = new Community({ users: [user._id], name: 'community' });
-    //     await community.save();
+        const community = new Community({ users: [user._id], name: 'community' });
+        await community.save();
 
-    //     const platform = new Platform({ name: 'platform', community: community._id });
-    //     await platform.save();
-    //     let communityDoc = await Community.findById(community.id);
-    //     if (communityDoc?.platforms) {
-    //       const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
-    //       expect(communityDoc.platforms[0].toHexString()).toBe(idAsString);
-    //     }
-    //     await platform.remove();
-    //     communityDoc = await Community.findById(community.id);
-    //     expect(communityDoc?.platforms).toEqual([]);
-    //     expect(communityDoc?.roles).toEqual([]);
+        const platform = new Platform({ name: 'platform', community: community._id });
+        await platform.save();
 
-    //     const platformDoc = await Platform.findById(platform._id);
-    //     expect(platformDoc).toBe(null);
-    //   });
+        const module = new Module({
+          name: 'hivemind',
+          community: community._id,
+          options: { platforms: [{ platform: platform._id }, { platform: new Types.ObjectId() }] },
+        });
+        await module.save();
 
-    //   test('Post Save: should add platformId to the community and admin role for the creator of community', async () => {
-    //     const user = new User({ discordId: 'discordId' });
-    //     await user.save();
+        let communityDoc = await Community.findById(community.id);
+        if (communityDoc?.platforms) {
+          const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
+          expect(communityDoc.platforms[0].toHexString()).toBe(idAsString);
+        }
+        await platform.remove();
+        communityDoc = await Community.findById(community.id);
+        expect(communityDoc?.platforms).toEqual([]);
+        expect(communityDoc?.roles).toEqual([]);
 
-    //     const community = new Community({ users: [user._id], name: 'community' });
-    //     await community.save();
-    //     user.communities?.push(community._id);
+        const platformDoc = await Platform.findById(platform._id);
+        expect(platformDoc).toBe(null);
 
-    //     const platform = new Platform({ name: 'platform', community: community._id });
-    //     await platform.save();
-    //     const communityDoc = await Community.findById(community.id);
-    //     if (communityDoc?.platforms && communityDoc?.roles) {
-    //       const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
-    //       expect(communityDoc.platforms[0].toHexString()).toBe(idAsString);
-    //       expect(JSON.parse(JSON.stringify(communityDoc.roles))).toEqual([
-    //         {
-    //           _id: expect.anything(),
-    //           roleType: 'admin',
-    //           source: {
-    //             platform: 'discord',
-    //             identifierType: 'member',
-    //             identifierValues: [user.discordId],
-    //             platformId: platform._id.toHexString(),
-    //           },
-    //         },
-    //       ]);
-    //     }
-    //   });
-    // });
+        const moduleDoc = await Module.findById(module._id);
+        expect(moduleDoc?.options?.platforms.length).toBe(1);
+      });
+
+      test('Post Save: should add platformId to the community and admin role for the creator of community', async () => {
+        const user = new User({ discordId: 'discordId' });
+        await user.save();
+
+        const community = new Community({ users: [user._id], name: 'community' });
+        await community.save();
+        user.communities?.push(community._id);
+
+        const platform = new Platform({ name: 'platform', community: community._id });
+        await platform.save();
+        const communityDoc = await Community.findById(community.id);
+        if (communityDoc?.platforms && communityDoc?.roles) {
+          const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
+          expect(communityDoc.platforms[0].toHexString()).toBe(idAsString);
+          expect(JSON.parse(JSON.stringify(communityDoc.roles))).toEqual([
+            {
+              _id: expect.anything(),
+              roleType: 'admin',
+              source: {
+                platform: 'discord',
+                identifierType: 'member',
+                identifierValues: [user.discordId],
+                platformId: platform._id.toHexString(),
+              },
+            },
+          ]);
+        }
+      });
+    });
   });
 });

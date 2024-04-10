@@ -15,7 +15,7 @@ const moduleSchema = new Schema<IModule, ModuleModel>({
     },
     options: {
         platforms: [{
-            platformId: {
+            platform: {
                 type: Schema.Types.ObjectId,
                 required: true,
                 ref: 'Platform'
