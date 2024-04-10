@@ -73,7 +73,7 @@ Platform {
 }
 ```
 
-### Platform interface
+### Module interface
 
 ```ts
 Module {
