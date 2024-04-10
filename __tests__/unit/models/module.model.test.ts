@@ -6,29 +6,27 @@ import { Types } from 'mongoose';
 // setupTestDB();
 
 describe('Module model', () => {
-    describe('Module validation', () => {
-        let module: IModule;
-        beforeEach(() => {
-            module = {
-                name: 'hivemind',
-                community: new Types.ObjectId(),
-                options: {
-                    platforms: [
-                        {
-                            platform: new Types.ObjectId(),
-                            metadata: {
-                                selectedChannels: ['c1', 'c2'],
-                            },
-                        },
-                    ],
-                },
-            };
-        });
-
-        test('should correctly validate a valid module', async () => {
-            await expect(new Module(module).validate()).resolves.toBeUndefined();
-        });
-
-
+  describe('Module validation', () => {
+    let module: IModule;
+    beforeEach(() => {
+      module = {
+        name: 'hivemind',
+        community: new Types.ObjectId(),
+        options: {
+          platforms: [
+            {
+              platform: new Types.ObjectId(),
+              metadata: {
+                selectedChannels: ['c1', 'c2'],
+              },
+            },
+          ],
+        },
+      };
     });
+
+    test('should correctly validate a valid module', async () => {
+      await expect(new Module(module).validate()).resolves.toBeUndefined();
+    });
+  });
 });
