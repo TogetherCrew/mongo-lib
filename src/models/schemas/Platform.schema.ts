@@ -1,7 +1,7 @@
 import { Schema, type Document, Types } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IPlatform, type PlatformModel } from '../../interfaces';
-import { Announcement, Community, Platform, User,Module } from '../index';
+import { Announcement, Community, Platform, User, Module } from '../index';
 
 const platformSchema = new Schema<IPlatform, PlatformModel>(
   {
@@ -76,8 +76,8 @@ platformSchema.pre('remove', async function (this: Document) {
   await Community.updateMany({}, { $pull: { roles: { 'source.platformId': platformId } } }, { multi: true });
   await Module.updateMany(
     { 'options.platforms.platformId': platformId },
-    { $pull: { 'options.platforms': { platform: platformId } } }
-);
+    { $pull: { 'options.platforms': { platform: platformId } } },
+  );
 });
 
 platformSchema.pre('save', function () {

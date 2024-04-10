@@ -23,5 +23,5 @@ export {
   platformSchema,
   announcementSchema,
   announcementEmitter,
-  moduleSchema
+  moduleSchema,
 };
