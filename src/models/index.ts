@@ -9,4 +9,18 @@ import Role from './Role.model';
 import Community from './Community.model';
 import Platform from './Platfrom.model';
 import Announcement from './Announcement.model';
-export { User, Token, HeatMap, RawInfo, MemberActivity, GuildMember, Channel, Role, Community, Platform, Announcement };
+import Module from './Module.model';
+export {
+  User,
+  Token,
+  HeatMap,
+  RawInfo,
+  MemberActivity,
+  GuildMember,
+  Channel,
+  Role,
+  Community,
+  Platform,
+  Announcement,
+  Module,
+};

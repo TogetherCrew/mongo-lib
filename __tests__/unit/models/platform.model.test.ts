@@ -1,4 +1,4 @@
-import { Platform, Community, User } from '../../../src/models';
+import { Platform, Community, User, Module } from '../../../src/models';
 import { IPlatform } from '../../../src/interfaces';
 import { Types } from 'mongoose';
 // import setupTestDB from '../../utils/setupTestDB';
@@ -34,6 +34,21 @@ describe('Platform model', () => {
 
     //     const platform = new Platform({ name: 'platform', community: community._id });
     //     await platform.save();
+
+    //     const module1 = new Module({
+    //       name: 'hivemind',
+    //       community: community._id,
+    //       options: { platforms: [{ platform: platform._id }, { platform: new Types.ObjectId() }] },
+    //     });
+    //     await module1.save();
+
+    //     const module2 = new Module({
+    //       name: 'hivemind',
+    //       community: community._id,
+    //       options: { platforms: [{ platform: new Types.ObjectId() }, { platform: platform._id }, { platform: new Types.ObjectId() }] },
+    //     });
+    //     await module2.save();
+
     //     let communityDoc = await Community.findById(community.id);
     //     if (communityDoc?.platforms) {
     //       const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
@@ -46,6 +61,11 @@ describe('Platform model', () => {
 
     //     const platformDoc = await Platform.findById(platform._id);
     //     expect(platformDoc).toBe(null);
+
+    //     const module1Doc = await Module.findById(module1._id);
+    //     const module2Doc = await Module.findById(module2._id);
+    //     expect(module1Doc?.options?.platforms.length).toBe(1);
+    //     expect(module2Doc?.options?.platforms.length).toBe(2);
     //   });
 
     //   test('Post Save: should add platformId to the community and admin role for the creator of community', async () => {

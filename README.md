@@ -72,6 +72,21 @@ Platform {
     connectedAt?: Date | null;
 }
 ```
+
+### Module interface
+
+```ts
+Module {
+  name: 'hivemind';
+    community: Types.ObjectId;
+    options?: {
+        platforms: Array<{
+            platform: Types.ObjectId;
+            metadata?: Record<string, any>; // dynamic object since structure can change
+        }>;
+    }
+}
+```
 ### Heatmap interface
 
 ```ts

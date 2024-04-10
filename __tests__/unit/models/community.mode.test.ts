@@ -1,4 +1,4 @@
-import { Community, User, Platform } from '../../../src/models';
+import { Community, User, Platform, Module } from '../../../src/models';
 import { ICommunity } from '../../../src/interfaces';
 import { Types } from 'mongoose';
 // import setupTestDB from '../../utils/setupTestDB';
@@ -32,6 +32,12 @@ describe('Community model', () => {
     //     const platform = new Platform({ name: 'platform', community: community._id });
     //     await platform.save();
 
+    //     const module = new Module({
+    //       name: 'hivemind',
+    //       community: community._id,
+    //       options: { platforms: [{ platform: platform._id }] },
+    //     })
+    //     await module.save();
     //     await community.remove();
 
     //     const userDoc = await User.findById(user._id);
@@ -39,6 +45,10 @@ describe('Community model', () => {
 
     //     const platformDoc = await Platform.findById(platform._id);
     //     expect(platformDoc).toBe(null);
+
+    //     const moduleDoc = await Module.findById(module._id);
+    //     expect(moduleDoc).toBe(null);
+
     //   });
     // });
   });
