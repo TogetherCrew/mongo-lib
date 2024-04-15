@@ -45,7 +45,13 @@ describe('Platform model', () => {
     //     const module2 = new Module({
     //       name: 'hivemind',
     //       community: community._id,
-    //       options: { platforms: [{ platform: new Types.ObjectId() }, { platform: platform._id }, { platform: new Types.ObjectId() }] },
+    //       options: {
+    //         platforms: [
+    //           { platform: new Types.ObjectId() },
+    //           { platform: platform._id },
+    //           { platform: new Types.ObjectId() },
+    //         ],
+    //       },
     //     });
     //     await module2.save();
 
@@ -82,18 +88,18 @@ describe('Platform model', () => {
     //     if (communityDoc?.platforms && communityDoc?.roles) {
     //       const idAsString = platform.id.toHexString ? platform.id.toHexString() : platform.id;
     //       expect(communityDoc.platforms[0].toHexString()).toBe(idAsString);
-    //       expect(JSON.parse(JSON.stringify(communityDoc.roles))).toEqual([
-    //         {
-    //           _id: expect.anything(),
-    //           roleType: 'admin',
-    //           source: {
-    //             platform: 'discord',
-    //             identifierType: 'member',
-    //             identifierValues: [user.discordId],
-    //             platformId: platform._id.toHexString(),
-    //           },
-    //         },
-    //       ]);
+    //       // expect(JSON.parse(JSON.stringify(communityDoc.roles))).toEqual([
+    //       //   {
+    //       //     _id: expect.anything(),
+    //       //     roleType: 'admin',
+    //       //     source: {
+    //       //       platform: 'discord',
+    //       //       identifierType: 'member',
+    //       //       identifierValues: [user.discordId],
+    //       //       platformId: platform._id.toHexString(),
+    //       //     },
+    //       //   },
+    //       // ]);
     //     }
     //   });
     // });

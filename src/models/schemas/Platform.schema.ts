@@ -95,19 +95,19 @@ platformSchema.post('save', async function () {
           {
             $addToSet: {
               platforms: platform._id,
-              roles: {
-                $each: [
-                  {
-                    roleType: 'admin',
-                    source: {
-                      platform: 'discord',
-                      identifierType: 'member',
-                      identifierValues: [user.discordId],
-                      platformId: platform._id,
-                    },
-                  },
-                ],
-              },
+              // roles: {
+              //   $each: [
+              //     {
+              //       roleType: 'admin',
+              //       source: {
+              //         platform: 'discord',
+              //         identifierType: 'member',
+              //         identifierValues: [user.discordId],
+              //         platformId: platform._id,
+              //       },
+              //     },
+              //   ],
+              // },
             },
           },
         );
