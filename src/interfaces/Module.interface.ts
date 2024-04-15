@@ -6,6 +6,7 @@ export interface IModule {
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
+      name: 'discord';
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };
@@ -14,6 +15,7 @@ export interface IModuleUpdateBody {
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
+      name: 'discord';
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };

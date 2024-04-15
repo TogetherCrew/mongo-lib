@@ -25,6 +25,11 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
           metadata: {
             type: Schema.Types.Mixed,
           },
+          name: {
+            type: String,
+            required: true,
+            enum: ['discord'],
+          },
         },
       ],
     },
