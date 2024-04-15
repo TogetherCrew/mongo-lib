@@ -1,9 +1,9 @@
 import { Platform, Community, User, Module } from '../../../src/models';
 import { IPlatform } from '../../../src/interfaces';
 import { Types } from 'mongoose';
-import setupTestDB from '../../utils/setupTestDB';
+// import setupTestDB from '../../utils/setupTestDB';
 
-setupTestDB();
+// setupTestDB();
 
 describe('Platform model', () => {
   describe('Platform validation', () => {
