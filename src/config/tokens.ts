@@ -6,5 +6,5 @@ export const tokenTypes = {
   TWITTER_ACCESS: 'twitter_access',
   TWITTER_REFRESH: 'twitter_refresh',
   GOOGLE_ACCESS: 'google_access',
-  GOOGLE_REFRESH: 'google_refresh'
+  GOOGLE_REFRESH: 'google_refresh',
 };
