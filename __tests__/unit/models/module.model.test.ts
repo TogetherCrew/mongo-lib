@@ -19,6 +19,7 @@ describe('Module model', () => {
               metadata: {
                 selectedChannels: ['c1', 'c2'],
               },
+              name: 'discord',
             },
           ],
         },
