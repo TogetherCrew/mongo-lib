@@ -28,7 +28,7 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
           name: {
             type: String,
             required: true,
-            enum: ['discord'],
+            enum: ['discord', 'google'],
           },
         },
       ],

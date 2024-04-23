@@ -10,12 +10,8 @@ describe('Platform model', () => {
     let platform: IPlatform;
     beforeEach(() => {
       platform = {
-        name: 'Discord',
+        name: 'google',
         community: new Types.ObjectId(),
-        metadata: {
-          guildId: 'guildId',
-          selectedChannels: ['c1', 'c2'],
-        },
         disconnectedAt: null,
       };
     });
