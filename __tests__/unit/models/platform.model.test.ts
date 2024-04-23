@@ -12,10 +12,6 @@ describe('Platform model', () => {
       platform = {
         name: 'google',
         community: new Types.ObjectId(),
-        metadata: {
-          guildId: 'guildId',
-          selectedChannels: ['c1', 'c2'],
-        },
         disconnectedAt: null,
       };
     });
