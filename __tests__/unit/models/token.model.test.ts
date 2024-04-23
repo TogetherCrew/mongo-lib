@@ -10,7 +10,7 @@ describe('Token model', () => {
       token = {
         user: new Types.ObjectId(),
         token: '4321',
-        type: 'access',
+        type: 'google_refresh',
         expires: moment('2022-02-01 08:30:26.127Z').toDate(),
       };
     });
