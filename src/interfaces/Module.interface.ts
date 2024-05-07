@@ -6,7 +6,7 @@ export interface IModule {
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
-      name: 'discord' | 'google';
+      name: 'discord' | 'google' | 'github';
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };
@@ -15,7 +15,7 @@ export interface IModuleUpdateBody {
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
-      name: 'discord' | 'google';
+      name: 'discord' | 'google' | 'github';
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };

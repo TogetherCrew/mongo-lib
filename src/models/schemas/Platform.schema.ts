@@ -8,7 +8,7 @@ const platformSchema = new Schema<IPlatform, PlatformModel>(
     name: {
       type: String,
       required: true,
-      enum: ['google', 'discord', 'twitter'],
+      enum: ['google', 'discord', 'twitter','github'],
     },
     metadata: {
       type: Schema.Types.Mixed,
