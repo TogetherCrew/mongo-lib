@@ -11,7 +11,7 @@ describe('MemberActivity model', () => {
         all_consistent: [],
         all_vital: [],
         all_active: [
-          'nimatorabiv#29031',
+          'nimatorabiv#2903',
           'MagicPalm#5706',
           'DenisFox.#1743',
           'Behzad#1761',
