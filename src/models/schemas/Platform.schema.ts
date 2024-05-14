@@ -2,13 +2,14 @@ import { Schema, type Document, Types } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IPlatform, type PlatformModel } from '../../interfaces';
 import { Announcement, Community, Platform, User, Module } from '../index';
+import { PlatformNames } from '../../config/enums';
 
 const platformSchema = new Schema<IPlatform, PlatformModel>(
   {
     name: {
       type: String,
       required: true,
-      enum: ['google', 'discord', 'twitter', 'github', 'notion'],
+      enum: Object.values(PlatformNames),
     },
     metadata: {
       type: Schema.Types.Mixed,
