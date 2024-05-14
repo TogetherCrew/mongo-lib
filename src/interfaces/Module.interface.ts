@@ -1,12 +1,13 @@
 import { type Model, type Types } from 'mongoose';
+import { type PlatformNames, type ModuleNames } from '../config/enums';
 
 export interface IModule {
-  name: 'hivemind';
+  name: ModuleNames;
   community: Types.ObjectId;
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
-      name: 'discord' | 'google' | 'github' | 'notion';
+      name: PlatformNames;
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };
@@ -15,7 +16,7 @@ export interface IModuleUpdateBody {
   options?: {
     platforms: Array<{
       platform: Types.ObjectId;
-      name: 'discord' | 'google' | 'github' | 'notion';
+      name: PlatformNames;
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };

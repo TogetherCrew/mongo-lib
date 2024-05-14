@@ -1,7 +1,8 @@
 import { type Model, type Types } from 'mongoose';
+import { type PlatformNames } from '../config/enums';
 
 export interface IPlatform {
-  name: 'google' | 'discord' | 'twitter';
+  name: PlatformNames;
   community: Types.ObjectId;
   metadata?: Record<string, any>; // dynamic object since structure can change
   disconnectedAt?: Date | null;
@@ -9,7 +10,7 @@ export interface IPlatform {
 }
 
 export interface IPlatformUpdateBody {
-  name?: 'google' | 'discord' | 'twitter';
+  name?: PlatformNames;
   community?: Types.ObjectId;
   metadata?: Record<string, any>;
   disconnectedAt?: Date | null;

@@ -1,13 +1,14 @@
 import { Schema } from 'mongoose';
 import { toJSON, paginate } from './plugins';
 import { type IModule, type ModuleModel } from '../../interfaces';
+import { PlatformNames, ModuleNames } from '../../config/enums';
 
 const moduleSchema = new Schema<IModule, ModuleModel>(
   {
     name: {
       type: String,
       required: true,
-      enum: ['hivemind'],
+      enum: Object.values(ModuleNames),
     },
     community: {
       type: Schema.Types.ObjectId,
@@ -28,7 +29,7 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
           name: {
             type: String,
             required: true,
-            enum: ['discord', 'google', 'github', 'notion'],
+            enum: Object.values(PlatformNames),
           },
         },
       ],

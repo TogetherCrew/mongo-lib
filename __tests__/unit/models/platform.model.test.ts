@@ -1,6 +1,7 @@
 import { Platform, Community, User, Module } from '../../../src/models';
 import { IPlatform } from '../../../src/interfaces';
 import { Types } from 'mongoose';
+import { PlatformNames } from '../../../src/config/enums';
 // import setupTestDB from '../../utils/setupTestDB';
 
 // setupTestDB();
@@ -10,7 +11,7 @@ describe('Platform model', () => {
     let platform: IPlatform;
     beforeEach(() => {
       platform = {
-        name: 'google',
+        name: PlatformNames.Google,
         community: new Types.ObjectId(),
         disconnectedAt: null,
       };
