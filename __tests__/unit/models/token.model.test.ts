@@ -26,7 +26,7 @@ describe('Token model', () => {
         token: '4321',
         type: 'invalidToken',
         expires: moment('2022-02-01 08:30:26.127Z').toDate(),
-      }
+      };
       await expect(new Token(invalidToken).validate()).rejects.toThrow();
     });
   });
