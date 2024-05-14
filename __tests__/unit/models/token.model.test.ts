@@ -2,6 +2,7 @@ import { Token } from '../../../src/models';
 import { IToken } from '../../../src/interfaces';
 import { Types } from 'mongoose';
 import moment from 'moment';
+import { TokenTypeNames } from '../../../src/config/enums';
 
 describe('Token model', () => {
   describe('Token validation', () => {
@@ -10,7 +11,7 @@ describe('Token model', () => {
       token = {
         user: new Types.ObjectId(),
         token: '4321',
-        type: 'google_refresh',
+        type: TokenTypeNames.GOOGLE_REFRESH,
         expires: moment('2022-02-01 08:30:26.127Z').toDate(),
       };
     });
@@ -20,8 +21,13 @@ describe('Token model', () => {
     });
 
     test('should throw a validation error if type is invalid', async () => {
-      token.type = 'invalidToken';
-      await expect(new Token(token).validate()).rejects.toThrow();
+      const invalidToken = {
+        user: new Types.ObjectId(),
+        token: '4321',
+        type: 'invalidToken',
+        expires: moment('2022-02-01 08:30:26.127Z').toDate(),
+      }
+      await expect(new Token(invalidToken).validate()).rejects.toThrow();
     });
   });
 });

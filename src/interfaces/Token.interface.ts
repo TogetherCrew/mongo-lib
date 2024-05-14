@@ -1,9 +1,10 @@
 import { type Model, type Types } from 'mongoose';
+import { type TokenTypeNames } from '../config/enums';
 
 export interface IToken {
   token: string;
   user: Types.ObjectId;
-  type: string;
+  type: TokenTypeNames;
   expires: Date;
   blacklisted?: boolean;
 }

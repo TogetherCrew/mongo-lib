@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { toJSON } from './plugins';
-import { tokenTypes } from '../../config/tokens';
 import { type IToken } from '../../interfaces';
+import { TokenTypeNames } from '../../config/enums';
 
 const tokenSchema = new Schema<IToken>(
   {
@@ -17,7 +17,7 @@ const tokenSchema = new Schema<IToken>(
     },
     type: {
       type: String,
-      enum: Object.values(tokenTypes),
+      enum: Object.values(TokenTypeNames),
       required: true,
     },
     expires: {
