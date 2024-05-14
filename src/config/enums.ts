@@ -11,7 +11,7 @@ export enum ModuleNames {
   Hivemind = 'hivemind',
 }
 
-export enum HivemindPlatforNames {
+export enum HivemindPlatformNames {
   Discord = 'discord',
   Google = 'google',
   GitHub = 'github',
