@@ -25,7 +25,9 @@ const platformSchema = new Schema<IPlatform, PlatformModel>(
     },
     connectedAt: {
       type: Date,
-      default: new Date(),
+      default: () => {
+        return new Date();
+      },
     },
   },
 
