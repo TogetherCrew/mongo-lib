@@ -149,5 +149,3 @@ describe('Platform model', () => {
     // });
   });
 });
-
-//     // "test": "jest --detectOpenHandles",
