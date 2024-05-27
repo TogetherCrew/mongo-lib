@@ -17,7 +17,7 @@ export interface IPlatformUpdateBody {
 }
 
 export interface IPlatformMethods {
-  softDelete: () => void;
+  softDelete: () => Promise<void>;
 }
 
 export interface PlatformModel extends Model<IPlatform, Record<string, unknown>, IPlatformMethods> {
