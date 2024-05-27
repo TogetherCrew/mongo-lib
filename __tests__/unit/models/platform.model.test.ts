@@ -101,7 +101,6 @@ describe('Platform model', () => {
 
     //   });
 
-
     //   test('SoftDelete Method: should softDelete the platform', async () => {
     //     const user = new User({ discordId: 'discordId' });
     //     await user.save();

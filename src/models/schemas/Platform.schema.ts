@@ -120,13 +120,11 @@ platformSchema.post('save', async function () {
   }
 });
 
-
 platformSchema.method('softDelete', async function softDelete() {
   const platformId = this._id;
   this.disconnectedAt = new Date();
   await this.save();
   await Module.updateMany({}, { $pull: { 'options.platforms': { platform: platformId } } }, { multi: true });
-
 });
 
 export default platformSchema;
