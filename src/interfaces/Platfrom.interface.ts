@@ -16,6 +16,10 @@ export interface IPlatformUpdateBody {
   disconnectedAt?: Date | null;
 }
 
-export interface PlatformModel extends Model<IPlatform> {
+export interface IPlatformMethods {
+  softDelete: () => void;
+}
+
+export interface PlatformModel extends Model<IPlatform, Record<string, unknown>, IPlatformMethods> {
   paginate: (filter: object, options: object) => any;
 }
