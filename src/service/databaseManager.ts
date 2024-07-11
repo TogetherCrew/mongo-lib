@@ -39,7 +39,7 @@ export default class DatabaseManager {
   }
 
   // Method to get Platform Database connection
-  public async getPlatformDb(platformId: Snowflake): Promise<Connection> {
+  public async getPlatformDb(platformId: string): Promise<Connection> {
     const dbName = platformId;
     const db = mongoose.connection.useDb(dbName, { useCache: true });
     await this.setupModels(db, 'platform');
