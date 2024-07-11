@@ -28,21 +28,31 @@ export default class DatabaseManager {
     return DatabaseManager.instance;
   }
 
-  public async getTenantDb(tenantId: Snowflake): Promise<Connection> {
+  public async getGuildDb(tenantId: Snowflake): Promise<Connection> {
     const dbName = tenantId;
     const db = mongoose.connection.useDb(dbName, { useCache: true });
-    await this.setupModels(db);
+    await this.setupModels(db, 'guild');
     return db;
   }
 
-  private async setupModels(db: Connection): Promise<void> {
+  public async getPlatformDb(tenantId: Snowflake): Promise<Connection> {
+    const dbName = tenantId;
+    const db = mongoose.connection.useDb(dbName, { useCache: true });
+    await this.setupModels(db, 'platform');
+    return db;
+  }
+
+  private async setupModels(db: Connection, dbType: 'guild' | 'platform'): Promise<void> {
     if (!this.modelCache[db.name]) {
-      db.model<IHeatMap>('HeatMap', heatMapSchema);
-      db.model<IRawInfo>('RawInfo', rawInfoSchema);
-      db.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
-      db.model<IGuildMember>('GuildMember', guildMemberSchema);
-      db.model<IChannel>('Channel', channelSchema);
-      db.model<IRole>('Role', roleSchema);
+      if (dbType === 'platform') {
+        db.model<IHeatMap>('HeatMap', heatMapSchema);
+        db.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
+      } else if (dbType === 'guild') {
+        db.model<IRawInfo>('RawInfo', rawInfoSchema);
+        db.model<IGuildMember>('GuildMember', guildMemberSchema);
+        db.model<IChannel>('Channel', channelSchema);
+        db.model<IRole>('Role', roleSchema);
+      }
       this.modelCache[db.name] = true;
     }
   }
