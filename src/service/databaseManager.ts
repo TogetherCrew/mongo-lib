@@ -65,4 +65,14 @@ export default class DatabaseManager {
       }
     }
   }
+
+  // Method to delete a database using the connection
+  public async deleteDatabase(db: Connection): Promise<void> {
+    const dbName = db.name;
+    try {
+      await db.dropDatabase();
+    } catch (error) {
+      console.error(`Error deleting database ${dbName}:`, error);
+    }
+  }
 }
