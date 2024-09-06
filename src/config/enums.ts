@@ -5,18 +5,23 @@ export enum PlatformNames {
   Notion = 'notion',
   MediaWiki = 'mediaWiki',
   Twitter = 'twitter',
+  Discourse = 'discourse',
 }
 
 export enum ModuleNames {
   Hivemind = 'hivemind',
+  ViolationDetection = 'violationDetection',
 }
 
 export enum HivemindPlatformNames {
-  Discord = 'discord',
-  Google = 'google',
-  GitHub = 'github',
-  Notion = 'notion',
-  MediaWiki = 'mediaWiki',
+  Discord = PlatformNames.Discord,
+  Google = PlatformNames.Google,
+  GitHub = PlatformNames.GitHub,
+  Notion = PlatformNames.Notion,
+  MediaWiki = PlatformNames.MediaWiki,
+}
+export enum ViolationDetectionPlatformNames {
+  Discourse = PlatformNames.Discourse,
 }
 
 export enum TokenTypeNames {
