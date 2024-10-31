@@ -20,16 +20,16 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
         {
           platform: {
             type: Schema.Types.ObjectId,
-            required: true,
             ref: 'Platform',
+            default: null,
           },
           metadata: {
             type: Schema.Types.Mixed,
           },
           name: {
             type: String,
-            required: true,
             enum: Object.values(PlatformNames),
+            default: null,
           },
         },
       ],
