@@ -28,7 +28,7 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
           },
           name: {
             type: String,
-            enum: Object.values(PlatformNames),
+            enum: [...Object.values(PlatformNames), null],
             default: null,
           },
         },

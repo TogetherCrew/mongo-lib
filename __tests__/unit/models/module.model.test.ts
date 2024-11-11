@@ -17,11 +17,11 @@ describe('Module model', () => {
         options: {
           platforms: [
             {
-              platform: new Types.ObjectId(),
+              platform: null,
               metadata: {
                 selectedChannels: ['c1', 'c2'],
               },
-              name: PlatformNames.Discord,
+              name: null,
             },
           ],
         },
