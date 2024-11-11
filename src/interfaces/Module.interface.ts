@@ -6,8 +6,8 @@ export interface IModule {
   community: Types.ObjectId;
   options?: {
     platforms: Array<{
-      platform: Types.ObjectId;
-      name: PlatformNames;
+      platform: Types.ObjectId | null;
+      name: PlatformNames | null;
       metadata?: Record<string, any>; // dynamic object since structure can change
     }>;
   };
