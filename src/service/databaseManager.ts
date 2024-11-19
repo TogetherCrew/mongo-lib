@@ -21,21 +21,39 @@ import { type Snowflake } from 'discord.js';
 export default class DatabaseManager {
   private static instance: DatabaseManager;
   private modelCache: Record<string, boolean> = {};
+  private mongoConnection: mongoose.Connection | null = null;
+
+  public async connectToMongoDB(url: string): Promise<void> {
+    try {
+      if (this.mongoConnection !== null) {
+        throw new Error('MongoDB connection already exists');
+      }
+      await mongoose.connect(url);
+      this.mongoConnection = mongoose.connection;
+      console.log('Connected to MongoDB!');
+    } catch (error) {
+      console.log({ error }, 'Failed to connect to MongoDB!');
+      throw new Error(`Failed to connect to MongoDB: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  public async disconnectFromMongoDB(): Promise<void> {
+    try {
+      if (this.mongoConnection !== null) {
+        await this.mongoConnection.close();
+        this.mongoConnection = null;
+        console.log('Disconnected from MongoDB');
+      }
+    } catch (error) {
+      throw new Error(`Failed to disconnect from MongoDB: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
 
   public static getInstance(): DatabaseManager {
     if (typeof DatabaseManager.instance === 'undefined') {
       DatabaseManager.instance = new DatabaseManager();
     }
     return DatabaseManager.instance;
-  }
-
-  public async connectToMongoDB(url: string): Promise<void> {
-    try {
-      await mongoose.connect(url);
-      console.log('Connected to MongoDB!');
-    } catch (error) {
-      console.log({ error }, 'Failed to connect to MongoDB!');
-    }
   }
 
   public async getGuildDb(guildId: Snowflake): Promise<Connection> {
