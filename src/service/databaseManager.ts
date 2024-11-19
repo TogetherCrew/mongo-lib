@@ -21,8 +21,34 @@ import { type Snowflake } from 'discord.js';
 export default class DatabaseManager {
   private static instance: DatabaseManager;
   private modelCache: Record<string, boolean> = {};
+  private mongoConnection: mongoose.Connection | null = null;
 
-  // Singleton pattern to get the instance of DatabaseManager
+  public async connectToMongoDB(url: string): Promise<void> {
+    try {
+      if (this.mongoConnection !== null) {
+        throw new Error('MongoDB connection already exists');
+      }
+      await mongoose.connect(url);
+      this.mongoConnection = mongoose.connection;
+      console.log('Connected to MongoDB!');
+    } catch (error) {
+      console.log({ error }, 'Failed to connect to MongoDB!');
+      throw new Error(`Failed to connect to MongoDB: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  public async disconnectFromMongoDB(): Promise<void> {
+    try {
+      if (this.mongoConnection !== null) {
+        await this.mongoConnection.close();
+        this.mongoConnection = null;
+        console.log('Disconnected from MongoDB');
+      }
+    } catch (error) {
+      throw new Error(`Failed to disconnect from MongoDB: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
   public static getInstance(): DatabaseManager {
     if (typeof DatabaseManager.instance === 'undefined') {
       DatabaseManager.instance = new DatabaseManager();
@@ -30,7 +56,6 @@ export default class DatabaseManager {
     return DatabaseManager.instance;
   }
 
-  // Method to get Guild Database connection
   public async getGuildDb(guildId: Snowflake): Promise<Connection> {
     const dbName = guildId;
     const db = mongoose.connection.useDb(dbName, { useCache: true });
@@ -38,7 +63,6 @@ export default class DatabaseManager {
     return db;
   }
 
-  // Method to get Platform Database connection
   public async getPlatformDb(platformId: string): Promise<Connection> {
     const dbName = platformId;
     const db = mongoose.connection.useDb(dbName, { useCache: true });
@@ -46,7 +70,6 @@ export default class DatabaseManager {
     return db;
   }
 
-  // Method to setup models based on database type
   private async setupModels(db: Connection, dbType: 'guild' | 'platform'): Promise<void> {
     if (!this.modelCache[db.name]) {
       try {
@@ -66,7 +89,6 @@ export default class DatabaseManager {
     }
   }
 
-  // Method to delete a database using the connection
   public async deleteDatabase(db: Connection): Promise<void> {
     const dbName = db.name;
     try {
