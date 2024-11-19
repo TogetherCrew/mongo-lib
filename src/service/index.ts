@@ -1,3 +1,3 @@
 import DatabaseManager from './databaseManager';
-
-export { DatabaseManager };
+import Connetion from './connetion';
+export { DatabaseManager, Connetion };
