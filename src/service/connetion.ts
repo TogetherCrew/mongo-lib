@@ -1,7 +1,22 @@
 import mongoose, { type Connection } from 'mongoose';
 
+/**
+ * Manages the MongoDB connection using Mongoose.
+ * Implements the singleton pattern to ensure a single connection throughout the application.
+ */
 export default class MongoConnectionManager {
+  private static instance: MongoConnectionManager;
   private mongoConnection: Connection | null = null;
+
+  // Private constructor to prevent direct instantiation
+  private constructor() {}
+
+  public static getInstance(): MongoConnectionManager {
+    if (typeof MongoConnectionManager.instance === 'undefined') {
+      MongoConnectionManager.instance = new MongoConnectionManager();
+    }
+    return MongoConnectionManager.instance;
+  }
 
   public async connect(url: string): Promise<void> {
     try {
@@ -34,20 +49,12 @@ export default class MongoConnectionManager {
     }
   }
 
-  /**
-   * Ensures that there is an active MongoDB connection.
-   * Throws an error if no connection is active.
-   */
   public ensureConnected(): void {
-    if (this.mongoConnection !== null) {
+    if (this.mongoConnection === null) {
       throw new Error('No active MongoDB connection. Please connect before performing database operations.');
     }
   }
 
-  /**
-   * Gets the current MongoDB connection.
-   * @returns The Mongoose Connection object.
-   */
   public getConnection(): Connection | null {
     this.ensureConnected();
     return this.mongoConnection;
