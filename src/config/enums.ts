@@ -6,6 +6,7 @@ export enum PlatformNames {
   MediaWiki = 'mediaWiki',
   Twitter = 'twitter',
   Discourse = 'discourse',
+  Telegram = 'telegram',
 }
 
 export enum ModuleNames {
