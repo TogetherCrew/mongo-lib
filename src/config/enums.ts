@@ -36,5 +36,5 @@ export enum TokenTypeNames {
   GOOGLE_ACCESS = 'google_access',
   GOOGLE_REFRESH = 'google_refresh',
   NOTION_ACCESS = 'notion_access',
-  TELEGRAM_VERIFICATION = 'telegram_verification'
+  TELEGRAM_VERIFICATION = 'telegram_verification',
 }
