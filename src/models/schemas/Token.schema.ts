@@ -15,6 +15,10 @@ const tokenSchema = new Schema<IToken>(
       ref: 'User',
       required: true,
     },
+    community: {
+      type: Schema.Types.ObjectId,
+      ref: 'Community',
+    },
     type: {
       type: String,
       enum: Object.values(TokenTypeNames),
