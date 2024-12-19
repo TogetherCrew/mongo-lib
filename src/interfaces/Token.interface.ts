@@ -4,7 +4,7 @@ import { type TokenTypeNames } from '../config/enums';
 export interface IToken {
   token: string;
   user: Types.ObjectId;
-  community: Types.ObjectId;
+  community?: Types.ObjectId;
   type: TokenTypeNames;
   expires: Date;
   blacklisted?: boolean;
