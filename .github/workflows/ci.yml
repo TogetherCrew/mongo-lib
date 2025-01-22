@@ -1,71 +1,10 @@
-name: CI & Release
+---
+name: CI Pipeline
 
-on:
-  pull_request:
-    branches: ['main']
-  push:
-    branches: ['main']
+on: pull_request
 
 jobs:
-  # 1) Lint
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: super-linter/super-linter@v5.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TYPESCRIPT_DEFAULT_STYLE: prettier
-          VALIDATE_DOCKERFILE_HADOLINT: false
-          VALIDATE_JSCPD: false
-          VALIDATE_PYTHON_FLAKE8: false
-          VALIDATE_PYTHON_MYPY: false
-
-  # 2) Test
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    needs: [lint]
-    steps:
-      - uses: actions/checkout@v4
-      # If you want to run Docker-based tests, uncomment and adapt:
-      # - run: docker compose -f docker-compose.test.yml up --exit-code-from app
-      # Or your normal npm-based tests:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-      - run: npm ci
-      - run: npm run test
-      # If you use Code Climate:
-      - uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-
-  # 3) Release (only on pushes to main)
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    needs: [test]
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
-    steps:
-      - uses: actions/checkout@v4
-
-      # Setup Node and npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: npm ci
-      - run: npm run build
-
-      - name: Semantic Release
-        run: npx semantic-release
-        env:
-          # GITHUB_TOKEN is necessary so semantic-release can create releases
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          # npm token to actually publish your package
-          # (This must be stored in your repo secrets as `NODE_AUTH_TOKEN`.)
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+  ci:
+    uses: TogetherCrew/operations/.github/workflows/ci.yml@main
+    secrets:
+      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
