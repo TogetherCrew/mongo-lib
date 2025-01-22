@@ -1,7 +1,8 @@
-import { Schema, type Document } from 'mongoose';
-import { toJSON, paginate } from './plugins';
+import { Document, Schema } from 'mongoose';
+
+import { IUser, UserModel } from '../../interfaces';
 import { Community } from '../index';
-import { type IUser, type UserModel } from '../../interfaces';
+import { paginate, toJSON } from './plugins';
 
 const userSchema = new Schema<IUser, UserModel>(
   {
