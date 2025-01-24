@@ -1,21 +1,23 @@
-import { type Snowflake } from 'discord.js';
 import { type Model, type Types } from 'mongoose';
+import { type PlatformNames } from '../config/enums';
+
+export interface IIdentity {
+  provider: PlatformNames;
+  id: string;
+}
 
 export interface IUser {
-  discordId: Snowflake;
-  email?: string;
+  identities: IIdentity[];
   communities?: Types.ObjectId[];
   tcaAt?: Date;
-  unverifiedTelegramUsername?: string;
 }
 
 export interface IUserUpdateBody {
-  email?: string;
+  identities?: IIdentity[];
   communities?: Types.ObjectId[];
   tcaAt?: Date;
-  unverifiedTelegramUsername?: string;
 }
 
 export interface UserModel extends Model<IUser> {
-  paginate: (filter: object, options: object) => any;
+  paginate: (filter: object, options: object) => Promise<any>;
 }

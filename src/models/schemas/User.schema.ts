@@ -1,21 +1,25 @@
-import { Document, Schema } from 'mongoose';
+import { type Document, Schema } from 'mongoose';
 
-import { IUser, UserModel } from '../../interfaces';
+import { type IUser, type UserModel } from '../../interfaces';
 import { Community } from '../index';
 import { paginate, toJSON } from './plugins';
+import { PlatformNames } from '../../config/enums';
 
 const userSchema = new Schema<IUser, UserModel>(
   {
-    discordId: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    email: {
-      type: String,
-      trim: true,
-      lowercase: true,
-    },
+    identities: [
+      {
+        provider: {
+          type: String,
+          enum: Object.values(PlatformNames),
+          required: true,
+        },
+        id: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
     communities: [
       {
         type: Schema.Types.ObjectId,
@@ -24,9 +28,6 @@ const userSchema = new Schema<IUser, UserModel>(
     ],
     tcaAt: {
       type: Date,
-    },
-    unverifiedTelegramUsername: {
-      type: String,
     },
   },
   { timestamps: true },
