@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RnDAO/tc-dbComm.git"
+    "url": "git+https://github.com/TogetherCrew/mongo-lib.git"
   },
   "author": "Behzad Rabiei & MagicPalm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RnDAO/tc-dbComm/issues"
+    "url": "https://github.com/TogetherCrew/mongo-lib/issues"
   },
-  "homepage": "https://github.com/RnDAO/tc-dbComm#readme",
+  "homepage": "https://github.com/TogetherCrew/mongo-lib#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
     "joi": "^17.7.0",
