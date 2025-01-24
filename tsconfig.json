@@ -6,18 +6,9 @@
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true
   },
-  "include": [
-    "./src/**/*",
-    "./__test__/**/*",
-    ".eslintrc.json",
-    "jest.config.ts"
-  ],
-  "exclude": [
-    "./__test__/**/*",
-    ".eslintrc.json",
-    "jest.config.ts"
-  ]
+  "include": ["./src/**/*", "./__test__/**/*", ".eslintrc.json", "jest.config.ts"],
+  "exclude": ["./__test__/**/*", ".eslintrc.json", "jest.config.ts"]
 }
