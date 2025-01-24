@@ -11,8 +11,7 @@
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"*.ts\" ",
     "prepublishOnly": "npm test",
-    "version": "npm run format && git add -A src",
-    "prepare": "husky"
+    "version": "npm run format && git add -A src"
   },
   "repository": {
     "type": "git",
