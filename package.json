@@ -10,8 +10,9 @@
     "dev": "nodemon ./src/index.ts",
     "test": "jest --detectOpenHandles",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\" \"*.ts\" ",
-    "prepublishOnly": "npm test",
-    "version": "npm run format && git add -A src"
+    "version": "npm run format && git add -A src",
+    "prepublishOnly": "npm run build && npm test",
+    "copy-files": "copyfiles -u 1 src/**/*.yml dist"
   },
   "repository": {
     "type": "git",
