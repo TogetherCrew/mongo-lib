@@ -7,6 +7,7 @@ export enum PlatformNames {
   Twitter = 'twitter',
   Discourse = 'discourse',
   Telegram = 'telegram',
+  Website = 'website'
 }
 
 export enum ModuleNames {
@@ -21,6 +22,8 @@ export enum HivemindPlatformNames {
   GitHub = PlatformNames.GitHub,
   Notion = PlatformNames.Notion,
   MediaWiki = PlatformNames.MediaWiki,
+  Website = PlatformNames.Website
+
 }
 export enum ViolationDetectionPlatformNames {
   Discourse = PlatformNames.Discourse,
