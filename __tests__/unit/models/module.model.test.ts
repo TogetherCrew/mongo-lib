@@ -1,7 +1,8 @@
-import { Module, Platform, Community, User } from '../../../src/models';
-import { IModule } from '../../../src/interfaces';
 import { Types } from 'mongoose';
-import { ModuleNames, PlatformNames } from '../../../src/config/enums';
+
+import { ModuleNames } from '../../../src/config/enums';
+import { IModule } from '../../../src/interfaces';
+import { Module } from '../../../src/models';
 
 // import setupTestDB from '../../utils/setupTestDB';
 
@@ -14,6 +15,7 @@ describe('Module model', () => {
       module = {
         name: ModuleNames.Hivemind,
         community: new Types.ObjectId(),
+        activated: false,
         options: {
           platforms: [
             {
