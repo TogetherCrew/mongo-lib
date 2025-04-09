@@ -1,9 +1,11 @@
-import { type Model, type Types } from 'mongoose';
-import { type PlatformNames, type ModuleNames } from '../config/enums';
+import { Model, Types } from 'mongoose';
+
+import { ModuleNames, PlatformNames } from '../config/enums';
 
 export interface IModule {
   name: ModuleNames;
   community: Types.ObjectId;
+  activated: boolean;
   options?: {
     platforms: Array<{
       platform: Types.ObjectId | null;

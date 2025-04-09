@@ -1,7 +1,8 @@
 import { Schema } from 'mongoose';
-import { toJSON, paginate } from './plugins';
+
+import { ModuleNames, PlatformNames } from '../../config/enums';
 import { type IModule, type ModuleModel } from '../../interfaces';
-import { PlatformNames, ModuleNames } from '../../config/enums';
+import { paginate, toJSON } from './plugins';
 
 const moduleSchema = new Schema<IModule, ModuleModel>(
   {
@@ -14,6 +15,11 @@ const moduleSchema = new Schema<IModule, ModuleModel>(
       type: Schema.Types.ObjectId,
       ref: 'Community',
       required: true,
+    },
+    activated: {
+      type: Boolean,
+      required: true,
+      default: false,
     },
     options: {
       platforms: [
