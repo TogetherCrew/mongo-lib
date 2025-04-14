@@ -14,6 +14,9 @@ export enum ModuleNames {
   Hivemind = 'hivemind',
   ViolationDetection = 'violationDetection',
   DynamicNft = 'dynamicNft',
+  CommunityInsights = 'communityInsights',
+  CommunityHealth = 'communityHealth',
+  Announcements = 'announcements',
 }
 
 export enum HivemindPlatformNames {
