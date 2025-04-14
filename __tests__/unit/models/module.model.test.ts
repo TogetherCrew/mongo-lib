@@ -13,7 +13,7 @@ describe('Module model', () => {
     let module: IModule;
     beforeEach(() => {
       module = {
-        name: ModuleNames.Hivemind,
+        name: ModuleNames.Announcements,
         community: new Types.ObjectId(),
         activated: false,
         options: {
