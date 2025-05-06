@@ -1,14 +1,10 @@
-import mongoose, { type Connection } from 'mongoose';
+import mongoose, { Connection } from 'mongoose';
 
-/**
- * Manages the MongoDB connection using Mongoose.
- * Implements the singleton pattern to ensure a single connection throughout the application.
- */
 export default class MongoConnectionManager {
   private static instance: MongoConnectionManager;
   private mongoConnection: Connection | null = null;
 
-  // Private constructor to prevent direct instantiation
+  // Private constructorto prevent direct instantiation
   private constructor() {}
 
   public static getInstance(): MongoConnectionManager {
