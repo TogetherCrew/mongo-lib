@@ -1,22 +1,15 @@
-import mongoose, { type Connection } from 'mongoose';
-import {
-  heatMapSchema,
-  rawInfoSchema,
-  MemberActivitySchema,
-  guildMemberSchema,
-  channelSchema,
-  roleSchema,
-} from '../models/schemas';
-import {
-  type IHeatMap,
-  type IRawInfo,
-  type IMemberActivity,
-  type IGuildMember,
-  type IChannel,
-  type IRole,
-} from '../interfaces';
+import { Snowflake } from 'discord.js';
+import mongoose, { Connection } from 'mongoose';
 
-import { type Snowflake } from 'discord.js';
+import { IChannel, IGuildMember, IHeatMap, IMemberActivity, IRawInfo, IRole } from './interfaces';
+import {
+  channelSchema,
+  guildMemberSchema,
+  heatMapSchema,
+  MemberActivitySchema,
+  rawInfoSchema,
+  roleSchema,
+} from './models/schemas';
 
 export default class DatabaseManager {
   private static instance: DatabaseManager;
