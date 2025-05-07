@@ -1,3 +1,11 @@
+## [3.7.1](https://github.com/TogetherCrew/mongo-lib/compare/v3.7.0...v3.7.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* create seperate db folder ([dc60831](https://github.com/TogetherCrew/mongo-lib/commit/dc608319a118a5d1631a28d3b48e709f602be836))
+* export files ([c0b6a2d](https://github.com/TogetherCrew/mongo-lib/commit/c0b6a2d3052ace1aabf63273e269faf75f534e8d))
+
 # [3.7.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.6.0...v3.7.0) (2025-05-07)
 
 
