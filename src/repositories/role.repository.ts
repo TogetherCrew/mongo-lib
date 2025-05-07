@@ -1,13 +1,12 @@
-import { Model } from 'mongoose';
+import { type Connection } from 'mongoose';
+
+import { type IRole } from '../interfaces';
 import { BaseRepository } from './base.repository';
-import { IRole } from '../interfaces';
-import Role from '../models/Role.model';
 
 export class RoleRepository extends BaseRepository<IRole> {
-  constructor(model: Model<IRole> = Role) {
-    super(model);
+  constructor(connection: Connection) {
+    super(connection.model<IRole>('Role'));
   }
 }
 
-export const roleRepository = new RoleRepository();
-export default roleRepository;
+export const makeRoleRepository = (connection: Connection) => new RoleRepository(connection);

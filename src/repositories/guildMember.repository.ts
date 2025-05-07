@@ -1,13 +1,12 @@
-import { Model } from 'mongoose';
+import { type Connection } from 'mongoose';
+
+import { type IGuildMember } from '../interfaces';
 import { BaseRepository } from './base.repository';
-import { IGuildMember } from '../interfaces';
-import GuildMember from '../models/GuildMember.model';
 
 export class GuildMemberRepository extends BaseRepository<IGuildMember> {
-  constructor(model: Model<IGuildMember> = GuildMember) {
-    super(model);
+  constructor(connection: Connection) {
+    super(connection.model<IGuildMember>('GuildMember'));
   }
 }
 
-export const guildMemberRepository = new GuildMemberRepository();
-export default guildMemberRepository;
+export const makeGuildMemberRepository = (connection: Connection) => new GuildMemberRepository(connection);

@@ -1,7 +1,15 @@
-import { Snowflake } from 'discord.js';
-import mongoose, { Connection } from 'mongoose';
+/* eslint-disable no-console */
+import { type Snowflake } from 'discord.js';
+import mongoose, { type Connection } from 'mongoose';
 
-import { IChannel, IGuildMember, IHeatMap, IMemberActivity, IRawInfo, IRole } from './interfaces';
+import {
+  type IChannel,
+  type IGuildMember,
+  type IHeatMap,
+  type IMemberActivity,
+  type IRawInfo,
+  type IRole,
+} from './interfaces';
 import {
   channelSchema,
   guildMemberSchema,
@@ -12,55 +20,62 @@ import {
 } from './models/schemas';
 
 export default class DatabaseManager {
-  private static instance: DatabaseManager;
-  private modelCache: Record<string, boolean> = {};
+  private static instance: DatabaseManager | undefined;
+
+  private readonly modelCache = new Map<string, Promise<void>>();
 
   public static getInstance(): DatabaseManager {
-    if (typeof DatabaseManager.instance === 'undefined') {
+    if (DatabaseManager.instance === undefined) {
       DatabaseManager.instance = new DatabaseManager();
     }
     return DatabaseManager.instance;
   }
 
   public async getGuildDb(guildId: Snowflake): Promise<Connection> {
-    const dbName = guildId;
-    const db = mongoose.connection.useDb(dbName, { useCache: true });
+    const db = mongoose.connection.useDb(guildId, { useCache: true });
     await this.setupModels(db, 'guild');
     return db;
   }
 
   public async getPlatformDb(platformId: string): Promise<Connection> {
-    const dbName = platformId;
-    const db = mongoose.connection.useDb(dbName, { useCache: true });
+    const db = mongoose.connection.useDb(platformId, { useCache: true });
     await this.setupModels(db, 'platform');
     return db;
   }
 
   private async setupModels(db: Connection, dbType: 'guild' | 'platform'): Promise<void> {
-    if (!this.modelCache[db.name]) {
-      try {
-        if (dbType === 'platform') {
-          db.model<IHeatMap>('HeatMap', heatMapSchema);
-          db.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
-        } else if (dbType === 'guild') {
-          db.model<IRawInfo>('RawInfo', rawInfoSchema);
-          db.model<IGuildMember>('GuildMember', guildMemberSchema);
-          db.model<IChannel>('Channel', channelSchema);
-          db.model<IRole>('Role', roleSchema);
+    let compilePromise: Promise<void> | undefined = this.modelCache.get(db.name);
+
+    if (compilePromise === undefined) {
+      compilePromise = (async (): Promise<void> => {
+        try {
+          if (dbType === 'platform') {
+            db.model<IHeatMap>('HeatMap', heatMapSchema);
+            db.model<IMemberActivity>('MemberActivity', MemberActivitySchema);
+          } else {
+            db.model<IRawInfo>('RawInfo', rawInfoSchema);
+            db.model<IGuildMember>('GuildMember', guildMemberSchema);
+            db.model<IChannel>('Channel', channelSchema);
+            db.model<IRole>('Role', roleSchema);
+          }
+        } catch (err) {
+          console.error(`Error setting up models for ${db.name}:`, err);
         }
-        this.modelCache[db.name] = true;
-      } catch (error) {
-        console.error(`Error setting up models for ${db.name}:`, error);
-      }
+      })();
+
+      this.modelCache.set(db.name, compilePromise);
     }
+
+    await compilePromise;
   }
 
   public async deleteDatabase(db: Connection): Promise<void> {
-    const dbName = db.name;
     try {
       await db.dropDatabase();
-    } catch (error) {
-      console.error(`Error deleting database ${dbName}:`, error);
+      await db.close();
+      this.modelCache.delete(db.name);
+    } catch (err) {
+      console.error(`Error deleting database ${db.name}:`, err);
     }
   }
 }

@@ -1,6 +1,6 @@
-import { Model } from 'mongoose';
+import { type Model } from 'mongoose';
 import { BaseRepository } from './base.repository';
-import { IAnnouncement } from '../interfaces';
+import { type IAnnouncement } from '../interfaces';
 import Announcement from '../models/Announcement.model';
 
 export class AnnouncementRepository extends BaseRepository<IAnnouncement> {
@@ -10,4 +10,3 @@ export class AnnouncementRepository extends BaseRepository<IAnnouncement> {
 }
 
 export const announcementRepository = new AnnouncementRepository();
-export default announcementRepository;

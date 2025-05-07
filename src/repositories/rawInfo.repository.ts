@@ -1,13 +1,12 @@
-import { Model } from 'mongoose';
+import { type Connection } from 'mongoose';
+
+import { type IRawInfo } from '../interfaces';
 import { BaseRepository } from './base.repository';
-import { IRawInfo } from '../interfaces';
-import RawInfo from '../models/RawInfo.model';
 
 export class RawInfoRepository extends BaseRepository<IRawInfo> {
-  constructor(model: Model<IRawInfo> = RawInfo) {
-    super(model);
+  constructor(connection: Connection) {
+    super(connection.model<IRawInfo>('RawInfo'));
   }
 }
 
-export const rawInfoRepository = new RawInfoRepository();
-export default rawInfoRepository;
+export const makeRawInfoRepository = (connection: Connection) => new RawInfoRepository(connection);

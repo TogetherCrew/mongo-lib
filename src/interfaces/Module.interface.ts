@@ -1,6 +1,6 @@
-import { Model, Types } from 'mongoose';
+import { type Model, type Types } from 'mongoose';
 
-import { ModuleNames, PlatformNames } from '../config/enums';
+import { type ModuleNames, type PlatformNames } from '../config/enums';
 
 export interface IModule {
   name: ModuleNames;

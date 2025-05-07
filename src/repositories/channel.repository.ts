@@ -1,13 +1,12 @@
-import { Model } from 'mongoose';
+import { type Connection } from 'mongoose';
+
+import { type IChannel } from '../interfaces';
 import { BaseRepository } from './base.repository';
-import { IChannel } from '../interfaces';
-import Channel from '../models/Channel.model';
 
 export class ChannelRepository extends BaseRepository<IChannel> {
-  constructor(model: Model<IChannel> = Channel) {
-    super(model);
+  constructor(connection: Connection) {
+    super(connection.model<IChannel>('Channel'));
   }
 }
 
-export const channelRepository = new ChannelRepository();
-export default channelRepository;
+export const makeChannelRepository = (connection: Connection) => new ChannelRepository(connection);
