@@ -1,3 +1,10 @@
+# [3.8.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.7.1...v3.8.0) (2025-05-07)
+
+
+### Features
+
+* create seperate db folder ([ac06522](https://github.com/TogetherCrew/mongo-lib/commit/ac065227feb0de095ccc2b3655469bc3a0c27d01))
+
 ## [3.7.1](https://github.com/TogetherCrew/mongo-lib/compare/v3.7.0...v3.7.1) (2025-05-07)
 
 
