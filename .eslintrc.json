@@ -3,10 +3,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "standard-with-typescript",
-    "prettier"
-  ],
+  "extends": ["standard-with-typescript", "prettier"],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -14,12 +11,11 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "rules": {},
-  "ignorePatterns": [
-    "coverage",
-    "dist",
-    "__tests__/",
-    "jest.config.ts",
-    "*.yml"
-  ]
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "ignorePatterns": ["coverage", "dist", "__tests__/", "jest.config.ts", "*.yml"]
 }

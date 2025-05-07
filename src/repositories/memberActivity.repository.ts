@@ -1,13 +1,12 @@
-import { Model } from 'mongoose';
+import { type Connection } from 'mongoose';
+
+import { type IMemberActivity } from '../interfaces';
 import { BaseRepository } from './base.repository';
-import { IMemberActivity } from '../interfaces';
-import MemberActivity from '../models/memberActivity.model';
 
 export class MemberActivityRepository extends BaseRepository<IMemberActivity> {
-  constructor(model: Model<IMemberActivity> = MemberActivity) {
-    super(model);
+  constructor(connection: Connection) {
+    super(connection.model<IMemberActivity>('MemberActivity'));
   }
 }
 
-export const memberActivityRepository = new MemberActivityRepository();
-export default memberActivityRepository;
+export const makeMemberActivityRepository = (connection: Connection) => new MemberActivityRepository(connection);

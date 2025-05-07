@@ -1,5 +1,13 @@
-// src/db/repositories/base.repository.ts
-import { FilterQuery, LeanDocument, Model, PopulateOptions, ProjectionType, QueryOptions, UpdateQuery } from 'mongoose';
+import {
+  type FilterQuery,
+  type HydratedDocument,
+  type LeanDocument,
+  type Model,
+  type PopulateOptions,
+  type ProjectionType,
+  type QueryOptions,
+  type UpdateQuery,
+} from 'mongoose';
 
 export interface PaginateOptions {
   page?: number;
@@ -8,51 +16,63 @@ export interface PaginateOptions {
   populate?: string | PopulateOptions | Array<string | PopulateOptions>;
 }
 
+interface PaginateResult<T> {
+  results: Array<LeanDocument<T>>;
+  page: number;
+  limit: number;
+  totalPages: number;
+  totalResults: number;
+}
+
+interface PaginateModel<T> extends Model<T> {
+  paginate: (filter: FilterQuery<T>, options: PaginateOptions) => Promise<PaginateResult<T>>;
+}
+
 export class BaseRepository<T> {
   constructor(private readonly model: Model<T>) {}
 
-  async create(doc: Partial<T>): Promise<T> {
+  async create(doc: Partial<T>): Promise<HydratedDocument<T>> {
     return await this.model.create(doc);
   }
 
-  async createMany(docs: Array<Partial<T>>): Promise<T[]> {
+  async createMany(docs: Array<Partial<T>>): Promise<Array<HydratedDocument<T>>> {
     return await this.model.insertMany(docs);
   }
 
-  async findById(id: string, projection?: ProjectionType<T>, options?: QueryOptions): Promise<T | null> {
-    return await this.model.findById(id, projection, options);
+  async findById(id: string, projection?: ProjectionType<T>, options?: QueryOptions): Promise<LeanDocument<T> | null> {
+    return await this.model.findById(id, projection, options).lean();
   }
 
-  async find(filter: FilterQuery<T>, projection?: ProjectionType<T>, options?: QueryOptions): Promise<T[]> {
-    return await this.model.find(filter, projection, options);
-  }
-
-  async updateOne(
+  async find(
     filter: FilterQuery<T>,
-    update: UpdateQuery<T>,
+    projection?: ProjectionType<T>,
     options?: QueryOptions,
-  ): Promise<{ acknowledged: boolean; modifiedCount: number; upsertedId: unknown }> {
+  ): Promise<Array<LeanDocument<T>>> {
+    return await this.model.find(filter, projection, options).lean();
+  }
+
+  async findOne(
+    filter: FilterQuery<T>,
+    projection?: ProjectionType<T>,
+    options?: QueryOptions,
+  ): Promise<LeanDocument<T> | null> {
+    return await this.model.findOne(filter, projection, options).lean();
+  }
+
+  async updateOne(filter: FilterQuery<T>, update: UpdateQuery<T>, options?: QueryOptions): Promise<any> {
     return await this.model.updateOne(filter, update, options);
   }
 
-  async deleteOne(filter: FilterQuery<T>): Promise<{ deletedCount?: number }> {
+  async deleteOne(filter: FilterQuery<T>): Promise<any> {
     return await this.model.deleteOne(filter);
   }
 
-  async deleteMany(filter: FilterQuery<T>): Promise<{ deletedCount?: number }> {
+  async deleteMany(filter: FilterQuery<T>): Promise<any> {
     return await this.model.deleteMany(filter);
   }
 
-  async paginate(
-    filter: FilterQuery<T>,
-    options: PaginateOptions,
-  ): Promise<{
-    results: Array<LeanDocument<T>>;
-    page: number;
-    limit: number;
-    totalPages: number;
-    totalResults: number;
-  }> {
-    return (this.model as any).paginate(filter, options);
+  async paginate(filter: FilterQuery<T>, options: PaginateOptions): Promise<PaginateResult<T>> {
+    const modelWithPaginate = this.model as unknown as PaginateModel<T>;
+    return await modelWithPaginate.paginate(filter, options);
   }
 }

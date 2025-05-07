@@ -1,6 +1,6 @@
-import { Model } from 'mongoose';
+import { type Model } from 'mongoose';
 import { BaseRepository } from './base.repository';
-import { IModule } from '../interfaces';
+import { type IModule } from '../interfaces';
 import Module from '../models/Module.model';
 
 export class ModuleRepository extends BaseRepository<IModule> {
@@ -10,4 +10,3 @@ export class ModuleRepository extends BaseRepository<IModule> {
 }
 
 export const moduleRepository = new ModuleRepository();
-export default moduleRepository;

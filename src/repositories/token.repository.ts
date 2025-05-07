@@ -1,6 +1,6 @@
-import { Model } from 'mongoose';
+import { type Model } from 'mongoose';
 import { BaseRepository } from './base.repository';
-import { IToken } from '../interfaces';
+import { type IToken } from '../interfaces';
 import Token from '../models/Token.model';
 
 export class TokenRepository extends BaseRepository<IToken> {
@@ -10,4 +10,3 @@ export class TokenRepository extends BaseRepository<IToken> {
 }
 
 export const tokenRepository = new TokenRepository();
-export default tokenRepository;

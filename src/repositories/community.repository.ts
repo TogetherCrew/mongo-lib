@@ -1,6 +1,6 @@
-import { Model } from 'mongoose';
+import { type Model } from 'mongoose';
 import { BaseRepository } from './base.repository';
-import { ICommunity } from '../interfaces';
+import { type ICommunity } from '../interfaces';
 import Community from '../models/Community.model';
 
 export class CommunityRepository extends BaseRepository<ICommunity> {
@@ -10,4 +10,3 @@ export class CommunityRepository extends BaseRepository<ICommunity> {
 }
 
 export const communityRepository = new CommunityRepository();
-export default communityRepository;
