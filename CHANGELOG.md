@@ -1,3 +1,10 @@
+# [3.9.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.8.0...v3.9.0) (2025-05-07)
+
+
+### Features
+
+* add services ([804a4b8](https://github.com/TogetherCrew/mongo-lib/commit/804a4b8c712c2f928f6ce81373d7a551f5bac21e))
+
 # [3.8.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.7.1...v3.8.0) (2025-05-07)
 
 
