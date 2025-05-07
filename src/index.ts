@@ -3,4 +3,4 @@ export * from './models/schemas';
 export * from './interfaces';
 export * from './config/enums';
 export * from './repositories';
-export * from './db';
+export * from './services';
