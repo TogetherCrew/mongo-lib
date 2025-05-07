@@ -9,7 +9,7 @@ import {
   type IMemberActivity,
   type IRawInfo,
   type IRole,
-} from './interfaces';
+} from '../interfaces';
 import {
   channelSchema,
   guildMemberSchema,
@@ -17,7 +17,7 @@ import {
   MemberActivitySchema,
   rawInfoSchema,
   roleSchema,
-} from './models/schemas';
+} from '../models/schemas';
 
 export default class DatabaseManager {
   private static instance: DatabaseManager | undefined;

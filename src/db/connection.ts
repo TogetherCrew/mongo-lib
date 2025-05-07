@@ -54,7 +54,7 @@ export default class MongoConnectionManager {
 
   public ensureConnected(): void {
     if (this.mongoConnection === null) {
-      throw new Error('No active MongoDB connection. Please connect first.');
+      throw new Error('No active MongoDB connection! Please connect first.');
     }
   }
 
