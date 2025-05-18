@@ -17,10 +17,7 @@ export interface IRoleUpdateBody {
 export interface IRoleMethods {
   softDelete: () => void;
 }
-/**
- * Compact representation of a **guild role** suitable for hand‑off to other
- * services.  Only primitive fields – no live Discord.js objects.
- */
+
 export interface RolePayload {
   guild: Snowflake;
   id: Snowflake;
