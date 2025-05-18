@@ -1,3 +1,11 @@
+# [3.10.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.9.0...v3.10.0) (2025-05-18)
+
+
+### Features
+
+* add discord payloads ([466f450](https://github.com/TogetherCrew/mongo-lib/commit/466f4507bfd13d2f890cf0222dfa4c42bb9d23d6))
+* add discord payloads ([c0e4de0](https://github.com/TogetherCrew/mongo-lib/commit/c0e4de05e7f7afcf278b05793df313a9aae7f79e))
+
 # [3.9.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.8.0...v3.9.0) (2025-05-07)
 
 
