@@ -1,5 +1,5 @@
-import { type Snowflake } from 'discord.js';
-import { type Model } from 'mongoose';
+import { Snowflake } from 'discord.js';
+import { Model } from 'mongoose';
 
 export interface IOverwrite {
   id: Snowflake; // ID of the role or user this overwrite applies to
@@ -26,6 +26,26 @@ export interface IChannelUpdateBody {
 }
 export interface IChannelMethods {
   softDelete: () => void;
+}
+
+export interface ChannelPayload {
+  type: number;
+  guild: Snowflake;
+  guildId: Snowflake;
+  permissionOverwrites: Snowflake[];
+  messages: Snowflake[];
+  threads: Snowflake[];
+  nsfw: boolean;
+  flags: number;
+  id: Snowflake;
+  name: string;
+  rawPosition: number;
+  parentId: Snowflake | null;
+  topic: string | null;
+  lastMessageId: Snowflake | null;
+  defaultThreadRateLimitPerUser: number | null;
+  rateLimitPerUser: number;
+  createdTimestamp: number;
 }
 
 export interface ChannelModel extends Model<IChannel, Record<string, unknown>, IChannelMethods> {

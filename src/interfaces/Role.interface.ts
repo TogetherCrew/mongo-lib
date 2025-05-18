@@ -1,5 +1,5 @@
-import { type Snowflake } from 'discord.js';
-import { type Model } from 'mongoose';
+import { Snowflake } from 'discord.js';
+import { Model } from 'mongoose';
 
 export interface IRole {
   roleId: Snowflake;
@@ -16,6 +16,22 @@ export interface IRoleUpdateBody {
 
 export interface IRoleMethods {
   softDelete: () => void;
+}
+
+export interface RolePayload {
+  guild: Snowflake;
+  id: Snowflake;
+  name: string;
+  color: number;
+  icon: string | null;
+  unicodeEmoji: string | null;
+  hoist: boolean;
+  mentionable: boolean;
+  managed: boolean;
+  permissions: string;
+  rawPosition: number;
+  tags: unknown | null;
+  createdTimestamp: number;
 }
 
 export interface RoleModel extends Model<IRole, Record<string, unknown>, IRoleMethods> {

@@ -1,5 +1,5 @@
-import { type Snowflake } from 'discord.js';
-import { type Model } from 'mongoose';
+import { Snowflake } from 'discord.js';
+import { Model } from 'mongoose';
 
 export interface IGuildMember {
   discordId: Snowflake;
@@ -26,6 +26,24 @@ export interface IGuildMemberUpdateBody {
   globalName?: string | null;
   nickname?: string | null;
   isBot?: boolean | null;
+}
+
+export interface GuildMemberPayload {
+  guildId: Snowflake;
+  userId: Snowflake;
+  joinedTimestamp: number | null;
+  premiumSinceTimestamp: number | null;
+  communicationDisabledUntilTimestamp: number | null;
+  nickname: string | null;
+  displayName: string;
+  avatar: string | null;
+  banner: string | null;
+  avatarURL: string | null;
+  bannerURL: string | null;
+  displayAvatarURL: string | null;
+  roles: Snowflake[];
+  pending: boolean;
+  flags: number;
 }
 
 export interface IGuildMemberMethods {
