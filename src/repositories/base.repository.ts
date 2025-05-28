@@ -1,12 +1,12 @@
 import {
-  type FilterQuery,
-  type HydratedDocument,
-  type LeanDocument,
-  type Model,
-  type PopulateOptions,
-  type ProjectionType,
-  type QueryOptions,
-  type UpdateQuery,
+  FilterQuery,
+  HydratedDocument,
+  LeanDocument,
+  Model,
+  PopulateOptions,
+  ProjectionType,
+  QueryOptions,
+  UpdateQuery,
 } from 'mongoose';
 
 export interface PaginateOptions {
@@ -61,6 +61,13 @@ export class BaseRepository<T> {
 
   async updateOne(filter: FilterQuery<T>, update: UpdateQuery<T>, options?: QueryOptions): Promise<any> {
     return await this.model.updateOne(filter, update, options);
+  }
+
+  async upsert(filter: FilterQuery<T>, update: UpdateQuery<T>, options?: QueryOptions): Promise<any> {
+    return await this.model.updateOne(filter, update, {
+      ...options,
+      upsert: true,
+    });
   }
 
   async deleteOne(filter: FilterQuery<T>): Promise<any> {
