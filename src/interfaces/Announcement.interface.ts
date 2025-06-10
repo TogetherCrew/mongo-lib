@@ -1,4 +1,4 @@
-import { type Model, type Types, type ObjectId } from 'mongoose';
+import { Model, ObjectId, Types } from 'mongoose';
 
 interface IDiscordOptions {
   channelIds?: string[];
@@ -30,10 +30,6 @@ export interface IAnnouncement {
   data: Array<IAnnouncementData<IDiscordOptions>>;
 }
 
-export interface IAnnouncementMethods {
-  softDelete: (userId: ObjectId) => void;
-}
-
-export interface AnnouncementModel extends Model<IAnnouncement, Record<string, unknown>, IAnnouncementMethods> {
+export interface AnnouncementModel extends Model<IAnnouncement> {
   paginate: (filter: object, options: object) => any;
 }

@@ -47,7 +47,7 @@ export interface GuildMemberPayload {
 }
 
 export interface IGuildMemberMethods {
-  softDelete: () => void;
+  softDelete: () => Promise<void>;
 }
 
 export interface GuildMemberModel extends Model<IGuildMember, Record<string, unknown>, IGuildMemberMethods> {

@@ -15,7 +15,7 @@ export interface IRoleUpdateBody {
 }
 
 export interface IRoleMethods {
-  softDelete: () => void;
+  softDelete: () => Promise<void>;
 }
 
 export interface RolePayload {

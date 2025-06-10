@@ -43,7 +43,7 @@ export interface IThreadUpdateBody {
 }
 
 export interface IThreadMethods {
-  softDelete: () => void;
+  softDelete: () => Promise<void>;
 }
 
 export interface ThreadModel extends Model<IThread, Record<string, unknown>, IThreadMethods> {
