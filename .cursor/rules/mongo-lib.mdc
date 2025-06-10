@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- This Project is a private npm package. it's for all projects to interact with mongo db.
+- Always use clean code and design patterns.
+- Alwyas propose the codes base on the current strctour.

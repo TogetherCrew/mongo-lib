@@ -25,7 +25,7 @@ export interface IChannelUpdateBody {
   type?: number;
 }
 export interface IChannelMethods {
-  softDelete: () => void;
+  softDelete: () => Promise<void>;
 }
 
 export interface ChannelPayload {
