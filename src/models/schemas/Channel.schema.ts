@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
-import { toJSON, paginate } from './plugins';
-import { type IChannel, type ChannelModel } from '../../interfaces';
+
+import { ChannelModel, IChannel } from '../../interfaces';
+import { paginate, toJSON } from './plugins';
 
 const channelSchema = new Schema<IChannel, ChannelModel>({
   channelId: {
@@ -18,7 +19,7 @@ const channelSchema = new Schema<IChannel, ChannelModel>({
   },
   permissionOverwrites: [
     {
-      id: String, // or use mongoose.Schema.Types.ObjectId if Snowflake is an ObjectId
+      id: String,
       type: {
         type: Number,
         enum: [0, 1],

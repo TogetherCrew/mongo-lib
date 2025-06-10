@@ -11,3 +11,4 @@ export * from './Community.interface';
 export * from './Platfrom.interface';
 export * from './Announcement.interface';
 export * from './Module.interface';
+export * from './Thread.interface';
