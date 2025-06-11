@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/TogetherCrew/mongo-lib#readme",
   "dependencies": {
+    "discord-api-types": "^0.38.11",
     "discord.js": "^14.7.1",
     "joi": "^17.7.0",
     "moment": "^2.29.4",
