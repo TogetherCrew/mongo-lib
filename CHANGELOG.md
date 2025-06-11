@@ -1,3 +1,10 @@
+## [3.12.1](https://github.com/TogetherCrew/mongo-lib/compare/v3.12.0...v3.12.1) (2025-06-11)
+
+
+### Bug Fixes
+
+* fix te issues with commitlint ([e61e38c](https://github.com/TogetherCrew/mongo-lib/commit/e61e38c2473fbedf85d9bd1c2c1dcca2e391486b))
+
 # [3.12.0](https://github.com/TogetherCrew/mongo-lib/compare/v3.11.0...v3.12.0) (2025-06-10)
 
 
