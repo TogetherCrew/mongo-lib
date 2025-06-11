@@ -1,3 +1,10 @@
+## [3.13.2](https://github.com/TogetherCrew/mongo-lib/compare/v3.13.1...v3.13.2) (2025-06-11)
+
+
+### Bug Fixes
+
+* make guild_id optional in thread interface ([8d4ebb8](https://github.com/TogetherCrew/mongo-lib/commit/8d4ebb850db8da4746542109d675302c4aeddee3))
+
 ## [3.13.1](https://github.com/TogetherCrew/mongo-lib/compare/v3.13.0...v3.13.1) (2025-06-11)
 
 
