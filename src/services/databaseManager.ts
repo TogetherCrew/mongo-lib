@@ -1,15 +1,8 @@
 /* eslint-disable no-console */
-import { type Snowflake } from 'discord.js';
-import mongoose, { type Connection } from 'mongoose';
+import { Snowflake } from 'discord.js';
+import mongoose, { Connection } from 'mongoose';
 
-import {
-  type IChannel,
-  type IGuildMember,
-  type IHeatMap,
-  type IMemberActivity,
-  type IRawInfo,
-  type IRole,
-} from '../interfaces';
+import { IChannel, IGuildMember, IHeatMap, IMemberActivity, IRawInfo, IRole, IThread } from '../interfaces';
 import {
   channelSchema,
   guildMemberSchema,
@@ -17,6 +10,7 @@ import {
   MemberActivitySchema,
   rawInfoSchema,
   roleSchema,
+  threadSchema,
 } from '../models/schemas';
 
 export default class DatabaseManager {
@@ -57,6 +51,7 @@ export default class DatabaseManager {
             db.model<IGuildMember>('GuildMember', guildMemberSchema);
             db.model<IChannel>('Channel', channelSchema);
             db.model<IRole>('Role', roleSchema);
+            db.model<IThread>('Thread', threadSchema);
           }
         } catch (err) {
           console.error(`Error setting up models for ${db.name}:`, err);
