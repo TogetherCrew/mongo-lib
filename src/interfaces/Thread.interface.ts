@@ -34,7 +34,7 @@ export interface ForumTag {
 export interface BaseThread {
   id: Snowflake;
   type: 10 | 11 | 12;
-  guild_id: Snowflake;
+  guild_id?: Snowflake;
   parent_id: Snowflake;
   owner_id: Snowflake;
   name: string;
