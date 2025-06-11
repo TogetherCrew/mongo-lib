@@ -71,7 +71,7 @@ describe('Thread model', () => {
 
     test('should handle PRIVATE_THREAD type', async () => {
       thread.type = 12;
-      thread.thread_metadata.invitable = false;
+      thread.thread_metadata!.invitable = false;
       await expect(new Thread(thread).validate()).resolves.toBeUndefined();
     });
 
