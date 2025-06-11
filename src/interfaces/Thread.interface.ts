@@ -35,14 +35,14 @@ export interface BaseThread {
   id: Snowflake;
   type: 10 | 11 | 12;
   guild_id?: Snowflake;
-  parent_id: Snowflake;
-  owner_id: Snowflake;
-  name: string;
+  parent_id?: Snowflake;
+  owner_id?: Snowflake;
+  name?: string;
   last_message_id?: Snowflake | null;
   message_count?: number;
   member_count?: number;
   rate_limit_per_user?: number;
-  thread_metadata: ThreadMetadata;
+  thread_metadata?: ThreadMetadata;
   total_message_sent?: number;
   flags?: number;
   applied_tags?: Snowflake[];

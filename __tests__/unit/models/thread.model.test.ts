@@ -40,7 +40,7 @@ describe('Thread model', () => {
     });
 
     test('should fail validation with invalid auto_archive_duration', async () => {
-      thread.thread_metadata.auto_archive_duration = 999;
+      thread.thread_metadata!.auto_archive_duration = 999;
       await expect(new Thread(thread).validate()).rejects.toThrow();
     });
 
@@ -71,7 +71,7 @@ describe('Thread model', () => {
 
     test('should handle PRIVATE_THREAD type', async () => {
       thread.type = 12;
-      thread.thread_metadata.invitable = false;
+      thread.thread_metadata!.invitable = false;
       await expect(new Thread(thread).validate()).resolves.toBeUndefined();
     });
 
