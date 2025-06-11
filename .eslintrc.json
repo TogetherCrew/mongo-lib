@@ -17,5 +17,5 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off"
   },
-  "ignorePatterns": ["coverage", "dist", "__tests__/", "jest.config.ts", "*.yml"]
+  "ignorePatterns": ["coverage", "dist", "__tests__/", "jest.config.ts", "*.yml", "CHANGELOG.md", "*.md"]
 }
