@@ -40,7 +40,7 @@ describe('Thread model', () => {
     });
 
     test('should fail validation with invalid auto_archive_duration', async () => {
-      thread.thread_metadata.auto_archive_duration = 999;
+      thread.thread_metadata!.auto_archive_duration = 999;
       await expect(new Thread(thread).validate()).rejects.toThrow();
     });
 
